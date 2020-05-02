@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29806.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KPSZI", "KPSZI\KPSZI.csproj", "{878B353E-0106-448F-8AA0-ECDFE7F1F498}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{878B353E-0106-448F-8AA0-ECDFE7F1F498}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{878B353E-0106-448F-8AA0-ECDFE7F1F498}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{878B353E-0106-448F-8AA0-ECDFE7F1F498}.Debug|x64.ActiveCfg = Debug|x64
+		{878B353E-0106-448F-8AA0-ECDFE7F1F498}.Debug|x64.Build.0 = Debug|x64
+		{878B353E-0106-448F-8AA0-ECDFE7F1F498}.Debug|x86.ActiveCfg = Debug|x86
+		{878B353E-0106-448F-8AA0-ECDFE7F1F498}.Debug|x86.Build.0 = Debug|x86
+		{878B353E-0106-448F-8AA0-ECDFE7F1F498}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{878B353E-0106-448F-8AA0-ECDFE7F1F498}.Release|Any CPU.Build.0 = Release|Any CPU
+		{878B353E-0106-448F-8AA0-ECDFE7F1F498}.Release|x64.ActiveCfg = Release|x64
+		{878B353E-0106-448F-8AA0-ECDFE7F1F498}.Release|x64.Build.0 = Release|x64
+		{878B353E-0106-448F-8AA0-ECDFE7F1F498}.Release|x86.ActiveCfg = Release|x86
+		{878B353E-0106-448F-8AA0-ECDFE7F1F498}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B9333A92-466C-483D-93E1-FE25729EE0D5}
+	EndGlobalSection
+EndGlobal
