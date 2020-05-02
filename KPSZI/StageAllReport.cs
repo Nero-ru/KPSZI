@@ -99,6 +99,8 @@ namespace KPSZI
                 //Task taskFIKS = Task.Factory.StartNew(() => );
                 //Task taskScannerVS = Task.Factory.StartNew(() => );
                 //Task taskScanoval = Task.Factory.StartNew(() =>);
+
+                // 
                 Scanoval.ReportToWord(sourcePathScanoval, templatePath, true, doc, app, paragraph);
                 ScannerVS.ReportToWord(sourcePathScannerVS, templatePath, true, doc, app, paragraph);
                 FIKS.ReportToWord(sourcePathFIKS, templatePath, true, doc, app, paragraph);
