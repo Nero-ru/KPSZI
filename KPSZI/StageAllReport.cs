@@ -88,7 +88,7 @@ namespace KPSZI
         protected void ExportAllReportsToWord(object sender, EventArgs e)
         {
             if (mf.cbStatus_FIKS.Checked != true || mf.cbStatus_Revisor2XP.Checked != true || mf.cbStatus_ScannerVS.Checked != true || mf.cbStatus_Scanoval.Checked != true)
-                MessageBox.Show("Выберете все отчеты", "Предупреждение", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Выберите все отчеты", "Предупреждение", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             else
             {
                 Word.Application app = new Word.Application();
