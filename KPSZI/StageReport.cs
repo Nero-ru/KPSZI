@@ -131,7 +131,7 @@ namespace KPSZI
 
         }
 
-        /*string color = "FFEDEC";
+        /*string color = "FFEDEC";..
 
         string red = color.Substring(0, 2);
         string green = color.Substring(2, 2);
