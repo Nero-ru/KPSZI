@@ -1,0 +1,165 @@
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\KPSZI-master\KPSZI\bin\Debug\template.docx
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\KPSZI-master\KPSZI\bin\Debug\templateTP.docx
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\KPSZI-master\KPSZI\bin\Debug\KPSZI.exe.config
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\KPSZI-master\KPSZI\bin\Debug\KPSZI.exe
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\KPSZI-master\KPSZI\bin\Debug\KPSZI.pdb
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\KPSZI-master\KPSZI\bin\Debug\EntityFramework.dll
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\KPSZI-master\KPSZI\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\KPSZI-master\KPSZI\bin\Debug\SQLite.CodeFirst.dll
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\KPSZI-master\KPSZI\bin\Debug\System.Data.SQLite.dll
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\KPSZI-master\KPSZI\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\KPSZI-master\KPSZI\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\KPSZI-master\KPSZI\bin\Debug\EntityFramework.xml
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\KPSZI-master\KPSZI\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\KPSZI-master\KPSZI\bin\Debug\System.Data.SQLite.xml
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\KPSZI-master\KPSZI\bin\Debug\System.Data.SQLite.dll.config
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\KPSZI-master\KPSZI\obj\Debug\KPSZI.csprojAssemblyReference.cache
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\KPSZI-master\KPSZI\obj\Debug\KPSZI.DamageDegreeControl.resources
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\KPSZI-master\KPSZI\obj\Debug\KPSZI.FillThreatsForm.resources
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\KPSZI-master\KPSZI\obj\Debug\KPSZI.IntruderAbilityControl.resources
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\KPSZI-master\KPSZI\obj\Debug\KPSZI.MainForm.resources
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\KPSZI-master\KPSZI\obj\Debug\KPSZI.Migrations.first.resources
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\KPSZI-master\KPSZI\obj\Debug\KPSZI.Properties.Resources.resources
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\KPSZI-master\KPSZI\obj\Debug\KPSZI.splashForm.resources
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\KPSZI-master\KPSZI\obj\Debug\KPSZI.WaitingSplashMessage.resources
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\KPSZI-master\KPSZI\obj\Debug\KPSZI.csproj.GenerateResource.cache
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\KPSZI-master\KPSZI\obj\Debug\KPSZI.csproj.CoreCompileInputs.cache
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\KPSZI-master\KPSZI\obj\Debug\KPSZI.csproj.CopyComplete
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\KPSZI-master\KPSZI\obj\Debug\KPSZI.exe
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\KPSZI-master\KPSZI\obj\Debug\KPSZI.pdb
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\KPSZI-master\KPSZI\bin\Debug\Microsoft.CSharp.dll
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\KPSZI-master\KPSZI\bin\Debug\HtmlAgilityPack.dll
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\KPSZI-master\KPSZI\bin\Debug\HtmlAgilityPack.xml
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\KPSZI-master\KPSZI\bin\Debug\HtmlAgilityPack.CssSelectors.dll
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\KPSZI-master\KPSZI\bin\Debug\HtmlAgilityPack.CssSelectors.pdb
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\Программа КПСЗИ\KPSZI-master\KPSZI\bin\Debug\template.docx
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\Программа КПСЗИ\KPSZI-master\KPSZI\bin\Debug\templateTP.docx
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\Программа КПСЗИ\KPSZI-master\KPSZI\bin\Debug\KPSZI.exe.config
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\Программа КПСЗИ\KPSZI-master\KPSZI\bin\Debug\KPSZI.exe
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\Программа КПСЗИ\KPSZI-master\KPSZI\bin\Debug\KPSZI.pdb
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\Программа КПСЗИ\KPSZI-master\KPSZI\bin\Debug\EntityFramework.dll
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\Программа КПСЗИ\KPSZI-master\KPSZI\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\Программа КПСЗИ\KPSZI-master\KPSZI\bin\Debug\HtmlAgilityPack.dll
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\Программа КПСЗИ\KPSZI-master\KPSZI\bin\Debug\SQLite.CodeFirst.dll
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\Программа КПСЗИ\KPSZI-master\KPSZI\bin\Debug\System.Data.SQLite.dll
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\Программа КПСЗИ\KPSZI-master\KPSZI\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\Программа КПСЗИ\KPSZI-master\KPSZI\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\Программа КПСЗИ\KPSZI-master\KPSZI\bin\Debug\EntityFramework.xml
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\Программа КПСЗИ\KPSZI-master\KPSZI\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\Программа КПСЗИ\KPSZI-master\KPSZI\bin\Debug\HtmlAgilityPack.xml
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\Программа КПСЗИ\KPSZI-master\KPSZI\bin\Debug\System.Data.SQLite.xml
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\Программа КПСЗИ\KPSZI-master\KPSZI\bin\Debug\System.Data.SQLite.dll.config
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\Программа КПСЗИ\KPSZI-master\KPSZI\obj\Debug\KPSZI.csprojAssemblyReference.cache
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\Программа КПСЗИ\KPSZI-master\KPSZI\obj\Debug\KPSZI.DamageDegreeControl.resources
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\Программа КПСЗИ\KPSZI-master\KPSZI\obj\Debug\KPSZI.FillThreatsForm.resources
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\Программа КПСЗИ\KPSZI-master\KPSZI\obj\Debug\KPSZI.IntruderAbilityControl.resources
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\Программа КПСЗИ\KPSZI-master\KPSZI\obj\Debug\KPSZI.MainForm.resources
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\Программа КПСЗИ\KPSZI-master\KPSZI\obj\Debug\KPSZI.Migrations.first.resources
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\Программа КПСЗИ\KPSZI-master\KPSZI\obj\Debug\KPSZI.Properties.Resources.resources
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\Программа КПСЗИ\KPSZI-master\KPSZI\obj\Debug\KPSZI.splashForm.resources
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\Программа КПСЗИ\KPSZI-master\KPSZI\obj\Debug\KPSZI.WaitingSplashMessage.resources
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\Программа КПСЗИ\KPSZI-master\KPSZI\obj\Debug\KPSZI.csproj.GenerateResource.cache
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\Программа КПСЗИ\KPSZI-master\KPSZI\obj\Debug\KPSZI.csproj.CoreCompileInputs.cache
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\Программа КПСЗИ\KPSZI-master\KPSZI\obj\Debug\KPSZI.csproj.CopyComplete
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\Программа КПСЗИ\KPSZI-master\KPSZI\obj\Debug\KPSZI.exe
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\Программа КПСЗИ\KPSZI-master\KPSZI\obj\Debug\KPSZI.pdb
+C:\Users\Nero\Desktop\KPSZI-master\KPSZI\bin\Debug\template.docx
+C:\Users\Nero\Desktop\KPSZI-master\KPSZI\bin\Debug\templateTP.docx
+C:\Users\Nero\Desktop\KPSZI-master\KPSZI\bin\Debug\KPSZI.exe.config
+C:\Users\Nero\Desktop\KPSZI-master\KPSZI\bin\Debug\KPSZI.exe
+C:\Users\Nero\Desktop\KPSZI-master\KPSZI\bin\Debug\KPSZI.pdb
+C:\Users\Nero\Desktop\KPSZI-master\KPSZI\bin\Debug\EntityFramework.dll
+C:\Users\Nero\Desktop\KPSZI-master\KPSZI\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Nero\Desktop\KPSZI-master\KPSZI\bin\Debug\HtmlAgilityPack.CssSelectors.dll
+C:\Users\Nero\Desktop\KPSZI-master\KPSZI\bin\Debug\HtmlAgilityPack.dll
+C:\Users\Nero\Desktop\KPSZI-master\KPSZI\bin\Debug\Microsoft.CSharp.dll
+C:\Users\Nero\Desktop\KPSZI-master\KPSZI\bin\Debug\SQLite.CodeFirst.dll
+C:\Users\Nero\Desktop\KPSZI-master\KPSZI\bin\Debug\System.Data.SQLite.dll
+C:\Users\Nero\Desktop\KPSZI-master\KPSZI\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\Nero\Desktop\KPSZI-master\KPSZI\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\Nero\Desktop\KPSZI-master\KPSZI\bin\Debug\EntityFramework.xml
+C:\Users\Nero\Desktop\KPSZI-master\KPSZI\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Nero\Desktop\KPSZI-master\KPSZI\bin\Debug\HtmlAgilityPack.xml
+C:\Users\Nero\Desktop\KPSZI-master\KPSZI\bin\Debug\HtmlAgilityPack.CssSelectors.pdb
+C:\Users\Nero\Desktop\KPSZI-master\KPSZI\bin\Debug\System.Data.SQLite.xml
+C:\Users\Nero\Desktop\KPSZI-master\KPSZI\bin\Debug\System.Data.SQLite.dll.config
+C:\Users\Nero\Desktop\KPSZI-master\KPSZI\bin\Debug\Microsoft.CSharp.xml
+C:\Users\Nero\Desktop\KPSZI-master\KPSZI\obj\Debug\KPSZI.csprojAssemblyReference.cache
+C:\Users\Nero\Desktop\KPSZI-master\KPSZI\obj\Debug\KPSZI.DamageDegreeControl.resources
+C:\Users\Nero\Desktop\KPSZI-master\KPSZI\obj\Debug\KPSZI.FillThreatsForm.resources
+C:\Users\Nero\Desktop\KPSZI-master\KPSZI\obj\Debug\KPSZI.IntruderAbilityControl.resources
+C:\Users\Nero\Desktop\KPSZI-master\KPSZI\obj\Debug\KPSZI.MainForm.resources
+C:\Users\Nero\Desktop\KPSZI-master\KPSZI\obj\Debug\KPSZI.Migrations.first.resources
+C:\Users\Nero\Desktop\KPSZI-master\KPSZI\obj\Debug\KPSZI.Properties.Resources.resources
+C:\Users\Nero\Desktop\KPSZI-master\KPSZI\obj\Debug\KPSZI.splashForm.resources
+C:\Users\Nero\Desktop\KPSZI-master\KPSZI\obj\Debug\KPSZI.WaitingSplashMessage.resources
+C:\Users\Nero\Desktop\KPSZI-master\KPSZI\obj\Debug\KPSZI.csproj.GenerateResource.cache
+C:\Users\Nero\Desktop\KPSZI-master\KPSZI\obj\Debug\KPSZI.csproj.CopyComplete
+C:\Users\Nero\Desktop\KPSZI-master\KPSZI\obj\Debug\KPSZI.exe
+C:\Users\Nero\Desktop\KPSZI-master\KPSZI\obj\Debug\KPSZI.pdb
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\1111\KPSZI-master\KPSZI\bin\Debug\template.docx
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\1111\KPSZI-master\KPSZI\bin\Debug\templateTP.docx
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\1111\KPSZI-master\KPSZI\bin\Debug\KPSZI.exe.config
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\1111\KPSZI-master\KPSZI\bin\Debug\KPSZI.exe
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\1111\KPSZI-master\KPSZI\bin\Debug\KPSZI.pdb
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\1111\KPSZI-master\KPSZI\bin\Debug\EntityFramework.dll
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\1111\KPSZI-master\KPSZI\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\1111\KPSZI-master\KPSZI\bin\Debug\HtmlAgilityPack.CssSelectors.dll
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\1111\KPSZI-master\KPSZI\bin\Debug\HtmlAgilityPack.dll
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\1111\KPSZI-master\KPSZI\bin\Debug\SQLite.CodeFirst.dll
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\1111\KPSZI-master\KPSZI\bin\Debug\System.Data.SQLite.dll
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\1111\KPSZI-master\KPSZI\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\1111\KPSZI-master\KPSZI\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\1111\KPSZI-master\KPSZI\bin\Debug\EntityFramework.xml
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\1111\KPSZI-master\KPSZI\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\1111\KPSZI-master\KPSZI\bin\Debug\HtmlAgilityPack.xml
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\1111\KPSZI-master\KPSZI\bin\Debug\HtmlAgilityPack.CssSelectors.pdb
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\1111\KPSZI-master\KPSZI\bin\Debug\System.Data.SQLite.xml
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\1111\KPSZI-master\KPSZI\bin\Debug\System.Data.SQLite.dll.config
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\1111\KPSZI-master\KPSZI\obj\Debug\KPSZI.csprojAssemblyReference.cache
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\1111\KPSZI-master\KPSZI\obj\Debug\KPSZI.DamageDegreeControl.resources
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\1111\KPSZI-master\KPSZI\obj\Debug\KPSZI.FillThreatsForm.resources
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\1111\KPSZI-master\KPSZI\obj\Debug\KPSZI.IntruderAbilityControl.resources
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\1111\KPSZI-master\KPSZI\obj\Debug\KPSZI.MainForm.resources
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\1111\KPSZI-master\KPSZI\obj\Debug\KPSZI.Migrations.first.resources
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\1111\KPSZI-master\KPSZI\obj\Debug\KPSZI.Properties.Resources.resources
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\1111\KPSZI-master\KPSZI\obj\Debug\KPSZI.splashForm.resources
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\1111\KPSZI-master\KPSZI\obj\Debug\KPSZI.WaitingSplashMessage.resources
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\1111\KPSZI-master\KPSZI\obj\Debug\KPSZI.csproj.GenerateResource.cache
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\1111\KPSZI-master\KPSZI\obj\Debug\KPSZI.csproj.CoreCompileInputs.cache
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\1111\KPSZI-master\KPSZI\obj\Debug\KPSZI.csproj.CopyComplete
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\1111\KPSZI-master\KPSZI\obj\Debug\KPSZI.exe
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\1111\KPSZI-master\KPSZI\obj\Debug\KPSZI.pdb
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\Программа КПСЗИ\KPSZI-master\KPSZI\bin\Debug\HtmlAgilityPack.pdb
+C:\Users\Evgeny\Desktop\KPSZI-master\KPSZI\bin\Debug\template.docx
+C:\Users\Evgeny\Desktop\KPSZI-master\KPSZI\bin\Debug\templateTP.docx
+C:\Users\Evgeny\Desktop\KPSZI-master\KPSZI\bin\Debug\KPSZI.exe.config
+C:\Users\Evgeny\Desktop\KPSZI-master\KPSZI\bin\Debug\KPSZI.exe
+C:\Users\Evgeny\Desktop\KPSZI-master\KPSZI\bin\Debug\KPSZI.pdb
+C:\Users\Evgeny\Desktop\KPSZI-master\KPSZI\bin\Debug\EntityFramework.dll
+C:\Users\Evgeny\Desktop\KPSZI-master\KPSZI\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Evgeny\Desktop\KPSZI-master\KPSZI\bin\Debug\HtmlAgilityPack.dll
+C:\Users\Evgeny\Desktop\KPSZI-master\KPSZI\bin\Debug\Microsoft.CSharp.dll
+C:\Users\Evgeny\Desktop\KPSZI-master\KPSZI\bin\Debug\SQLite.CodeFirst.dll
+C:\Users\Evgeny\Desktop\KPSZI-master\KPSZI\bin\Debug\System.Data.SQLite.dll
+C:\Users\Evgeny\Desktop\KPSZI-master\KPSZI\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\Evgeny\Desktop\KPSZI-master\KPSZI\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\Evgeny\Desktop\KPSZI-master\KPSZI\bin\Debug\EntityFramework.xml
+C:\Users\Evgeny\Desktop\KPSZI-master\KPSZI\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Evgeny\Desktop\KPSZI-master\KPSZI\bin\Debug\HtmlAgilityPack.pdb
+C:\Users\Evgeny\Desktop\KPSZI-master\KPSZI\bin\Debug\HtmlAgilityPack.xml
+C:\Users\Evgeny\Desktop\KPSZI-master\KPSZI\bin\Debug\System.Data.SQLite.xml
+C:\Users\Evgeny\Desktop\KPSZI-master\KPSZI\bin\Debug\System.Data.SQLite.dll.config
+C:\Users\Evgeny\Desktop\KPSZI-master\KPSZI\obj\Debug\KPSZI.csprojAssemblyReference.cache
+C:\Users\Evgeny\Desktop\KPSZI-master\KPSZI\obj\Debug\KPSZI.DamageDegreeControl.resources
+C:\Users\Evgeny\Desktop\KPSZI-master\KPSZI\obj\Debug\KPSZI.FillThreatsForm.resources
+C:\Users\Evgeny\Desktop\KPSZI-master\KPSZI\obj\Debug\KPSZI.IntruderAbilityControl.resources
+C:\Users\Evgeny\Desktop\KPSZI-master\KPSZI\obj\Debug\KPSZI.MainForm.resources
+C:\Users\Evgeny\Desktop\KPSZI-master\KPSZI\obj\Debug\KPSZI.Migrations.first.resources
+C:\Users\Evgeny\Desktop\KPSZI-master\KPSZI\obj\Debug\KPSZI.Properties.Resources.resources
+C:\Users\Evgeny\Desktop\KPSZI-master\KPSZI\obj\Debug\KPSZI.splashForm.resources
+C:\Users\Evgeny\Desktop\KPSZI-master\KPSZI\obj\Debug\KPSZI.WaitingSplashMessage.resources
+C:\Users\Evgeny\Desktop\KPSZI-master\KPSZI\obj\Debug\KPSZI.csproj.GenerateResource.cache
+C:\Users\Evgeny\Desktop\KPSZI-master\KPSZI\obj\Debug\KPSZI.csproj.CopyComplete
+C:\Users\Evgeny\Desktop\KPSZI-master\KPSZI\obj\Debug\KPSZI.exe
+C:\Users\Evgeny\Desktop\KPSZI-master\KPSZI\obj\Debug\KPSZI.pdb

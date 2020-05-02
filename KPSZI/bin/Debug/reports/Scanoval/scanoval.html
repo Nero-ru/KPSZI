@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Отчет по найденным уязвимостям</title>
+    <style>
+        html {
+            font-family: Arial;
+        }
+
+        .font9pt {
+            font-size: 9pt;
+        }
+
+        .font10pt {
+            font-size: 10pt;
+        }
+
+        .bold {
+            font-weight: bold;
+        }
+
+        div.header {
+            background-color: #F2F2F2;
+            vertical-align: middle;
+            padding: 3px 5px 3px 0px;
+            height: 46px;
+            width: 724px;
+        }
+
+            div.header div.reportLogoContainer {
+                float: left;
+                height: 46px;
+                display: table;
+            }
+
+                div.header div.reportLogoContainer div.middle {
+                    display: table-cell;
+                    vertical-align: middle;
+                }
+
+                    div.header div.reportLogoContainer div.middle div.reportLogo {
+                        float: left;
+                        margin: auto;
+                    }
+
+
+            div.header div.reportNameContainer {
+                float: right;
+                height: 46px;
+                display: table;
+            }
+
+                div.header div.reportNameContainer div.middle {
+                    display: table-cell;
+                    vertical-align: middle;
+                }
+
+                    div.header div.reportNameContainer div.middle div.reportName {
+                        float: right;
+                        font-weight: bold;
+                        font-size: 11pt;
+                        color: #9E0000;
+                        text-transform: uppercase;
+                        margin: auto;
+                    }
+
+        div.conent {
+            width: 724px;
+        }
+
+        div.footer {
+            padding: 10px 25px 10px 25px;
+            width: 724px;
+            font-size: 11pt;
+            font-family: Calibri;
+        }
+
+            div.footer div {
+                text-align: center;
+                color: #A9A9A9;
+                margin: auto;
+            }
+
+        tr.hidden {
+            display: none;
+        }
+
+        div.reportInfo {
+            margin-top: 35px;
+        }
+
+            div.reportInfo table.reportInfo {
+                border: 2px #ffffff;
+                margin: auto;
+                width: 722px;
+            }
+
+                div.reportInfo table.reportInfo td.key {
+                    background-color: #D9D9D9;
+                    width: 50%;
+                    padding-left: 5px;
+                    font-size: 10pt;
+                }
+
+                div.reportInfo table.reportInfo td.value {
+                    background-color: #EFF4FB;
+                    width: 50%;
+                    padding-left: 5px;
+                    font-style: italic;
+                    font-size: 9pt;
+                }
+
+        div.vulnerabilities {
+            margin-top: 35px;
+        }
+
+            div.vulnerabilities div.vulnerabTitle {
+                font-family: Calibri;
+                font-size: 11pt;
+                font-weight: bold;
+            }
+
+            div.vulnerabilities table.vulnerabilitiesTbl {
+                border-spacing: 5px 3px;
+                margin-left: -5px;
+            }
+
+                div.vulnerabilities table.vulnerabilitiesTbl thead {
+                    font-weight: bold;
+                    background-color: #D9D9D9;
+                    font-size: 9pt;
+                    font-family: Calibri;
+                }
+
+                    div.vulnerabilities table.vulnerabilitiesTbl thead td.bduidHead {
+                        text-align: center;
+                        width: 180px;
+                    }
+
+                    div.vulnerabilities table.vulnerabilitiesTbl thead td.riskHead {
+                        text-align: center;
+                        width: 100px;
+                    }
+
+                    div.vulnerabilities table.vulnerabilitiesTbl thead td.descrHead {
+                        width: 464px;
+                    }
+
+                div.vulnerabilities table.vulnerabilitiesTbl tr.even {
+                    background-color: #EFF4FB;
+                }
+
+                div.vulnerabilities table.vulnerabilitiesTbl td {
+                    font-size: 9pt;
+                }
+
+                    div.vulnerabilities table.vulnerabilitiesTbl td.bdu {
+                        text-align: center;
+                        vertical-align: top;
+                    }
+
+                    div.vulnerabilities table.vulnerabilitiesTbl td.riskTextColor {
+                        color: #ffffff;
+                    }
+
+                    div.vulnerabilities table.vulnerabilitiesTbl td.risk {
+                        text-align: center;
+                        vertical-align: top;
+                    }
+
+                    div.vulnerabilities table.vulnerabilitiesTbl td.desc {
+                        padding: 3px 7px 3px 7px;
+                    }
+
+                    div.vulnerabilities table.vulnerabilitiesTbl td.fileslist {
+                        color: #515151;
+                        font-style: italic;
+                    }
+
+                    div.vulnerabilities table.vulnerabilitiesTbl td.prods {
+                        font-size: 8pt;
+                    }
+
+
+        div.vulnerabilitiesList {
+            margin-top: 35px;
+        }
+
+            div.vulnerabilitiesList div.vulnListTitle {
+                font-family: Calibri;
+                font-size: 11pt;
+                font-weight: bold;
+            }
+
+            div.vulnerabilitiesList div.ref_id {
+                padding-top: 2px;
+                padding-bottom: 2px;
+                font-weight: bold;
+                vertical-align: middle;
+            }
+
+            div.vulnerabilitiesList div.ref_ref {
+                padding-top: 2px;
+                padding-bottom: 2px;
+                padding-left: 37px;
+                height: 17px;
+                vertical-align: middle;
+            }
+
+            div.vulnerabilitiesList table.vulnerabilitiesListTbl {
+                border-spacing: 5px 3px;
+                width: 100%;
+                font-size: 9pt;
+            }
+
+                div.vulnerabilitiesList table.vulnerabilitiesListTbl td.key {
+                    width: 20%;
+                }
+
+                div.vulnerabilitiesList table.vulnerabilitiesListTbl td.vulnerabTC {
+                    color: #FFFFFF;
+                }
+
+
+
+                div.vulnerabilitiesList table.vulnerabilitiesListTbl td.vulnerab {
+                    padding: 7px 17px 7px 17px;
+                    text-align: center;
+                }
+
+                div.vulnerabilitiesList table.vulnerabilitiesListTbl td.title {
+                    background-color: #D9D9D9;
+                    padding: 7px 17px 7px 17px;
+                    text-align: center;
+                }
+
+                div.vulnerabilitiesList table.vulnerabilitiesListTbl td.value {
+                    background-color: #EFF4FB;
+                }
+
+                div.vulnerabilitiesList table.vulnerabilitiesListTbl td.valueMargin {
+                    padding: 7px 7px 7px 7px;
+                }
+
+        div.reportStat {
+            margin-top: 35px;
+            padding-left: 15%;
+            padding-right: 15%;
+        }
+
+            div.reportStat table.statTable {
+                width: 100%;
+                margin: auto;
+            }
+
+        table.statTable thead td {
+            background-color: #EFF4FB;
+            text-align: center;
+            padding: 3px 3px 3px 3px;
+            font-weight: bold;
+            font-size: 9pt;
+        }
+
+        table.statTable tbody td {
+            text-align: center;
+            padding: 3px 3px 3px 3px;
+            font-size: 9pt;
+        }
+
+            table.statTable tbody td.key {
+                color: #ffffff;
+            }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header">
+            <div class="reportLogoContainer">
+                <div class="middle">
+                    <div class="reportLogo">
+                        <img alt="Logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIgAAAAeCAYAAAD3hVYMAAAJpElEQVRoge2bf1BU1xXHPyuyyo+ICMpiFAGjW2HXSDVFiEoUo4KaHwY1iejIkMwYqrGJrZKQSRo7icGMZhwsaUcZjKgxo0GNFrXjL5IqOsEYXZA+E0TALGaEEBp+RChu/9i+677dtytjdlNS+M7szJl7zzv3vnfPu99zzn2r+dWbj1j89UEANEsN9Mrq8q11tfRE9OkuC9Dd5Z6KPtA9FqC7yz0VfbrLAvwS5J6IXorpotxT0Rc8/3DD6wcyOiEWgA5zK2XGGm62N3WLhe+q7H2XB7lm9UsA1N+8SV7+jrto/3Kg8WQWkzbyMRbq5xB03yCHgRt++I6PpEPkV37SbZzAlayWxURH6Xn1ldUYDNFoNBrR3tnZyblzn7MsY6VCd9fOD9BoNNTV3WBm0uOqC5KelsrKlSsAMJnKWLQ43Wl/ZmYWRUeOqdoB2FmQh9FooKWlhbiHpznVcwWPUcx7cWvImLBE1TkAgu4bRMaEJRRMWtdtnMCVbI/oKD0fbNuK0WhQOAeAl5cX8fETOXr4gGgrvyxx48a3AAwZMljVJsC0aVOFvHPnhw79CxbMF/KiRc84teMueCSLmaGLZVLYQ2KQmvrr5JZuJ6v4XfJP7UKqrxR9J+pK3DauJ2V7bNywHq1WC1jf9MzMLMaOi2XTphwaGxsBCA3V8ZfcTeKaqqprgNWB0tNSVRdErx8NQHt7u+ruoNOFOOh6En098UBnDp4kBmj44TuWffaGIubI/baQxQEzaQv4N3trjncbJ3BJMbSKe4qO0hMaqgMcaSAvfwd5+TsoPnmEwMBAYmPvvCg5m3OJj58IWHcK+1glOkovnE6SrjgsVva6tYrdSqvVkp6W6tGYxyMUEzJkiBjg0+vnVAPSgqajXXKO2EHRTL1tZF5CMnr/MJf648fHMEMXK/QHawOc6se0jGBeQjIzdLGE1w8UO598rb2+LZYsXiRk+xhBRtHho4B1t4iO0gNWmpF3F7W3f8XyDCGfOHHSoX/cuAcBaGxsFHbmzp2jOr674LEsRsZgv+B7svPqE8tJGTMbH+/+CntSbCU5F7ZzvORTof+ENp5lv08jyDfQ4QalyY76zVIDqzKy0QePBKB2nJlg30GKsbJutbHNtEcE0bZZzLBh9wNWGnCGQ4eKWPTs0wDMmZNM+WUJgIoKifj4iWi1WpJnTVfQyJgxVkfq7OxU3V1keqmosNqKj5/IiBFhTufgDnikUHa1tkoMMCnsId6ev/qub7+tvGXpehaPfcrBOQD0wSNZPyWT8eNjAKtzZD35sqpzqOmrOfHwgKEOY/n28yFjwhKe0MY7DVQ7OjpU2wHhEPbI2ZwrZPsgMzDQeg/V1TUO161YniHoJWdzrrDjKp5xBzxCMTvNRbR1/CgGeXJMEjtmb6Ti9ZPsSMxmg3EVK5LTVClgXkKyIsCtbTLz1r6NFFz6WNjcZtqD1FxDs9TAacqpbTIL3dzS7az+8E2Ofl0sbPj282Gx/nHFWJZbtxUPQqqvJLvkffae/UTRnjJZPR29V5RflsTOI+9EYI0vZBw8eMjhOnl3aWxspPyyRPlliZaWFkCZ2bgbHqEYqbmGlQVZrHv6NYc3Wx88En3wSKYQx1LjfHJ02xSxSMroJKFb22RmyZYXaR4OVJzBVF5GUPgQhf7N9iaWbHmRF2ens+Wfe6kyXcVfH8TJ8yZ82rVMiYoDYITPUMU8NYl9FOOkHl8jbN4XHMDMBxLEfO0p5qdCkq5gNBoIDAwkOkpP+WVJxBfO6EXeXWR6Abh6tQqj0aDIbNwNj53FXPCrZtbB53lr30b2VRxGqq+kpv66YnDffj6siXtBBIkAYf5DRf+xC6eszvFfmyf7mFQD2+bh8PalPOEccnuD5nthS9Ovj8M8ZZSaLyraj39+StHvjGLuFbb1DTkwlWsjzuhFhi1FyXY0Go1iB3In+no6RdyvP8P+S2cU7Rkh80h75FkxiedmLua18zk0Sw0ELbxTWPta802XxkoJS+SZUXMJWzjM5c06o5jOpg6FTe8E364+v3tC0ZFjrF37BlqtloiIcNLTUvHy8gKg5Ow5B/0JE34N3KEXNTvyDuRu/CxnMfZyLoWMqhklYo3wgcOcppRdcY41cS/c9UYtt247pRivAG8H+/ZzUKOY/v0dg2gZybOmu5yPTDM6XYhIVS0WC9nr33OwI9dGBgwYQMnpE4p+2bF0uhBBV+7E/+y4/4a5TkzCdvFab7WJ9pC2gXe185xhodA/X3mR1L+9zEMfpTBm7VT2VRwWfa4oxr69w9yq6LPXv2QqA5Q1DnskJEwRsv2iw506h0ajITIyAkCU4m1hm+l4eXnh5+en+MkOotFoFFTkLngki4kwRnJk7hYKJq0jwhjpoONfC1PHThaTqO/8XuhI390pw09+ME5xrd4/TBGvNEsNirOewut/F9mNvz4IX28lVXSZYoa6ppjs9e9hsVgAa8ndHtFRehITrWcqcqZhj7z8HXR2diravvzyooOebendZCpT/cl25EzHnXA7xUQYI/nrtD8R5BtIkG8gH8/5M6fK/sGlsK/4V3szD1ju57G5SYrs5nDVKWGn5JsviAk1ABATamCDcRXvaLcS6T+M1THPM3hGMH84tU4Uvto6fhQ1jJTRSVwpk7imh5SwRCYP/40Yw90UU1ZWjtFoIDRUR8npE1y8aKLq2jXGGg1ERY0Rb/b+AwedPvzq6hqxe1gsFta88rqiPz0tVdBLaekXitNhW+wv3E1kZIQiK7KFt7e3+BxBDa4+UfDIWUzVN9UMD7BmIz7e/UmKmU4S6px89OtiCouLxLU5Rfkkhj8sqpxTouJEqipj86Nvktr+MlJzDZ9/dUH0x4Qa2PPbrarj/FSKsT2LAWuJ/ejhA4SG6vDz8yM+fqI4Z5Fx5sxZVXqRcfDgIXF0r0YvtmV02+zFlZ0VyzMcHEmr1YqqrhpaWlqcOojbKabKdJVVpg1kFb/L+UrHLVNGbZOZ7JL3+d2uPzrYeemzt51e23qrjdzS7YJK3pG2ikLZ3eAuipExM+lxdu7aLc5FwLoT1NXdIDMzy+kbL8OWZuSTXlvIZXT77MWVHTnjcRc0E3Y/ZfF0QDr1tlE89A5zK2X9u/ZFWeygaMZ76xkYYqWj2urrHGk7q3rt0kcXMHpgOJ1NHXgFeHPl+2uUfnGe0QYrL9+svMEFv2qhnxg3hQCtPx3mVswDmhSxy2BtAIYfw8ScC4uL8C5U7iA9BR79ouz/Se79X0w3WozuKPdU9P4vpotyT0Xv/2J6dxGX6KWYLso9Fb0U00sxLvEfRD8ZTOIHEOIAAAAASUVORK5CYII=" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="reportNameContainer">
+                <div class="middle">
+                    <div class="reportName">Отчёт</div>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <div class="conent">
+        <div class="reportInfo">
+            <table class="reportInfo">
+                <tr>
+                    <td class="key">№ отчета</td>
+                    <td class="value">bb496f13-b108-493e-b2fe-f05e0a7b23f4</td>
+                </tr>
+                <tr>
+                    <td class="key">№ сканирования</td>
+                    <td class="value">5833aa69-2dbb-41a1-a0bb-72def5ff24f2</td>
+                </tr>
+                <tr>
+                    <td class="key">Профиль</td>
+                    <td class="value">Уязвимости</td>
+                </tr>
+                <tr>
+                    <td class="key">Начало/завершение сканирования</td>
+                    <td class="value">14.04.2020 22:02:55 / 14.04.2020 22:04:50</td>
+                </tr>
+                <tr>
+                    <td class="key">Формирование отчета</td>
+                    <td class="value">14.04.2020 22:05:06</td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="reportStat">
+            <table class="statTable">
+                <thead>
+                    <tr>
+                        <th style="width: 30%;">Уровень опасности</th>
+                        <th style="width: 35%;">Найдено</th>
+                        <th style="width: 35%;">Всего</th>
+                    </tr>
+                </thead>
+                <tr >
+                    <td class='key'><div style='background-color: #89171A;'>Критический<div></td>
+                    <td>0</td>
+                    <td>1112</td>
+                </tr><tr >
+                    <td class='key'><div style='background-color: #CC0000;'>Высокий<div></td>
+                    <td>4</td>
+                    <td>2638</td>
+                </tr><tr >
+                    <td class='key'><div style='background-color: #F5770F;'>Средний<div></td>
+                    <td>5</td>
+                    <td>2544</td>
+                </tr><tr >
+                    <td class='key'><div style='background-color: #00705C;'>Низкий<div></td>
+                    <td>1</td>
+                    <td>212</td>
+                </tr><tr style='background-color: #EFF4FB;'>
+                    <td ><div style='background-color: ;'>Всего<div></td>
+                    <td>10</td>
+                    <td>6506</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="vulnerabilities">
+            <div class="vulnerabTitle">Уязвимости [10]</div>
+            <br/>
+            <table class="vulnerabilitiesTbl">
+                <thead>
+                    <tr>
+                        <td class="bduidHead">Идентификатор уязвимости</td>
+                        <td class="riskHead">Уровень опасности</td>
+                        <td class="descrHead">Название уязвимости</td>
+                    </tr>
+                </thead>
+                <tr >
+                <td class="bdu">BDU:2019-00031</td>
+                <td class="risk riskTextColor">
+                    <div style='background-color: #CC0000; ' >Высокий</div>
+                </td>
+                <td class="desc">В том, как определенные приложения, созданные с помощью библиотеки Microsoft Foundation Classes (MFC), обрабатывают загрузку DLL-файлов, существует уязвимость, делающая возможным удаленное выполнение кода. Воспользовавшись этой уязвимостью, злоумышленник может установить полный контроль над системой. После этого злоумышленник сможет устанавливать программы, просматривать, изменять и уничтожать данные или создавать новые учетные записи с неограниченными правами.</td>
+            </tr>
+            <tr calss=" ">
+                <td class="fileslist prods" colspan="2">cpe:/a:microsoft:visual_c++:2005:redistribution_pkg</td>
+                <td class="desc fileslist">C:\WINDOWS\WinSxS\x86_microsoft.vc80.atl_1fc8b3b9a1e18e3b_8.0.50727.762_none_11ecb0ab9b2caf3c\ATL80.dll (8.0.50727.762)<br/>C:\WINDOWS\winsxs\x86_microsoft.vc80.atl_1fc8b3b9a1e18e3b_8.0.50727.762_none_11ecb0ab9b2caf3c\ATL80.dll (8.0.50727.762)</td>
+            </tr><tr even>
+                <td class="bdu">BDU:2019-00021</td>
+                <td class="risk riskTextColor">
+                    <div style='background-color: #CC0000; ' >Высокий</div>
+                </td>
+                <td class="desc">Уязвимость в алгоритме генерации OpenSSL RSA Key в OpenSSL 1.1.0-1.1.0h и 1.0.2b-1.0.2o.</td>
+            </tr>
+            <tr calss="even ">
+                <td class="fileslist prods" colspan="2"></td>
+                <td class="desc fileslist">C:\Program Files\Microsoft Office\root\Office16\ODBC Drivers\Redshift\lib\OpenSSL64.DllA\ssleay32.dll (1.0.2.10)<br/>C:\Program Files\Microsoft Office\root\Office16\ODBC Drivers\Salesforce\lib\OpenSSL64.DllA\ssleay32.dll (1.0.2.10)</td>
+            </tr><tr >
+                <td class="bdu">BDU:2019-00186</td>
+                <td class="risk riskTextColor">
+                    <div style='background-color: #CC0000; ' >Высокий</div>
+                </td>
+                <td class="desc">Уязвимость отказа в обслуживании в OpenSSL 1.1.0-1.1.0h, и 1.0.2-1.0.2o</td>
+            </tr>
+            <tr calss=" ">
+                <td class="fileslist prods" colspan="2"></td>
+                <td class="desc fileslist">C:\Program Files\Microsoft Office\root\Office16\ODBC Drivers\Redshift\lib\OpenSSL64.DllA\ssleay32.dll (1.0.2.10)<br/>C:\Program Files\Microsoft Office\root\Office16\ODBC Drivers\Salesforce\lib\OpenSSL64.DllA\ssleay32.dll (1.0.2.10)</td>
+            </tr><tr even>
+                <td class="bdu">BDU:2019-00985</td>
+                <td class="risk riskTextColor">
+                    <div style='background-color: #CC0000; ' >Высокий</div>
+                </td>
+                <td class="desc">Если приложение сталкивается с фатальной ошибкой протокола и затем дважды вызывает SSL_shutdown () (один раз для отправки close_notify и один раз для получения), тогда OpenSSL может по-разному реагировать на вызывающее приложение, если получена 0-байтовая запись с неверным заполнением по сравнению с 0-байтовой записью с неверным MAC.</td>
+            </tr>
+            <tr calss="even ">
+                <td class="fileslist prods" colspan="2"></td>
+                <td class="desc fileslist">C:\Program Files\Microsoft Office\root\Office16\ODBC Drivers\Redshift\lib\OpenSSL64.DllA\ssleay32.dll (1.0.2.10)<br/>C:\Program Files\Microsoft Office\root\Office16\ODBC Drivers\Salesforce\lib\OpenSSL64.DllA\ssleay32.dll (1.0.2.10)</td>
+            </tr><tr >
+                <td class="bdu">BDU:2019-00765</td>
+                <td class="risk riskTextColor">
+                    <div style='background-color: #F5770F; ' >Средний</div>
+                </td>
+                <td class="desc">Уязвимость в OpenSSL до 1.0.2n связана с механизмом "состояния ошибки". Если в случае возникновения фатальной ошибки продолжаются попытки продлить рукопожатие, данный механизм вызывает немедленный сбой. Проблема заключается в том, что при непосредственном вызове функций SSL_read () или SSL_write () механизм не срабатывает должным образом. OpenSSL 1.1.0 не подвержен.</td>
+            </tr>
+            <tr calss=" ">
+                <td class="fileslist prods" colspan="2"></td>
+                <td class="desc fileslist">C:\Program Files\Microsoft Office\root\Office16\ODBC Drivers\Redshift\lib\OpenSSL64.DllA\ssleay32.dll (1.0.2.10)<br/>C:\Program Files\Microsoft Office\root\Office16\ODBC Drivers\Salesforce\lib\OpenSSL64.DllA\ssleay32.dll (1.0.2.10)</td>
+            </tr><tr even>
+                <td class="bdu">BDU:2019-01256</td>
+                <td class="risk riskTextColor">
+                    <div style='background-color: #F5770F; ' >Средний</div>
+                </td>
+                <td class="desc">Уязвимость в алгоритме подписи OpenSSL DSA, злоумышленник может использовать различные варианты алгоритма подписи для восстановления закрытого ключа. Испралено в OpenSSL 1.1.1a-dev (1.1.1). Испралено в OpenSSL 1.1.0j-dev (1.1.0-1.1.0i). Испралено в OpenSSL 1.0.2q-dev (1.0.2-1.0.2p).</td>
+            </tr>
+            <tr calss="even ">
+                <td class="fileslist prods" colspan="2"></td>
+                <td class="desc fileslist">C:\Program Files\Microsoft Office\root\Office16\ODBC Drivers\Redshift\lib\OpenSSL64.DllA\ssleay32.dll (1.0.2.10)<br/>C:\Program Files\Microsoft Office\root\Office16\ODBC Drivers\Salesforce\lib\OpenSSL64.DllA\ssleay32.dll (1.0.2.10)</td>
+            </tr><tr >
+                <td class="bdu">BDU:2019-04084</td>
+                <td class="risk riskTextColor">
+                    <div style='background-color: #F5770F; ' >Средний</div>
+                </td>
+                <td class="desc">Уязвимость в OpenSSL до 1.1.1d, до 1.1.0l и до 1.0.2t может привести к полному восстановлению ключа во время операции подписи ECDSA.</td>
+            </tr>
+            <tr calss=" ">
+                <td class="fileslist prods" colspan="2"></td>
+                <td class="desc fileslist">C:\Program Files\Microsoft Office\root\Office16\ODBC Drivers\Redshift\lib\OpenSSL64.DllA\ssleay32.dll (1.0.2.10)<br/>C:\Program Files\Microsoft Office\root\Office16\ODBC Drivers\Salesforce\lib\OpenSSL64.DllA\ssleay32.dll (1.0.2.10)</td>
+            </tr><tr even>
+                <td class="bdu">BDU:2019-04082</td>
+                <td class="risk riskTextColor">
+                    <div style='background-color: #F5770F; ' >Средний</div>
+                </td>
+                <td class="desc">Уязвимость в OpenSSL до 1.1.1d, до 1.1.0l и до 1.0.2t позволяет восстановить CMS/PKCS7 транспортированный ключ шифрования или расшифровать любое сообщение, которое было зашифровано с помощью открытого ключа RSA.</td>
+            </tr>
+            <tr calss="even ">
+                <td class="fileslist prods" colspan="2"></td>
+                <td class="desc fileslist">C:\Program Files\Microsoft Office\root\Office16\ODBC Drivers\Redshift\lib\OpenSSL64.DllA\ssleay32.dll (1.0.2.10)<br/>C:\Program Files\Microsoft Office\root\Office16\ODBC Drivers\Salesforce\lib\OpenSSL64.DllA\ssleay32.dll (1.0.2.10)</td>
+            </tr><tr >
+                <td class="bdu">BDU:2020-00300</td>
+                <td class="risk riskTextColor">
+                    <div style='background-color: #F5770F; ' >Средний</div>
+                </td>
+                <td class="desc">Ошибка переполнения в OpenSSL 1.1.1-1.1.1d и 1.0.2-1.0.2t.</td>
+            </tr>
+            <tr calss=" ">
+                <td class="fileslist prods" colspan="2"></td>
+                <td class="desc fileslist">C:\Program Files\Microsoft Office\root\Office16\ODBC Drivers\Redshift\lib\OpenSSL64.DllA\ssleay32.dll (1.0.2.10)<br/>C:\Program Files\Microsoft Office\root\Office16\ODBC Drivers\Salesforce\lib\OpenSSL64.DllA\ssleay32.dll (1.0.2.10)</td>
+            </tr><tr even>
+                <td class="bdu">BDU:2019-03123</td>
+                <td class="risk riskTextColor">
+                    <div style='background-color: #00705C; ' >Низкий</div>
+                </td>
+                <td class="desc">OpenSSL имеет внутреннее значение по умолчанию для дерева каталогов, где он может найти файлы конфигурации и сертификаты. Этот каталог обычно называется OPENSSLDIR и настраивается с помощью параметров --prefix / --openssldir. OpenSSL версий 1.1.1-1.1.1c, 1.1.0-1.1.0k и 1.0.2-1.0.2s для mingw конфигурации предполагают, что результирующие программы и библиотеки установлены в Unix-подобной среде и префикс по умолчанию задан "/usr/local". Тем не менее, mingw-это программы Windows, и поэтому они ищут подкаталоги 'C:/usr/local', который может быть общедоступен для записи, что позволяет злоумышленникам изменять конфигурацию OpenSSL, вставлять сертификаты CA, изменять (или даже заменять) существующие модули и т.д.</td>
+            </tr>
+            <tr calss="even ">
+                <td class="fileslist prods" colspan="2"></td>
+                <td class="desc fileslist">C:\Program Files\Microsoft Office\root\Office16\ODBC Drivers\Redshift\lib\OpenSSL64.DllA\ssleay32.dll (1.0.2.10)<br/>C:\Program Files\Microsoft Office\root\Office16\ODBC Drivers\Salesforce\lib\OpenSSL64.DllA\ssleay32.dll (1.0.2.10)</td>
+            </tr>
+            </table>
+        </div>
+
+        <div class="vulnerabilitiesList">
+            <div class="vulnListTitle">Список уязвимостей</div>
+            <br/>
+            <table class="vulnerabilitiesListTbl">
+                <tr>
+                    <td class=" font8pt vulnerab key vulnerabTC" style='background-color: #CC0000;'>Уязвимость</td>
+                    <td class=" font8pt valueMargin">Уровень опасности: Высокий</td>
+                </tr>
+                <tr>
+                    <td class="font10pt title key">BDU:2019-00031</td>
+                   <td class="font10pt bold value valueMargin">Уязвимость, связанная с небезопасной загрузкой библиотек MFC (MS11-025)</td>
+                </tr>
+                <tr>
+                    <td class="title key">Описание уязвимости</td>
+                    <td class="valueMargin"></td>
+                </tr>
+                <tr>
+                    <td colspan="2">В том, как определенные приложения, созданные с помощью библиотеки Microsoft Foundation Classes (MFC), обрабатывают загрузку DLL-файлов, существует уязвимость, делающая возможным удаленное выполнение кода. Воспользовавшись этой уязвимостью, злоумышленник может установить полный контроль над системой. После этого злоумышленник сможет устанавливать программы, просматривать, изменять и уничтожать данные или создавать новые учетные записи с неограниченными правами.</td>
+                </tr>
+                <tr>
+                    <td class="title key">Возможные меры по устранению уязвимости</td>
+                    <td class="valueMargin"></td>
+                </tr>
+                <tr>
+                    <td colspan="2">Использование рекомендаций производителя: 
+https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2010-3190</td>
+                </tr>
+                <tr>
+                    <td class="title key">Ссылки на источники</td>
+                    <td class="valueMargin"></td>
+                </tr>
+                <tr>
+                    <td colspan="2" style='padding-bottom: 30px;'><div class='ref_id'>BDU:2019-00031 (FSTEC)</div><div class='ref_ref'><a href="https://bdu.fstec.ru/vul/2019-00031" target="_blank">https://bdu.fstec.ru/vul/2019-00031</a></div><div class='ref_id'>CVE-2010-3190 (CVE)</div><div class='ref_ref'><a href="http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-3190" target="_blank">http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-3190</a></div><div class='ref_id'>MS11-025 (Microsoft)</div><div class='ref_ref'><a href="http://technet.microsoft.com/ru-ru/security/bulletin/ms11-025" target="_blank">http://technet.microsoft.com/ru-ru/security/bulletin/ms11-025</a></div></td>
+                </tr><tr>
+                    <td class=" font8pt vulnerab key vulnerabTC" style='background-color: #CC0000;'>Уязвимость</td>
+                    <td class=" font8pt valueMargin">Уровень опасности: Высокий</td>
+                </tr>
+                <tr>
+                    <td class="font10pt title key">BDU:2019-00021</td>
+                   <td class="font10pt bold value valueMargin">Уязвимость в OpenSSL 1.1.0-1.1.0h, и 1.0.2b-1.0.2o (20180416)</td>
+                </tr>
+                <tr>
+                    <td class="title key">Описание уязвимости</td>
+                    <td class="valueMargin"></td>
+                </tr>
+                <tr>
+                    <td colspan="2">Уязвимость в алгоритме генерации OpenSSL RSA Key в OpenSSL 1.1.0-1.1.0h и 1.0.2b-1.0.2o.</td>
+                </tr>
+                <tr>
+                    <td class="title key">Возможные меры по устранению уязвимости</td>
+                    <td class="valueMargin"></td>
+                </tr>
+                <tr>
+                    <td colspan="2">Для Openssl:
+Обновление программного обеспечения до 1.1.1a-1 или более поздней версии
+Для Openssl1.0:
+Обновление программного обеспечения до 1.0.2q-2 или более поздней версии
+
+Для Astra Linux:
+Обновление программного обеспечения (пакета openssl) до </td>
+                </tr>
+                <tr>
+                    <td class="title key">Ссылки на источники</td>
+                    <td class="valueMargin"></td>
+                </tr>
+                <tr>
+                    <td colspan="2" style='padding-bottom: 30px;'><div class='ref_id'>BDU:2019-00021 (FSTEC)</div><div class='ref_ref'><a href="https://bdu.fstec.ru/vul/2019-00021" target="_blank">https://bdu.fstec.ru/vul/2019-00021</a></div><div class='ref_id'>CVE-2018-0737 (CVE)</div><div class='ref_ref'><a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-0737" target="_blank">http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-0737</a></div><div class='ref_id'>20180416 (OpenSSL)</div><div class='ref_ref'><a href="https://www.openssl.org/news/secadv/20180416.txt" target="_blank">https://www.openssl.org/news/secadv/20180416.txt</a></div></td>
+                </tr><tr>
+                    <td class=" font8pt vulnerab key vulnerabTC" style='background-color: #CC0000;'>Уязвимость</td>
+                    <td class=" font8pt valueMargin">Уровень опасности: Высокий</td>
+                </tr>
+                <tr>
+                    <td class="font10pt title key">BDU:2019-00186</td>
+                   <td class="font10pt bold value valueMargin">Уязвимость в OpenSSL 1.1.0-1.1.0h, и 1.0.2-1.0.2o (20180612)</td>
+                </tr>
+                <tr>
+                    <td class="title key">Описание уязвимости</td>
+                    <td class="valueMargin"></td>
+                </tr>
+                <tr>
+                    <td colspan="2">Уязвимость отказа в обслуживании в OpenSSL 1.1.0-1.1.0h, и 1.0.2-1.0.2o</td>
+                </tr>
+                <tr>
+                    <td class="title key">Возможные меры по устранению уязвимости</td>
+                    <td class="valueMargin"></td>
+                </tr>
+                <tr>
+                    <td colspan="2">Использование рекомендаций:
+Для OpenSSL:
+https://www.openssl.org/news/secadv/20180612.txt
+
+Для программных продуктов Oracle:
+http://www.oracle.com/technetwork/security-advisory/cpuoct2018-4428296.html
+https://www.oracle.com/security-alerts/cpuoct201</td>
+                </tr>
+                <tr>
+                    <td class="title key">Ссылки на источники</td>
+                    <td class="valueMargin"></td>
+                </tr>
+                <tr>
+                    <td colspan="2" style='padding-bottom: 30px;'><div class='ref_id'>BDU:2019-00186 (FSTEC)</div><div class='ref_ref'><a href="https://bdu.fstec.ru/vul/2019-00186" target="_blank">https://bdu.fstec.ru/vul/2019-00186</a></div><div class='ref_id'>CVE-2018-0732 (CVE)</div><div class='ref_ref'><a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-0732" target="_blank">http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-0732</a></div><div class='ref_id'>20180612 (OpenSSL)</div><div class='ref_ref'><a href="https://www.openssl.org/news/secadv/20180612.txt" target="_blank">https://www.openssl.org/news/secadv/20180612.txt</a></div></td>
+                </tr><tr>
+                    <td class=" font8pt vulnerab key vulnerabTC" style='background-color: #CC0000;'>Уязвимость</td>
+                    <td class=" font8pt valueMargin">Уровень опасности: Высокий</td>
+                </tr>
+                <tr>
+                    <td class="font10pt title key">BDU:2019-00985</td>
+                   <td class="font10pt bold value valueMargin">Уязвимость в OpenSSL 1.0.2-1.0.2q (20190226)</td>
+                </tr>
+                <tr>
+                    <td class="title key">Описание уязвимости</td>
+                    <td class="valueMargin"></td>
+                </tr>
+                <tr>
+                    <td colspan="2">Если приложение сталкивается с фатальной ошибкой протокола и затем дважды вызывает SSL_shutdown () (один раз для отправки close_notify и один раз для получения), тогда OpenSSL может по-разному реагировать на вызывающее приложение, если получена 0-байтовая запись с неверным заполнением по сравнению с 0-байтовой записью с неверным MAC.</td>
+                </tr>
+                <tr>
+                    <td class="title key">Возможные меры по устранению уязвимости</td>
+                    <td class="valueMargin"></td>
+                </tr>
+                <tr>
+                    <td colspan="2">Использование рекомендаций: 
+https://www.openssl.org/news/secadv/20190226.txt
+
+Компенсирующие меры для SIMATIC S7-1500 CPU 1518(F)-4 PN/DP MFP:
+Следовать рекомендациям производителя:
+https://www.siemens.com/cert/operational-guidelines-industrial-secu</td>
+                </tr>
+                <tr>
+                    <td class="title key">Ссылки на источники</td>
+                    <td class="valueMargin"></td>
+                </tr>
+                <tr>
+                    <td colspan="2" style='padding-bottom: 30px;'><div class='ref_id'>BDU:2019-00985 (FSTEC)</div><div class='ref_ref'><a href="https://bdu.fstec.ru/vul/2019-00985" target="_blank">https://bdu.fstec.ru/vul/2019-00985</a></div><div class='ref_id'>CVE-2019-1559 (CVE)</div><div class='ref_ref'><a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-1559" target="_blank">https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-1559</a></div><div class='ref_id'>20190226 (OpenSSL)</div><div class='ref_ref'><a href="https://www.openssl.org/news/secadv/20190226.txt" target="_blank">https://www.openssl.org/news/secadv/20190226.txt</a></div></td>
+                </tr><tr>
+                    <td class=" font8pt vulnerab key vulnerabTC" style='background-color: #F5770F;'>Уязвимость</td>
+                    <td class=" font8pt valueMargin">Уровень опасности: Средний</td>
+                </tr>
+                <tr>
+                    <td class="font10pt title key">BDU:2019-00765</td>
+                   <td class="font10pt bold value valueMargin">Уязвимость в OpenSSL 1.0.2 до 1.0.2n (20171207)</td>
+                </tr>
+                <tr>
+                    <td class="title key">Описание уязвимости</td>
+                    <td class="valueMargin"></td>
+                </tr>
+                <tr>
+                    <td colspan="2">Уязвимость в OpenSSL до 1.0.2n связана с механизмом "состояния ошибки". Если в случае возникновения фатальной ошибки продолжаются попытки продлить рукопожатие, данный механизм вызывает немедленный сбой. Проблема заключается в том, что при непосредственном вызове функций SSL_read () или SSL_write () механизм не срабатывает должным образом. OpenSSL 1.1.0 не подвержен.</td>
+                </tr>
+                <tr>
+                    <td class="title key">Возможные меры по устранению уязвимости</td>
+                    <td class="valueMargin"></td>
+                </tr>
+                <tr>
+                    <td colspan="2">Обновление программного обеспечения:
+Для MindConnect IoT2040 и MindConnect Nano (IPC227D) до V03.01:
+Обновление через интерфейс Mindsphere
+
+Для SIMATIC ET 200SP Open Controller CPU 1515SP PC до V2.1.6:
+https://support.industry.siemens.com/cs/us/en/view/10</td>
+                </tr>
+                <tr>
+                    <td class="title key">Ссылки на источники</td>
+                    <td class="valueMargin"></td>
+                </tr>
+                <tr>
+                    <td colspan="2" style='padding-bottom: 30px;'><div class='ref_id'>BDU:2019-00765 (FSTEC)</div><div class='ref_ref'><a href="https://bdu.fstec.ru/vul/2019-00765" target="_blank">https://bdu.fstec.ru/vul/2019-00765</a></div><div class='ref_id'>CVE-2017-3737 (CVE)</div><div class='ref_ref'><a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-3737" target="_blank">http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-3737</a></div><div class='ref_id'>20171207 (OpenSSL)</div><div class='ref_ref'><a href="https://www.openssl.org/news/secadv/20171207.txt" target="_blank">https://www.openssl.org/news/secadv/20171207.txt</a></div></td>
+                </tr><tr>
+                    <td class=" font8pt vulnerab key vulnerabTC" style='background-color: #F5770F;'>Уязвимость</td>
+                    <td class=" font8pt valueMargin">Уровень опасности: Средний</td>
+                </tr>
+                <tr>
+                    <td class="font10pt title key">BDU:2019-01256</td>
+                   <td class="font10pt bold value valueMargin">Уязвимость в OpenSSL 1.0.2-1.0.2p, 1.1.0-1.1.0i, и 1.1.1 (20181030)</td>
+                </tr>
+                <tr>
+                    <td class="title key">Описание уязвимости</td>
+                    <td class="valueMargin"></td>
+                </tr>
+                <tr>
+                    <td colspan="2">Уязвимость в алгоритме подписи OpenSSL DSA, злоумышленник может использовать различные варианты алгоритма подписи для восстановления закрытого ключа. Испралено в OpenSSL 1.1.1a-dev (1.1.1). Испралено в OpenSSL 1.1.0j-dev (1.1.0-1.1.0i). Испралено в OpenSSL 1.0.2q-dev (1.0.2-1.0.2p).</td>
+                </tr>
+                <tr>
+                    <td class="title key">Возможные меры по устранению уязвимости</td>
+                    <td class="valueMargin"></td>
+                </tr>
+                <tr>
+                    <td colspan="2">Для openssl:
+Обновление программного обеспечения до 1.1.1a-1 или более поздней версии
+
+Для openssl1.0:
+Обновление программного обеспечения до 1.0.2q-2 или более поздней версии
+
+Для Debian:
+Обновление программного обеспечения (пакета openssl) до 1.1</td>
+                </tr>
+                <tr>
+                    <td class="title key">Ссылки на источники</td>
+                    <td class="valueMargin"></td>
+                </tr>
+                <tr>
+                    <td colspan="2" style='padding-bottom: 30px;'><div class='ref_id'>BDU:2019-01256 (FSTEC)</div><div class='ref_ref'><a href="https://bdu.fstec.ru/vul/2019-01256" target="_blank">https://bdu.fstec.ru/vul/2019-01256</a></div><div class='ref_id'>CVE-2018-0734 (CVE)</div><div class='ref_ref'><a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-0734" target="_blank">http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-0734</a></div><div class='ref_id'>20181030 (OpenSSL)</div><div class='ref_ref'><a href="https://www.openssl.org/news/secadv/20181030.txt" target="_blank">https://www.openssl.org/news/secadv/20181030.txt</a></div></td>
+                </tr><tr>
+                    <td class=" font8pt vulnerab key vulnerabTC" style='background-color: #F5770F;'>Уязвимость</td>
+                    <td class=" font8pt valueMargin">Уровень опасности: Средний</td>
+                </tr>
+                <tr>
+                    <td class="font10pt title key">BDU:2019-04084</td>
+                   <td class="font10pt bold value valueMargin">Уязвимость в OpenSSL до 1.1.1d, до 1.1.0l и до 1.0.2t (20190910)</td>
+                </tr>
+                <tr>
+                    <td class="title key">Описание уязвимости</td>
+                    <td class="valueMargin"></td>
+                </tr>
+                <tr>
+                    <td colspan="2">Уязвимость в OpenSSL до 1.1.1d, до 1.1.0l и до 1.0.2t может привести к полному восстановлению ключа во время операции подписи ECDSA.</td>
+                </tr>
+                <tr>
+                    <td class="title key">Возможные меры по устранению уязвимости</td>
+                    <td class="valueMargin"></td>
+                </tr>
+                <tr>
+                    <td colspan="2">Использование рекомендаций производителя:
+Для программных продуктов OpenSSL:
+https://www.openssl.org/news/secadv/20190910.txt
+
+Для программных продуктов Fedora Project:
+https://lists.fedoraproject.org/archives/list/package-announce@lists.fedoraprojec</td>
+                </tr>
+                <tr>
+                    <td class="title key">Ссылки на источники</td>
+                    <td class="valueMargin"></td>
+                </tr>
+                <tr>
+                    <td colspan="2" style='padding-bottom: 30px;'><div class='ref_id'>BDU:2019-04084 (FSTEC)</div><div class='ref_ref'><a href="https://bdu.fstec.ru/vul/2019-04084" target="_blank">https://bdu.fstec.ru/vul/2019-04084</a></div><div class='ref_id'>CVE-2019-1547 (CVE)</div><div class='ref_ref'><a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-1547" target="_blank">https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-1547</a></div><div class='ref_id'>20190910 (OpenSSL)</div><div class='ref_ref'><a href="https://www.openssl.org/news/secadv/20190910.txt" target="_blank">https://www.openssl.org/news/secadv/20190910.txt</a></div></td>
+                </tr><tr>
+                    <td class=" font8pt vulnerab key vulnerabTC" style='background-color: #F5770F;'>Уязвимость</td>
+                    <td class=" font8pt valueMargin">Уровень опасности: Средний</td>
+                </tr>
+                <tr>
+                    <td class="font10pt title key">BDU:2019-04082</td>
+                   <td class="font10pt bold value valueMargin">Уязвимость в OpenSSL до 1.1.1d, до 1.1.0l и до 1.0.2t (20190910)</td>
+                </tr>
+                <tr>
+                    <td class="title key">Описание уязвимости</td>
+                    <td class="valueMargin"></td>
+                </tr>
+                <tr>
+                    <td colspan="2">Уязвимость в OpenSSL до 1.1.1d, до 1.1.0l и до 1.0.2t позволяет восстановить CMS/PKCS7 транспортированный ключ шифрования или расшифровать любое сообщение, которое было зашифровано с помощью открытого ключа RSA.</td>
+                </tr>
+                <tr>
+                    <td class="title key">Возможные меры по устранению уязвимости</td>
+                    <td class="valueMargin"></td>
+                </tr>
+                <tr>
+                    <td colspan="2">Использование рекомендаций производителя:
+Для программных продуктов OpenSSL:
+https://www.openssl.org/news/secadv/20190910.txt
+
+Для Debian GNU/Linux:
+https://security-tracker.debian.org/tracker/CVE-2019-1563
+
+Для программных продуктов Fedora Project</td>
+                </tr>
+                <tr>
+                    <td class="title key">Ссылки на источники</td>
+                    <td class="valueMargin"></td>
+                </tr>
+                <tr>
+                    <td colspan="2" style='padding-bottom: 30px;'><div class='ref_id'>BDU:2019-04082 (FSTEC)</div><div class='ref_ref'><a href="https://bdu.fstec.ru/vul/2019-04082" target="_blank">https://bdu.fstec.ru/vul/2019-04082</a></div><div class='ref_id'>CVE-2019-1563 (CVE)</div><div class='ref_ref'><a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-1563" target="_blank">https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-1563</a></div><div class='ref_id'>20190910 (OpenSSL)</div><div class='ref_ref'><a href="https://www.openssl.org/news/secadv/20190910.txt" target="_blank">https://www.openssl.org/news/secadv/20190910.txt</a></div></td>
+                </tr><tr>
+                    <td class=" font8pt vulnerab key vulnerabTC" style='background-color: #F5770F;'>Уязвимость</td>
+                    <td class=" font8pt valueMargin">Уровень опасности: Средний</td>
+                </tr>
+                <tr>
+                    <td class="font10pt title key">BDU:2020-00300</td>
+                   <td class="font10pt bold value valueMargin">Уязвимость в OpenSSL 1.1.1-1.1.1d и 1.0.2-1.0.2t (20191206)</td>
+                </tr>
+                <tr>
+                    <td class="title key">Описание уязвимости</td>
+                    <td class="valueMargin"></td>
+                </tr>
+                <tr>
+                    <td colspan="2">Ошибка переполнения в OpenSSL 1.1.1-1.1.1d и 1.0.2-1.0.2t.</td>
+                </tr>
+                <tr>
+                    <td class="title key">Возможные меры по устранению уязвимости</td>
+                    <td class="valueMargin"></td>
+                </tr>
+                <tr>
+                    <td colspan="2">Обновление библиотеки OpenSSL до версии 1.1.1e-dev, 1.0.2u-dev или новее</td>
+                </tr>
+                <tr>
+                    <td class="title key">Ссылки на источники</td>
+                    <td class="valueMargin"></td>
+                </tr>
+                <tr>
+                    <td colspan="2" style='padding-bottom: 30px;'><div class='ref_id'>BDU:2020-00300 (FSTEC)</div><div class='ref_ref'><a href="https://bdu.fstec.ru/vul/2020-00300" target="_blank">https://bdu.fstec.ru/vul/2020-00300</a></div><div class='ref_id'>CVE-2019-1551 (CVE)</div><div class='ref_ref'><a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-1551" target="_blank">https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-1551</a></div><div class='ref_id'>20191206 (OpenSSL)</div><div class='ref_ref'><a href="https://www.openssl.org/news/secadv/20191206.txt" target="_blank">https://www.openssl.org/news/secadv/20191206.txt</a></div></td>
+                </tr><tr>
+                    <td class=" font8pt vulnerab key vulnerabTC" style='background-color: #00705C;'>Уязвимость</td>
+                    <td class=" font8pt valueMargin">Уровень опасности: Низкий</td>
+                </tr>
+                <tr>
+                    <td class="font10pt title key">BDU:2019-03123</td>
+                   <td class="font10pt bold value valueMargin">Уязвимость в OpenSSL 1.1.1-1.1.1c, 1.1.0-1.1.0k и 1.0.2-1.0.2s (20190730)</td>
+                </tr>
+                <tr>
+                    <td class="title key">Описание уязвимости</td>
+                    <td class="valueMargin"></td>
+                </tr>
+                <tr>
+                    <td colspan="2">OpenSSL имеет внутреннее значение по умолчанию для дерева каталогов, где он может найти файлы конфигурации и сертификаты. Этот каталог обычно называется OPENSSLDIR и настраивается с помощью параметров --prefix / --openssldir. OpenSSL версий 1.1.1-1.1.1c, 1.1.0-1.1.0k и 1.0.2-1.0.2s для mingw конфигурации предполагают, что результирующие программы и библиотеки установлены в Unix-подобной среде и префикс по умолчанию задан "/usr/local". Тем не менее, mingw-это программы Windows, и поэтому они ищут подкаталоги 'C:/usr/local', который может быть общедоступен для записи, что позволяет злоумышленникам изменять конфигурацию OpenSSL, вставлять сертификаты CA, изменять (или даже заменять) существующие модули и т.д.</td>
+                </tr>
+                <tr>
+                    <td class="title key">Возможные меры по устранению уязвимости</td>
+                    <td class="valueMargin"></td>
+                </tr>
+                <tr>
+                    <td colspan="2">Использование рекомендаций:
+Для OpenSSL:
+
+https://www.openssl.org/news/secadv/20190730.txt
+
+Для РЕД ОС:
+Обновление операционной системы до версии 7.2 Муром
+
+Для Fedora:
+https://lists.fedoraproject.org/archives/list/package-announce@lists.fedorapro</td>
+                </tr>
+                <tr>
+                    <td class="title key">Ссылки на источники</td>
+                    <td class="valueMargin"></td>
+                </tr>
+                <tr>
+                    <td colspan="2" style='padding-bottom: 30px;'><div class='ref_id'>BDU:2019-03123 (FSTEC)</div><div class='ref_ref'><a href="https://bdu.fstec.ru/vul/2019-03123" target="_blank">https://bdu.fstec.ru/vul/2019-03123</a></div><div class='ref_id'>CVE-2019-1552 (CVE)</div><div class='ref_ref'><a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-1552" target="_blank">https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-1552</a></div><div class='ref_id'>20190730 (OpenSSL)</div><div class='ref_ref'><a href="https://www.openssl.org/news/secadv/20190730.txt" target="_blank">https://www.openssl.org/news/secadv/20190730.txt</a></div></td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="footer">
+            <hr style="height: 3px; size: 3px; border: 0; background-color: #eff4fb" />
+            <div>Программа осуществляет поиск уязвимостей только по выбранному Вами множеству определений. Отчеты программы не могут являться объективной оценкой защищенности сканируемого компьютера.</div>
+            <div>Конец отчета. ScanOVAL 1.3.4 (build 14)</div>
+            <div>ScanOVAL: 3835cfe1-e90e-443a-860a-0be5c8883220.</div>
+            <hr style="height: 1px; size: 1px; border: 0; background-color: #b4b4b4" />
+            <div style="font-family: Arial Narrow; font-size: 9.75pt; color: #b4b4b4; text-align: right;">
+                1
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
