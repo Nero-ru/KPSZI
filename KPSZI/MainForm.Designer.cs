@@ -114,6 +114,8 @@
             this.initDBToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clearAllTablesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.RegistryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.downloadRegistryListthrlistxlsxToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.rewriteRegistryDBToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.treeView = new System.Windows.Forms.TreeView();
             this.tpOptions = new System.Windows.Forms.TabPage();
             this.dgvProjectSecurityResult = new System.Windows.Forms.DataGridView();
@@ -365,12 +367,10 @@
             this.AddressOfCompTextBox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.NumsOfCabsTextBox = new System.Windows.Forms.TextBox();
             this.NumOfWPTextBox = new System.Windows.Forms.TextBox();
-            this.DateOfReportTextBox = new System.Windows.Forms.TextBox();
             this.NameOfISTextBox = new System.Windows.Forms.TextBox();
             this.btnExportAllToWord = new System.Windows.Forms.Button();
             this.cbStatus_Scanoval = new System.Windows.Forms.CheckBox();
@@ -398,8 +398,6 @@
             this.iconList = new System.Windows.Forms.ImageList(this.components);
             this.saveThreatModel = new System.Windows.Forms.SaveFileDialog();
             this.ofdReport = new System.Windows.Forms.OpenFileDialog();
-            this.downloadRegistryListthrlistxlsxToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.rewriteRegistryDBToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.tpOptions.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProjectSecurityResult)).BeginInit();
@@ -633,6 +631,20 @@
             this.RegistryToolStripMenuItem.Name = "RegistryToolStripMenuItem";
             this.RegistryToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
             this.RegistryToolStripMenuItem.Text = "Реестр ФСТЭК СЗИ";
+            // 
+            // downloadRegistryListthrlistxlsxToolStripMenuItem
+            // 
+            this.downloadRegistryListthrlistxlsxToolStripMenuItem.Name = "downloadRegistryListthrlistxlsxToolStripMenuItem";
+            this.downloadRegistryListthrlistxlsxToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
+            this.downloadRegistryListthrlistxlsxToolStripMenuItem.Text = "Скачать файл \"_reestr_sszi\"";
+            this.downloadRegistryListthrlistxlsxToolStripMenuItem.Click += new System.EventHandler(this.downloadRegistryListthrlistxlsxToolStripMenuItem_Click);
+            // 
+            // rewriteRegistryDBToolStripMenuItem
+            // 
+            this.rewriteRegistryDBToolStripMenuItem.Name = "rewriteRegistryDBToolStripMenuItem";
+            this.rewriteRegistryDBToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
+            this.rewriteRegistryDBToolStripMenuItem.Text = "Перезаписать базу реестра";
+            this.rewriteRegistryDBToolStripMenuItem.Click += new System.EventHandler(this.rewriteRegistryDBToolStripMenuItem_Click);
             // 
             // treeView
             // 
@@ -3803,12 +3815,10 @@
             this.tpAllReport.Controls.Add(this.AddressOfCompTextBox);
             this.tpAllReport.Controls.Add(this.label6);
             this.tpAllReport.Controls.Add(this.label5);
-            this.tpAllReport.Controls.Add(this.label4);
             this.tpAllReport.Controls.Add(this.label3);
             this.tpAllReport.Controls.Add(this.label2);
             this.tpAllReport.Controls.Add(this.NumsOfCabsTextBox);
             this.tpAllReport.Controls.Add(this.NumOfWPTextBox);
-            this.tpAllReport.Controls.Add(this.DateOfReportTextBox);
             this.tpAllReport.Controls.Add(this.NameOfISTextBox);
             this.tpAllReport.Controls.Add(this.btnExportAllToWord);
             this.tpAllReport.Controls.Add(this.cbStatus_Scanoval);
@@ -3830,7 +3840,7 @@
             // label7
             // 
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label7.Location = new System.Drawing.Point(6, 132);
+            this.label7.Location = new System.Drawing.Point(6, 106);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(402, 21);
             this.label7.TabIndex = 30;
@@ -3838,15 +3848,15 @@
             // 
             // AddressOfCompTextBox
             // 
-            this.AddressOfCompTextBox.Location = new System.Drawing.Point(414, 132);
+            this.AddressOfCompTextBox.Location = new System.Drawing.Point(414, 106);
             this.AddressOfCompTextBox.Name = "AddressOfCompTextBox";
             this.AddressOfCompTextBox.Size = new System.Drawing.Size(450, 20);
-            this.AddressOfCompTextBox.TabIndex = 29;
+            this.AddressOfCompTextBox.TabIndex = 3;
             // 
             // label6
             // 
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label6.Location = new System.Drawing.Point(6, 109);
+            this.label6.Location = new System.Drawing.Point(6, 83);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(472, 21);
             this.label6.TabIndex = 28;
@@ -3855,20 +3865,11 @@
             // label5
             // 
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(6, 84);
+            this.label5.Location = new System.Drawing.Point(6, 58);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(267, 21);
             this.label5.TabIndex = 27;
             this.label5.Text = "Число автоматизированных рабочих мест:";
-            // 
-            // label4
-            // 
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(6, 58);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(268, 21);
-            this.label4.TabIndex = 26;
-            this.label4.Text = "Дата проведения отчёта (число, месяц, год):";
             // 
             // label3
             // 
@@ -3890,35 +3891,28 @@
             // 
             // NumsOfCabsTextBox
             // 
-            this.NumsOfCabsTextBox.Location = new System.Drawing.Point(484, 109);
+            this.NumsOfCabsTextBox.Location = new System.Drawing.Point(484, 83);
             this.NumsOfCabsTextBox.Name = "NumsOfCabsTextBox";
             this.NumsOfCabsTextBox.Size = new System.Drawing.Size(380, 20);
-            this.NumsOfCabsTextBox.TabIndex = 23;
+            this.NumsOfCabsTextBox.TabIndex = 2;
             // 
             // NumOfWPTextBox
             // 
-            this.NumOfWPTextBox.Location = new System.Drawing.Point(279, 83);
+            this.NumOfWPTextBox.Location = new System.Drawing.Point(279, 57);
             this.NumOfWPTextBox.Name = "NumOfWPTextBox";
             this.NumOfWPTextBox.Size = new System.Drawing.Size(585, 20);
-            this.NumOfWPTextBox.TabIndex = 22;
-            // 
-            // DateOfReportTextBox
-            // 
-            this.DateOfReportTextBox.Location = new System.Drawing.Point(279, 57);
-            this.DateOfReportTextBox.Name = "DateOfReportTextBox";
-            this.DateOfReportTextBox.Size = new System.Drawing.Size(585, 20);
-            this.DateOfReportTextBox.TabIndex = 21;
+            this.NumOfWPTextBox.TabIndex = 1;
             // 
             // NameOfISTextBox
             // 
             this.NameOfISTextBox.Location = new System.Drawing.Point(327, 31);
             this.NameOfISTextBox.Name = "NameOfISTextBox";
             this.NameOfISTextBox.Size = new System.Drawing.Size(537, 20);
-            this.NameOfISTextBox.TabIndex = 20;
+            this.NameOfISTextBox.TabIndex = 0;
             // 
             // btnExportAllToWord
             // 
-            this.btnExportAllToWord.Location = new System.Drawing.Point(695, 265);
+            this.btnExportAllToWord.Location = new System.Drawing.Point(695, 239);
             this.btnExportAllToWord.Name = "btnExportAllToWord";
             this.btnExportAllToWord.Size = new System.Drawing.Size(169, 23);
             this.btnExportAllToWord.TabIndex = 8;
@@ -3929,7 +3923,7 @@
             // 
             this.cbStatus_Scanoval.AutoSize = true;
             this.cbStatus_Scanoval.Enabled = false;
-            this.cbStatus_Scanoval.Location = new System.Drawing.Point(184, 265);
+            this.cbStatus_Scanoval.Location = new System.Drawing.Point(184, 239);
             this.cbStatus_Scanoval.Name = "cbStatus_Scanoval";
             this.cbStatus_Scanoval.Size = new System.Drawing.Size(15, 14);
             this.cbStatus_Scanoval.TabIndex = 7;
@@ -3939,7 +3933,7 @@
             // 
             this.cbStatus_ScannerVS.AutoSize = true;
             this.cbStatus_ScannerVS.Enabled = false;
-            this.cbStatus_ScannerVS.Location = new System.Drawing.Point(184, 236);
+            this.cbStatus_ScannerVS.Location = new System.Drawing.Point(184, 210);
             this.cbStatus_ScannerVS.Name = "cbStatus_ScannerVS";
             this.cbStatus_ScannerVS.Size = new System.Drawing.Size(15, 14);
             this.cbStatus_ScannerVS.TabIndex = 6;
@@ -3949,7 +3943,7 @@
             // 
             this.cbStatus_FIKS.AutoSize = true;
             this.cbStatus_FIKS.Enabled = false;
-            this.cbStatus_FIKS.Location = new System.Drawing.Point(184, 207);
+            this.cbStatus_FIKS.Location = new System.Drawing.Point(184, 181);
             this.cbStatus_FIKS.Name = "cbStatus_FIKS";
             this.cbStatus_FIKS.Size = new System.Drawing.Size(15, 14);
             this.cbStatus_FIKS.TabIndex = 5;
@@ -3959,7 +3953,7 @@
             // 
             this.cbStatus_Revisor2XP.AutoSize = true;
             this.cbStatus_Revisor2XP.Enabled = false;
-            this.cbStatus_Revisor2XP.Location = new System.Drawing.Point(184, 177);
+            this.cbStatus_Revisor2XP.Location = new System.Drawing.Point(184, 151);
             this.cbStatus_Revisor2XP.Name = "cbStatus_Revisor2XP";
             this.cbStatus_Revisor2XP.Size = new System.Drawing.Size(15, 14);
             this.cbStatus_Revisor2XP.TabIndex = 4;
@@ -3967,37 +3961,37 @@
             // 
             // btnGetPath_Scanoval
             // 
-            this.btnGetPath_Scanoval.Location = new System.Drawing.Point(9, 260);
+            this.btnGetPath_Scanoval.Location = new System.Drawing.Point(9, 234);
             this.btnGetPath_Scanoval.Name = "btnGetPath_Scanoval";
             this.btnGetPath_Scanoval.Size = new System.Drawing.Size(169, 23);
-            this.btnGetPath_Scanoval.TabIndex = 3;
+            this.btnGetPath_Scanoval.TabIndex = 7;
             this.btnGetPath_Scanoval.Text = "Выбрать отчет Scanoval";
             this.btnGetPath_Scanoval.UseVisualStyleBackColor = true;
             // 
             // btnGetPath_ScannerVS
             // 
-            this.btnGetPath_ScannerVS.Location = new System.Drawing.Point(9, 231);
+            this.btnGetPath_ScannerVS.Location = new System.Drawing.Point(9, 205);
             this.btnGetPath_ScannerVS.Name = "btnGetPath_ScannerVS";
             this.btnGetPath_ScannerVS.Size = new System.Drawing.Size(169, 23);
-            this.btnGetPath_ScannerVS.TabIndex = 2;
+            this.btnGetPath_ScannerVS.TabIndex = 6;
             this.btnGetPath_ScannerVS.Text = "Выбрать отчет ScannerVS";
             this.btnGetPath_ScannerVS.UseVisualStyleBackColor = true;
             // 
             // btnGetPath_FIKS
             // 
-            this.btnGetPath_FIKS.Location = new System.Drawing.Point(9, 202);
+            this.btnGetPath_FIKS.Location = new System.Drawing.Point(9, 176);
             this.btnGetPath_FIKS.Name = "btnGetPath_FIKS";
             this.btnGetPath_FIKS.Size = new System.Drawing.Size(169, 23);
-            this.btnGetPath_FIKS.TabIndex = 1;
+            this.btnGetPath_FIKS.TabIndex = 5;
             this.btnGetPath_FIKS.Text = "Выбрать отчет FIKS";
             this.btnGetPath_FIKS.UseVisualStyleBackColor = true;
             // 
             // btnGetPath_Revisor2XP
             // 
-            this.btnGetPath_Revisor2XP.Location = new System.Drawing.Point(9, 173);
+            this.btnGetPath_Revisor2XP.Location = new System.Drawing.Point(9, 147);
             this.btnGetPath_Revisor2XP.Name = "btnGetPath_Revisor2XP";
             this.btnGetPath_Revisor2XP.Size = new System.Drawing.Size(169, 23);
-            this.btnGetPath_Revisor2XP.TabIndex = 0;
+            this.btnGetPath_Revisor2XP.TabIndex = 4;
             this.btnGetPath_Revisor2XP.Text = "Выбрать отчет Revisor2XP";
             this.btnGetPath_Revisor2XP.UseVisualStyleBackColor = true;
             // 
@@ -4157,20 +4151,6 @@
             // ofdReport
             // 
             this.ofdReport.FileName = "ofdReport";
-            // 
-            // downloadRegistryListthrlistxlsxToolStripMenuItem
-            // 
-            this.downloadRegistryListthrlistxlsxToolStripMenuItem.Name = "downloadRegistryListthrlistxlsxToolStripMenuItem";
-            this.downloadRegistryListthrlistxlsxToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
-            this.downloadRegistryListthrlistxlsxToolStripMenuItem.Text = "Скачать файл \"_reestr_sszi\"";
-            this.downloadRegistryListthrlistxlsxToolStripMenuItem.Click += new System.EventHandler(this.downloadRegistryListthrlistxlsxToolStripMenuItem_Click);
-            // 
-            // rewriteRegistryDBToolStripMenuItem
-            // 
-            this.rewriteRegistryDBToolStripMenuItem.Name = "rewriteRegistryDBToolStripMenuItem";
-            this.rewriteRegistryDBToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
-            this.rewriteRegistryDBToolStripMenuItem.Text = "Перезаписать базу реестра";
-            this.rewriteRegistryDBToolStripMenuItem.Click += new System.EventHandler(this.rewriteRegistryDBToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -4580,12 +4560,10 @@
         public System.Windows.Forms.TextBox AddressOfCompTextBox;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         public System.Windows.Forms.TextBox NumsOfCabsTextBox;
         public System.Windows.Forms.TextBox NumOfWPTextBox;
-        public System.Windows.Forms.TextBox DateOfReportTextBox;
         public System.Windows.Forms.TextBox NameOfISTextBox;
         private System.Windows.Forms.TabPage tpDLConfig;
         public System.Windows.Forms.TextBox tbCustomDLCPath;
