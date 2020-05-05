@@ -167,3 +167,9 @@ C:\KPSZI\KPSZI-master\KPSZI\bin\x64\Debug\System.IO.Packaging.dll
 C:\KPSZI\KPSZI-master\KPSZI\bin\x64\Debug\DocumentFormat.OpenXml.xml
 C:\KPSZI\KPSZI-master\KPSZI\bin\x64\Debug\ExcelNumberFormat.xml
 C:\KPSZI\KPSZI-master\KPSZI\bin\x64\Debug\System.Data.SQLite.EF6.Migrations.dll
+C:\Users\Veronika\source\repos\KPSZI\KPSZI\bin\x64\Debug\DocumentFormat.OpenXml.dll
+C:\Users\Veronika\source\repos\KPSZI\KPSZI\bin\x64\Debug\ExcelNumberFormat.dll
+C:\Users\Veronika\source\repos\KPSZI\KPSZI\bin\x64\Debug\System.Data.SQLite.EF6.Migrations.dll
+C:\Users\Veronika\source\repos\KPSZI\KPSZI\bin\x64\Debug\System.IO.Packaging.dll
+C:\Users\Veronika\source\repos\KPSZI\KPSZI\bin\x64\Debug\DocumentFormat.OpenXml.xml
+C:\Users\Veronika\source\repos\KPSZI\KPSZI\bin\x64\Debug\ExcelNumberFormat.xml
