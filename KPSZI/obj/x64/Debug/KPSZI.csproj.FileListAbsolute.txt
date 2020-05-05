@@ -161,3 +161,9 @@ C:\Users\Veronika\source\repos\KPSZI\KPSZI\obj\x64\Debug\KPSZI.csproj.CoreCompil
 C:\Users\Veronika\source\repos\KPSZI\KPSZI\obj\x64\Debug\KPSZI.csproj.CopyComplete
 C:\Users\Veronika\source\repos\KPSZI\KPSZI\obj\x64\Debug\KPSZI.exe
 C:\Users\Veronika\source\repos\KPSZI\KPSZI\obj\x64\Debug\KPSZI.pdb
+C:\KPSZI\KPSZI-master\KPSZI\bin\x64\Debug\DocumentFormat.OpenXml.dll
+C:\KPSZI\KPSZI-master\KPSZI\bin\x64\Debug\ExcelNumberFormat.dll
+C:\KPSZI\KPSZI-master\KPSZI\bin\x64\Debug\System.IO.Packaging.dll
+C:\KPSZI\KPSZI-master\KPSZI\bin\x64\Debug\DocumentFormat.OpenXml.xml
+C:\KPSZI\KPSZI-master\KPSZI\bin\x64\Debug\ExcelNumberFormat.xml
+C:\KPSZI\KPSZI-master\KPSZI\bin\x64\Debug\System.Data.SQLite.EF6.Migrations.dll

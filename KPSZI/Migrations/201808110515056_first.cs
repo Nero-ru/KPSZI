@@ -137,7 +137,19 @@ namespace KPSZI.Migrations
                         DateOfChange = c.DateTime(nullable: false),
                     })
                 .PrimaryKey(t => t.ThreatId);
-            
+
+            CreateTable(
+                "dbo.CertificatesSZI",
+                c => new
+                {
+                    CertificateId = c.Int(nullable: false, identity: true),
+                    CertificateNumber = c.Int(nullable: false),
+                    NameSZI = c.String(),
+                    Validity = c.DateTime(),
+                    ValidityTechnicalSupport = c.DateTime(),
+                })
+                .PrimaryKey(t => t.CertificateId);
+
             CreateTable(
                 "dbo.ImplementWays",
                 c => new

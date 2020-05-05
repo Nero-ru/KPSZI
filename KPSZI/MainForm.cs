@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
 using Microsoft.Office.Interop.Word;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace KPSZI
 {
@@ -396,6 +397,54 @@ namespace KPSZI
             doc.Selection.Find.Execute(ref findText, ref matchCase, ref matchWholeWord,
                 ref matchWildCards, ref matchSoundsLike, ref matchAllWordForms, ref forward, ref wrap, ref format, ref replaceWithText, ref replace,
                 ref matchKashida, ref matchDiacritics, ref matchAlefHamza, ref matchControl);
+        }
+
+        private void downloadRegistryListthrlistxlsxToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (var client = new WebClient())
+                {
+                    client.DownloadFile("https://fstec.ru/component/attachments/download/489", "_reestr_sszi.ods");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Проблемы при загрузке файла _reestr_sszi.ods\n" + ex.Message, "Ошибка загрузки файла", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            try
+            {
+                Excel.Application excel = new Excel.Application();
+                Excel.Workbook wb = excel.Workbooks.Open(Environment.CurrentDirectory + "/_reestr_sszi.ods");
+                excel.Visible = true;
+                wb.SaveAs(Environment.CurrentDirectory + "/_reestr_sszi.xlsx", Excel.XlFileFormat.xlWorkbookDefault, Type.Missing, Type.Missing, false, false, Excel.XlSaveAsAccessMode.xlNoChange, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
+                wb.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Проблемы при конвертации файла _reestr_sszi.ods в формат .xlsx\n" + ex.Message, "Ошибка конфертации файла", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            File.Delete(Environment.CurrentDirectory + "/_reestr_sszi.ods");
+            MessageBox.Show("Файл успешно загружен и сконвертирован в формат .xlsx", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void rewriteRegistryDBToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            // Перезаписать Реестра ФСТЭК СЗИ
+            if (MessageBox.Show("Будут удалены все данные о сертификатах СЗИ в БД и записаны заново.\nПродолжить?", "Ахтунг!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                using (KPSZIContext db = new KPSZIContext())
+                {
+                    FileInfo fi = new FileInfo("_reestr_sszi.xlsx");
+
+                    db.CertificatesSZI.AddRange(CertificateSZI.GetThreatsFromXlsx(fi, db));
+                    db.SaveChanges();
+                }
+                MessageBox.Show("Таблица сертификатах СЗИ успешно перезаписана!", "Это успех, парень!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }

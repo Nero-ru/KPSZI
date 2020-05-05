@@ -19,6 +19,7 @@ namespace KPSZI.Model
 
         public DbSet<ConfigOption> ConfigOptions { get; set; }
         public DbSet<Threat> Threats { get; set; }
+        public DbSet<CertificateSZI> CertificatesSZI { get; set; }
         public DbSet<ThreatSource> ThreatSources { get; set; }
         public DbSet<IntruderType> IntruderTypes { get; set; }
         public DbSet<InfoType> InfoTypes { get; set; }
