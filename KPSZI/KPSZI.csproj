@@ -216,6 +216,7 @@
     <Compile Include="StageAllReport.cs" />
     <Compile Include="StageClassification.cs" />
     <Compile Include="StageConfigOptions.cs" />
+    <Compile Include="StageDLConfig.cs" />
     <Compile Include="StageReportFIKS.cs" />
     <Compile Include="StageIntruder.cs" />
     <Compile Include="StageMeasures.cs" />
