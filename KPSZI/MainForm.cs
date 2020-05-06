@@ -89,6 +89,7 @@ namespace KPSZI
             stages.Add("tnScanoval", reportScanoval);
             stages.Add("tnAllReport", new StageAllReport(returnTabPage("tpAllReport"), returnTreeNode("tnAllReport"), this, IS, @"reports/All/Report_v1.2.docx", reportRevisor2XP, reportFIKS, reportScannerVS, reportScanoval));
             stages.Add("tnDLConfig", new StageDLConfig(returnTabPage("tpDLConfig"), returnTreeNode("tnDLConfig"), this, IS));
+            stages.Add("tnCertificateSZI", new StageCertificateSZI(returnTabPage("tpCertificateSZI"), returnTreeNode("tnCertificateSZI"), this, IS));
             //returnTreeNode("tnActualThreats").ForeColor = Color.Gray;
             //returnTreeNode("tnActualThreats").BackColor = Color.White;
 

@@ -236,6 +236,7 @@
     <Compile Include="Stage.cs" />
     <Compile Include="StageAccessMatrix.cs" />
     <Compile Include="StageAllReport.cs" />
+    <Compile Include="StageCertificateSZI.cs" />
     <Compile Include="StageClassification.cs" />
     <Compile Include="StageConfigOptions.cs" />
     <Compile Include="StageDLConfig.cs" />

@@ -145,8 +145,8 @@ namespace KPSZI.Migrations
                     CertificateId = c.Int(nullable: false, identity: true),
                     CertificateNumber = c.Int(nullable: false),
                     NameSZI = c.String(),
-                    Validity = c.DateTime(),
-                    ValidityTechnicalSupport = c.DateTime(),
+                    Validity = c.String(),
+                    ValidityTechnicalSupport = c.String(),
                 })
                 .PrimaryKey(t => t.CertificateId);
 

@@ -35,12 +35,12 @@ namespace KPSZI.Model
         /// <summary>
         /// Срок действия сертификата
         /// </summary>
-        public DateTime Validity = new DateTime();
+        public string Validity { get; set; }
 
         /// <summary>
         /// Дата окончания технической поддержки 
         /// </summary>
-        public DateTime ValidityTechnicalSupport = new DateTime();
+        public string ValidityTechnicalSupport { get; set; }
 
         /// <summary>
         /// Метод выстаскивает текстовое описание сертификатов, парсит, приводит к типу CertificateSZI и возвращает массив объектов CertificateSZI.
@@ -56,10 +56,9 @@ namespace KPSZI.Model
             {
                 CertificateSZI сSZI = new CertificateSZI();
                 сSZI.CertificateNumber = listOfXlslxRows[0][i].ToString();
-                сSZI.Validity = DateTime.ParseExact(listOfXlslxRows[2][i].ToString(), "dd.MM.yyyy", CultureInfo.GetCultureInfo("ru-RU"));
+                сSZI.Validity = listOfXlslxRows[2][i].ToString();
                 сSZI.NameSZI = listOfXlslxRows[3][i];
-                if(listOfXlslxRows[10][i].ToString() != "")
-                    сSZI.ValidityTechnicalSupport = DateTime.ParseExact(listOfXlslxRows[10][i].ToString(), "dd.MM.yyyy", CultureInfo.GetCultureInfo("ru-RU"));
+                сSZI.ValidityTechnicalSupport = listOfXlslxRows[10][i].ToString();
                 listOfAllThreatsFromFile.Add(сSZI);
             }
 
