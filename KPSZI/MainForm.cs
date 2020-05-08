@@ -93,6 +93,8 @@ namespace KPSZI
             //returnTreeNode("tnActualThreats").ForeColor = Color.Gray;
             //returnTreeNode("tnActualThreats").BackColor = Color.White;
 
+            DateOfReportTextBox.Text = Convert.ToString(DateTime.Now.ToString("D"));
+
             // закрываем все вкладки в TabControl
             tabControl.TabPages.Clear();
 
