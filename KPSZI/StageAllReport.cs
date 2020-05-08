@@ -126,9 +126,9 @@ namespace KPSZI
                 bkNameofIS10.Range.Text = Convert.ToString(mf.NameOfISTextBox.Text);
                 bkNameofIS11.Range.Text = Convert.ToString(mf.NameOfISTextBox.Text);
                 //bkDateReport.Range.Text = Convert.ToString(DateTime.Now.ToString("D"));
-                bkDateReport.Range.Text = Convert.ToString(mf.DateOfReportTextBox.Text + " ");
+                bkDateReport.Range.Text = Convert.ToString(mf.DateOfReportTextBox.Text);
                 bkNumOfWP.Range.Text = Convert.ToString(mf.NumOfWPTextBox.Text);
-                bkNumsOfCabinets.Range.Text = Convert.ToString(mf.NumsOfCabsTextBox.Text + " ");
+                bkNumsOfCabinets.Range.Text = Convert.ToString(mf.NumsOfCabsTextBox.Text);
                 bkAddressOfComp.Range.Text = Convert.ToString(mf.AddressOfCompTextBox.Text);
 
                 //Task taskRevisor2XP = Task.Factory.StartNew(() => );
