@@ -173,3 +173,9 @@ C:\Users\Veronika\source\repos\KPSZI\KPSZI\bin\x64\Debug\System.Data.SQLite.EF6.
 C:\Users\Veronika\source\repos\KPSZI\KPSZI\bin\x64\Debug\System.IO.Packaging.dll
 C:\Users\Veronika\source\repos\KPSZI\KPSZI\bin\x64\Debug\DocumentFormat.OpenXml.xml
 C:\Users\Veronika\source\repos\KPSZI\KPSZI\bin\x64\Debug\ExcelNumberFormat.xml
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\Программа КПСЗИ\KPSZI-master\KPSZI\bin\x64\Debug\DocumentFormat.OpenXml.dll
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\Программа КПСЗИ\KPSZI-master\KPSZI\bin\x64\Debug\ExcelNumberFormat.dll
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\Программа КПСЗИ\KPSZI-master\KPSZI\bin\x64\Debug\System.Data.SQLite.EF6.Migrations.dll
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\Программа КПСЗИ\KPSZI-master\KPSZI\bin\x64\Debug\System.IO.Packaging.dll
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\Программа КПСЗИ\KPSZI-master\KPSZI\bin\x64\Debug\DocumentFormat.OpenXml.xml
+C:\Users\dduj\Desktop\учеба\4 курс\2 сем\Программа КПСЗИ\KPSZI-master\KPSZI\bin\x64\Debug\ExcelNumberFormat.xml

@@ -365,6 +365,8 @@
             this.btnExportToWord_Scanoval = new System.Windows.Forms.Button();
             this.wbScanoval = new System.Windows.Forms.WebBrowser();
             this.tpAllReport = new System.Windows.Forms.TabPage();
+            this.label9 = new System.Windows.Forms.Label();
+            this.DateOfReportTextBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.AddressOfCompTextBox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -412,8 +414,6 @@
             this.iconList = new System.Windows.Forms.ImageList(this.components);
             this.saveThreatModel = new System.Windows.Forms.SaveFileDialog();
             this.ofdReport = new System.Windows.Forms.OpenFileDialog();
-            this.label9 = new System.Windows.Forms.Label();
-            this.DateOfReportTextBox = new System.Windows.Forms.TextBox();
             this.menuStrip.SuspendLayout();
             this.tpOptions.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProjectSecurityResult)).BeginInit();
@@ -546,7 +546,7 @@
             this.dataBaseToolStripMenuItem,
             this.RegistryToolStripMenuItem});
             this.testPanelToolStripMenuItem.Name = "testPanelToolStripMenuItem";
-            this.testPanelToolStripMenuItem.Size = new System.Drawing.Size(87, 20);
+            this.testPanelToolStripMenuItem.Size = new System.Drawing.Size(86, 20);
             this.testPanelToolStripMenuItem.Text = "База данных";
             // 
             // threatToolStripMenuItem
@@ -3861,6 +3861,22 @@
             this.tpAllReport.Text = "tpAllReport";
             this.tpAllReport.UseVisualStyleBackColor = true;
             // 
+            // label9
+            // 
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label9.Location = new System.Drawing.Point(6, 57);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(161, 21);
+            this.label9.TabIndex = 32;
+            this.label9.Text = "Дата проведения отчёта:";
+            // 
+            // DateOfReportTextBox
+            // 
+            this.DateOfReportTextBox.Location = new System.Drawing.Point(173, 56);
+            this.DateOfReportTextBox.Name = "DateOfReportTextBox";
+            this.DateOfReportTextBox.Size = new System.Drawing.Size(691, 20);
+            this.DateOfReportTextBox.TabIndex = 31;
+            // 
             // label7
             // 
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -3922,15 +3938,19 @@
             // 
             // NumOfWPTextBox
             // 
+            this.NumOfWPTextBox.BackColor = System.Drawing.SystemColors.Window;
             this.NumOfWPTextBox.Location = new System.Drawing.Point(279, 82);
             this.NumOfWPTextBox.Name = "NumOfWPTextBox";
+            this.NumOfWPTextBox.ReadOnly = true;
             this.NumOfWPTextBox.Size = new System.Drawing.Size(585, 20);
             this.NumOfWPTextBox.TabIndex = 1;
             // 
             // NameOfISTextBox
             // 
+            this.NameOfISTextBox.BackColor = System.Drawing.SystemColors.Window;
             this.NameOfISTextBox.Location = new System.Drawing.Point(327, 31);
             this.NameOfISTextBox.Name = "NameOfISTextBox";
+            this.NameOfISTextBox.ReadOnly = true;
             this.NameOfISTextBox.Size = new System.Drawing.Size(537, 20);
             this.NameOfISTextBox.TabIndex = 0;
             // 
@@ -4311,22 +4331,6 @@
             // ofdReport
             // 
             this.ofdReport.FileName = "ofdReport";
-            // 
-            // label9
-            // 
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label9.Location = new System.Drawing.Point(6, 57);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(161, 21);
-            this.label9.TabIndex = 32;
-            this.label9.Text = "Дата проведения отчёта:";
-            // 
-            // DateOfReportTextBox
-            // 
-            this.DateOfReportTextBox.Location = new System.Drawing.Point(173, 56);
-            this.DateOfReportTextBox.Name = "DateOfReportTextBox";
-            this.DateOfReportTextBox.Size = new System.Drawing.Size(691, 20);
-            this.DateOfReportTextBox.TabIndex = 31;
             // 
             // MainForm
             // 

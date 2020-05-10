@@ -32,13 +32,51 @@ namespace KPSZI
             Scanoval = scanoval;
         }
 
+        /*if (IS.listOfInfoTypes.Count == 0)
+            {
+                if (MessageBox.Show("Для определения степеней ущерба, требуется выбрать виды информации. Перейти к выбору?", "Недостаточно исходных данных", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    mf.treeView.SelectedNode = mf.returnTreeNode("tnOptions");
+                }
+                return;
+            }*/
+
         public override void enterTabPage()
         {
-            mf.btnGetPath_FIKS.Click += new EventHandler(GetPathReport);
-            mf.btnGetPath_Revisor2XP.Click += new EventHandler(GetPathReport);
-            mf.btnGetPath_ScannerVS.Click += new EventHandler(GetPathReport);
-            mf.btnGetPath_Scanoval.Click += new EventHandler(GetPathReport);
-            mf.btnExportAllToWord.Click += new EventHandler(ExportAllReportsToWord);
+            if (isEnoughData())
+            {
+                mf.btnGetPath_FIKS.Click += new EventHandler(GetPathReport);
+                mf.btnGetPath_Revisor2XP.Click += new EventHandler(GetPathReport);
+                mf.btnGetPath_ScannerVS.Click += new EventHandler(GetPathReport);
+                mf.btnGetPath_Scanoval.Click += new EventHandler(GetPathReport);
+                mf.btnExportAllToWord.Click += new EventHandler(ExportAllReportsToWord);
+
+                mf.NameOfISTextBox.Text = mf.tbISName.Text.Trim('"');
+                mf.NumOfWPTextBox.Text = mf.dgvHardware.Rows.Count.ToString();
+            }
+        }
+
+        bool isEnoughData()
+        {
+            if (mf.tbISName.Text.Trim() == string.Empty)
+            {
+                if (MessageBox.Show("Для вывода отчета необходимо указать название информационной системы. Нажмите OK, чтобы перейти к выбору", "Недостаточно исходных данных", MessageBoxButtons.OK) == DialogResult.OK)
+                {
+                    mf.treeView.SelectedNode = mf.returnTreeNode("tnOptions");
+                }
+                return false;
+            }
+
+            if (mf.dgvHardware.Rows.Count == 0)
+            {
+                if (MessageBox.Show("Для вывода отчета необходимо определить аппаратную конфигурацию. Нажмите OK, чтобы перейти к выбору", "Недостаточно исходных данных", MessageBoxButtons.OK) == DialogResult.OK)
+                {
+                    mf.treeView.SelectedNode = mf.returnTreeNode("tnHardware");
+                }
+                return false;
+            }
+
+            return true;
         }
 
         public override void saveChanges()
