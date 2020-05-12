@@ -98,6 +98,7 @@ namespace KPSZI
                     {
                         sourcePathFIKS = mf.ofdReport.FileName;
                         mf.cbStatus_FIKS.Checked = true;
+                        mf.fileName_FIKS.Text = sourcePathFIKS.Split('\\').Last();
                     }
                     break;
                 case "Revisor2XP":
@@ -105,6 +106,7 @@ namespace KPSZI
                     {
                         sourcePathRevisor2XP = mf.ofdReport.FileName;
                         mf.cbStatus_Revisor2XP.Checked = true;
+                        mf.fileName_Revisor2XP.Text = sourcePathRevisor2XP.Split('\\').Last();
                     }
                     break;
                 case "ScannerVS":
@@ -112,6 +114,7 @@ namespace KPSZI
                     {
                         sourcePathScannerVS = mf.ofdReport.FileName;
                         mf.cbStatus_ScannerVS.Checked = true;
+                        mf.fileName_ScannerVS.Text = sourcePathScannerVS.Split('\\').Last();
                     }
                     break;
                 case "Scanoval":
@@ -119,6 +122,7 @@ namespace KPSZI
                     {
                         sourcePathScanoval = mf.ofdReport.FileName;
                         mf.cbStatus_Scanoval.Checked = true;
+                        mf.fileName_Scanoval.Text = sourcePathScanoval.Split('\\').Last();
                     }
                     break;
             }
@@ -174,11 +178,22 @@ namespace KPSZI
                 //Task taskScannerVS = Task.Factory.StartNew(() => );
                 //Task taskScanoval = Task.Factory.StartNew(() =>);
 
-                Scanoval.ReportToWord(sourcePathScanoval, templatePath, true, doc, app, paragraph);
-                ScannerVS.ReportToWord(sourcePathScannerVS, templatePath, true, doc, app, paragraph);
-                FIKS.ReportToWord(sourcePathFIKS, templatePath, true, doc, app, paragraph);
-                
-                Revisor2XP.ReportToWord(sourcePathRevisor2XP, templatePath, true, doc, app, paragraph);
+                try
+                {
+                    Scanoval.Parce(sourcePathScanoval);
+                    ScannerVS.Parce(sourcePathScannerVS);
+                    FIKS.Parce(sourcePathFIKS);
+                    Revisor2XP.Parce(sourcePathRevisor2XP);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Возможно один из отчетов был выбран неправильно!\nПроверьте выбранные отчеты и повторите попытку", "Предупреждение", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+                Scanoval.ReportToWord(templatePath, true, doc, app, paragraph);
+                ScannerVS.ReportToWord(templatePath, true, doc, app, paragraph);
+                FIKS.ReportToWord(templatePath, true, doc, app, paragraph);
+                Revisor2XP.ReportToWord(templatePath, true, doc, app, paragraph);
                 
                 
                 

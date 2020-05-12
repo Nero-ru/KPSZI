@@ -8,6 +8,7 @@ using HtmlAgilityPack;
 using System.Text.RegularExpressions;
 using System.IO;
 using Word = Microsoft.Office.Interop.Word;
+using DocumentFormat.OpenXml.Drawing;
 
 namespace KPSZI
 {
@@ -16,6 +17,8 @@ namespace KPSZI
         protected override ImageList imageListForTabPage { get; set; }
         protected override Button BtnExportToWord { get => mf.btnExportToWord_FIKS; }
         protected override Encoding htmlEncoding { get => Encoding.GetEncoding(1251); }
+        protected HtmlNodeCollection centerNodes = null;
+        protected HtmlTableElement[][] elems = null;
 
         public StageReportFIKS(TabPage stageTab, TreeNode stageNode, MainForm mainForm, InformationSystem IS, string template, WebBrowser wb)
              : base(stageTab, stageNode, mainForm, IS, template, wb)
@@ -28,25 +31,15 @@ namespace KPSZI
 
         }
 
-        public override void ReportToWord(string pathHTML, string nameWord, bool groupExport = false, Word.Document doc = null, Word.Application app = null, Word.Paragraph paragraph = null)
+        public override void Parce(string pathHTML)
         {
             HtmlAgilityPack.HtmlDocument htmlDoc = new HtmlAgilityPack.HtmlDocument();
             htmlDoc.Load(pathHTML);
-            if (!groupExport)
-            {
-                app = new Word.Application();
-                doc = app.Documents.Add(Environment.CurrentDirectory + "/" + nameWord);
-                paragraph = doc.Paragraphs.Add();
-            }
-            app.Visible = true;
-            int countColumn;
-            int tableIndex = 0;
-
             #region Парсинг ключевых HTML элементов
             HtmlNodeCollection reportNodes = htmlDoc.DocumentNode.SelectNodes("//table[1]//tr");
-            HtmlNodeCollection centerNodes = htmlDoc.DocumentNode.SelectNodes("//center");
+            centerNodes = htmlDoc.DocumentNode.SelectNodes("//center");
 
-            HtmlTableElement[][] elems = new HtmlTableElement[reportNodes.Count][];
+            elems = new HtmlTableElement[reportNodes.Count][];
 
             for (int i = 0; i < elems.Length; i++)
             {
@@ -110,67 +103,87 @@ namespace KPSZI
                 elems[i] = tempArray;
             }*/
             #endregion
+        }
 
-            #region Заполнение шапки
-            FillRangeInWord(paragraph.Range, "Приложение В", "Times New Roman", 14, 0, Word.WdParagraphAlignment.wdAlignParagraphRight, Word.WdColor.wdColorBlack);
-            paragraph.Range.InsertParagraphAfter();
-            FillRangeInWord(paragraph.Range, "Результат фиксации файлов СЗИ с помощью программы «ФИКС»", "Times New Roman", 12, 0, Word.WdParagraphAlignment.wdAlignParagraphCenter, Word.WdColor.wdColorBlack);
-            paragraph.Range.InsertParagraphAfter();
-            FillRangeInWord(paragraph.Range, "Таблица Б1. Имена файлов в дистрибутиве СЗИ «Secret Net Studio 8» и их контрольные значения.", "Times New Roman", 12, 0, Word.WdParagraphAlignment.wdAlignParagraphLeft, Word.WdColor.wdColorBlack);
-            paragraph.Range.InsertParagraphAfter();
-            for (int i = 0; i < 4; i++)
+        public override void ReportToWord(string nameWord, bool groupExport = false, Word.Document doc = null, Word.Application app = null, Word.Paragraph paragraph = null)
+        {
+            if (centerNodes == null || elems == null)
+                MessageBox.Show("Отчет СЗИ \"ФИКС\" был обработан некорректно, убедитесь в правильности выбора отчета", "Предупреждение", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else
             {
-                FillRangeInWord(paragraph.Range, centerNodes[i].InnerText, "Times New Roman", 14, 1, Word.WdParagraphAlignment.wdAlignParagraphCenter, Word.WdColor.wdColorBlack);
+                if (!groupExport)
+                {
+                    app = new Word.Application();
+                    doc = app.Documents.Add(Environment.CurrentDirectory + "/" + nameWord);
+                    paragraph = doc.Paragraphs.Add();
+                }
+                app.Visible = true;
+                int countColumn;
+                int tableIndex = 0;
+
+                #region Заполнение шапки
+                FillRangeInWord(paragraph.Range, "Приложение В", "Times New Roman", 14, 0, Word.WdParagraphAlignment.wdAlignParagraphRight, Word.WdColor.wdColorBlack);
                 paragraph.Range.InsertParagraphAfter();
-            }
-
-            #endregion
-
-            #region Заполнение таблицы
-            Word.Table table = CreateStandartTable(paragraph.Range, 1, 6, Word.WdLineStyle.wdLineStyleSingle, Word.WdLineStyle.wdLineStyleSingle, doc);
-            countColumn = table.Rows[1].Cells.Count;
-            for (int i = 0; i < countColumn; i++)
-            {
-                FillRangeInWord(table.Cell(1, i + 1).Range, elems[tableIndex][i].Text, "Times New Roman", 12, elems[tableIndex][i].Bold, Word.WdParagraphAlignment.wdAlignParagraphCenter, Word.WdColor.wdColorBlack);
-            }
-            tableIndex++;
-            for (int i = 0; i < countColumn; i++)
-            {
-                table.Cell(1, i + 1).VerticalAlignment = Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
-            }
-            for (int i = 0; i < elems.GetLength(0) - 1; i++)
-            {
-                table.Rows.Add();
-            }
-            for (int i = 0; i < (elems.GetLength(0) - 1) / 3; i++)
-            {
-                table.Cell(2 + i * 3, 1).Merge(table.Cell(2 + i * 3, 6));
-                FillRangeInWord(table.Cell(2 + i * 3, 1).Range, elems[tableIndex][0].Text, "Times New Roman", 12, elems[tableIndex][0].Bold, Word.WdParagraphAlignment.wdAlignParagraphCenter, Word.WdColor.wdColorBlack, true, elems[tableIndex][0].wdBackColor);
-                tableIndex++;
-                for (int j = 0; j < countColumn; j++)
+                FillRangeInWord(paragraph.Range, "Результат фиксации файлов СЗИ с помощью программы «ФИКС»", "Times New Roman", 12, 0, Word.WdParagraphAlignment.wdAlignParagraphCenter, Word.WdColor.wdColorBlack);
+                paragraph.Range.InsertParagraphAfter();
+                FillRangeInWord(paragraph.Range, "Таблица Б1. Имена файлов в дистрибутиве СЗИ «Secret Net Studio 8» и их контрольные значения.", "Times New Roman", 12, 0, Word.WdParagraphAlignment.wdAlignParagraphLeft, Word.WdColor.wdColorBlack);
+                paragraph.Range.InsertParagraphAfter();
+                for (int i = 0; i < 4; i++)
                 {
-                    FillRangeInWord(table.Cell(3 + i * 3, j + 1).Range, elems[tableIndex][j].Text, "Times New Roman", 12, elems[tableIndex][j].Bold, Word.WdParagraphAlignment.wdAlignParagraphCenter, Word.WdColor.wdColorBlack, true, elems[tableIndex][j].wdBackColor);
+                    FillRangeInWord(paragraph.Range, centerNodes[i].InnerText, "Times New Roman", 14, 1, Word.WdParagraphAlignment.wdAlignParagraphCenter, Word.WdColor.wdColorBlack);
+                    paragraph.Range.InsertParagraphAfter();
+                }
+
+                #endregion
+
+                #region Заполнение таблицы
+                Word.Table table = CreateStandartTable(paragraph.Range, 1, 6, Word.WdLineStyle.wdLineStyleSingle, Word.WdLineStyle.wdLineStyleSingle, doc);
+                countColumn = table.Rows[1].Cells.Count;
+                for (int i = 0; i < countColumn; i++)
+                {
+                    FillRangeInWord(table.Cell(1, i + 1).Range, elems[tableIndex][i].Text, "Times New Roman", 12, elems[tableIndex][i].Bold, Word.WdParagraphAlignment.wdAlignParagraphCenter, Word.WdColor.wdColorBlack);
                 }
                 tableIndex++;
-                table.Cell(4 + i * 3, 1).Merge(table.Cell(4 + i * 3, 3));
-                for (int j = 0; j < countColumn - 2; j++)
+                for (int i = 0; i < countColumn; i++)
                 {
-                    FillRangeInWord(table.Cell(4 + i * 3, j + 1).Range, elems[tableIndex][j].Text, "Times New Roman", 12, elems[tableIndex][j].Bold, Word.WdParagraphAlignment.wdAlignParagraphCenter, Word.WdColor.wdColorBlack, true, elems[tableIndex][j].wdBackColor);
+                    table.Cell(1, i + 1).VerticalAlignment = Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
                 }
-                tableIndex++;
-                if (i + 1 == (elems.GetLength(0) - 1) / 3)
+                for (int i = 0; i < elems.GetLength(0) - 1; i++)
                 {
-                    table.Cell(elems.GetLength(0) - 1, 1).Merge(table.Cell(elems.GetLength(0) - 1, 3));
-                    for (int j = 0; j < countColumn - 2; j++)
+                    table.Rows.Add();
+                }
+                for (int i = 0; i < (elems.GetLength(0) - 1) / 3; i++)
+                {
+                    table.Cell(2 + i * 3, 1).Merge(table.Cell(2 + i * 3, 6));
+                    FillRangeInWord(table.Cell(2 + i * 3, 1).Range, elems[tableIndex][0].Text, "Times New Roman", 12, elems[tableIndex][0].Bold, Word.WdParagraphAlignment.wdAlignParagraphCenter, Word.WdColor.wdColorBlack, true, elems[tableIndex][0].wdBackColor);
+                    tableIndex++;
+                    for (int j = 0; j < countColumn; j++)
                     {
-                        FillRangeInWord(table.Cell(elems.GetLength(0) - 1, j + 1).Range, elems[tableIndex][j].Text, "Times New Roman", 12, elems[tableIndex][j].Bold, Word.WdParagraphAlignment.wdAlignParagraphCenter, Word.WdColor.wdColorBlack, true, elems[tableIndex][j].wdBackColor);
+                        FillRangeInWord(table.Cell(3 + i * 3, j + 1).Range, elems[tableIndex][j].Text, "Times New Roman", 12, elems[tableIndex][j].Bold, Word.WdParagraphAlignment.wdAlignParagraphCenter, Word.WdColor.wdColorBlack, true, elems[tableIndex][j].wdBackColor);
                     }
                     tableIndex++;
-                    table.Cell(elems.GetLength(0), 1).Merge(table.Cell(elems.GetLength(0), 6));
-                    FillRangeInWord(table.Cell(elems.GetLength(0), 1).Range, elems[tableIndex][0].Text, "Times New Roman", 12, elems[tableIndex][0].Bold, Word.WdParagraphAlignment.wdAlignParagraphRight, Word.WdColor.wdColorBlack, true, elems[tableIndex][0].wdBackColor);
+                    table.Cell(4 + i * 3, 1).Merge(table.Cell(4 + i * 3, 3));
+                    for (int j = 0; j < countColumn - 2; j++)
+                    {
+                        FillRangeInWord(table.Cell(4 + i * 3, j + 1).Range, elems[tableIndex][j].Text, "Times New Roman", 12, elems[tableIndex][j].Bold, Word.WdParagraphAlignment.wdAlignParagraphCenter, Word.WdColor.wdColorBlack, true, elems[tableIndex][j].wdBackColor);
+                    }
+                    tableIndex++;
+                    if (i + 1 == (elems.GetLength(0) - 1) / 3)
+                    {
+                        table.Cell(elems.GetLength(0) - 1, 1).Merge(table.Cell(elems.GetLength(0) - 1, 3));
+                        for (int j = 0; j < countColumn - 2; j++)
+                        {
+                            FillRangeInWord(table.Cell(elems.GetLength(0) - 1, j + 1).Range, elems[tableIndex][j].Text, "Times New Roman", 12, elems[tableIndex][j].Bold, Word.WdParagraphAlignment.wdAlignParagraphCenter, Word.WdColor.wdColorBlack, true, elems[tableIndex][j].wdBackColor);
+                        }
+                        tableIndex++;
+                        table.Cell(elems.GetLength(0), 1).Merge(table.Cell(elems.GetLength(0), 6));
+                        FillRangeInWord(table.Cell(elems.GetLength(0), 1).Range, elems[tableIndex][0].Text, "Times New Roman", 12, elems[tableIndex][0].Bold, Word.WdParagraphAlignment.wdAlignParagraphRight, Word.WdColor.wdColorBlack, true, elems[tableIndex][0].wdBackColor);
+                    }
                 }
+                #endregion
+
+                paragraph.Range.InsertBreak(Word.WdBreakType.wdPageBreak);
             }
-            #endregion
         }
     }
 }

@@ -401,6 +401,11 @@
             this.tbNumCertificateSZI = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.dgvCertificateSZI = new System.Windows.Forms.DataGridView();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.comboBoxIntegrit = new System.Windows.Forms.ComboBox();
             this.comboBoxAvailability = new System.Windows.Forms.ComboBox();
             this.comboBoxConfidentiality = new System.Windows.Forms.ComboBox();
@@ -411,11 +416,10 @@
             this.iconList = new System.Windows.Forms.ImageList(this.components);
             this.saveThreatModel = new System.Windows.Forms.SaveFileDialog();
             this.ofdReport = new System.Windows.Forms.OpenFileDialog();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fileName_Revisor2XP = new System.Windows.Forms.TextBox();
+            this.fileName_FIKS = new System.Windows.Forms.TextBox();
+            this.fileName_ScannerVS = new System.Windows.Forms.TextBox();
+            this.fileName_Scanoval = new System.Windows.Forms.TextBox();
             this.menuStrip.SuspendLayout();
             this.tpOptions.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProjectSecurityResult)).BeginInit();
@@ -548,7 +552,7 @@
             this.dataBaseToolStripMenuItem,
             this.RegistryToolStripMenuItem});
             this.testPanelToolStripMenuItem.Name = "testPanelToolStripMenuItem";
-            this.testPanelToolStripMenuItem.Size = new System.Drawing.Size(86, 20);
+            this.testPanelToolStripMenuItem.Size = new System.Drawing.Size(87, 20);
             this.testPanelToolStripMenuItem.Text = "База данных";
             // 
             // threatToolStripMenuItem
@@ -3835,6 +3839,10 @@
             // 
             // tpAllReport
             // 
+            this.tpAllReport.Controls.Add(this.fileName_Scanoval);
+            this.tpAllReport.Controls.Add(this.fileName_ScannerVS);
+            this.tpAllReport.Controls.Add(this.fileName_FIKS);
+            this.tpAllReport.Controls.Add(this.fileName_Revisor2XP);
             this.tpAllReport.Controls.Add(this.label10);
             this.tpAllReport.Controls.Add(this.label9);
             this.tpAllReport.Controls.Add(this.DateOfReportTextBox);
@@ -4230,6 +4238,41 @@
             this.dgvCertificateSZI.Size = new System.Drawing.Size(771, 316);
             this.dgvCertificateSZI.TabIndex = 2;
             // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "№ сертификата";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Width = 120;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "Срок действия сертификата";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Наименование средства (шифр)";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 350;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Техническая поддержка";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Возможность использования";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
             // comboBoxIntegrit
             // 
             this.comboBoxIntegrit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -4316,40 +4359,37 @@
             // 
             this.ofdReport.FileName = "ofdReport";
             // 
-            // Column2
+            // fileName_Revisor2XP
             // 
-            this.Column2.HeaderText = "№ сертификата";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Width = 120;
+            this.fileName_Revisor2XP.Enabled = false;
+            this.fileName_Revisor2XP.Location = new System.Drawing.Point(205, 204);
+            this.fileName_Revisor2XP.Name = "fileName_Revisor2XP";
+            this.fileName_Revisor2XP.Size = new System.Drawing.Size(153, 20);
+            this.fileName_Revisor2XP.TabIndex = 34;
             // 
-            // dataGridViewTextBoxColumn1
+            // fileName_FIKS
             // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "Срок действия сертификата";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.fileName_FIKS.Enabled = false;
+            this.fileName_FIKS.Location = new System.Drawing.Point(205, 234);
+            this.fileName_FIKS.Name = "fileName_FIKS";
+            this.fileName_FIKS.Size = new System.Drawing.Size(153, 20);
+            this.fileName_FIKS.TabIndex = 35;
             // 
-            // Column1
+            // fileName_ScannerVS
             // 
-            this.Column1.HeaderText = "Наименование средства (шифр)";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 350;
+            this.fileName_ScannerVS.Enabled = false;
+            this.fileName_ScannerVS.Location = new System.Drawing.Point(205, 263);
+            this.fileName_ScannerVS.Name = "fileName_ScannerVS";
+            this.fileName_ScannerVS.Size = new System.Drawing.Size(153, 20);
+            this.fileName_ScannerVS.TabIndex = 36;
             // 
-            // Column3
+            // fileName_Scanoval
             // 
-            this.Column3.HeaderText = "Техническая поддержка";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Возможность использования";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
+            this.fileName_Scanoval.Enabled = false;
+            this.fileName_Scanoval.Location = new System.Drawing.Point(205, 292);
+            this.fileName_Scanoval.Name = "fileName_Scanoval";
+            this.fileName_Scanoval.Size = new System.Drawing.Size(153, 20);
+            this.fileName_Scanoval.TabIndex = 37;
             // 
             // MainForm
             // 
@@ -4793,5 +4833,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        public System.Windows.Forms.TextBox fileName_Scanoval;
+        public System.Windows.Forms.TextBox fileName_ScannerVS;
+        public System.Windows.Forms.TextBox fileName_FIKS;
+        public System.Windows.Forms.TextBox fileName_Revisor2XP;
     }
 }

@@ -69,11 +69,13 @@ namespace KPSZI
             return true;
         }
 
-        public abstract void ReportToWord(string pathHTML, string nameWord, bool groupExport = false, Word.Document doc = null, Word.Application app = null, Word.Paragraph paragraph = null);
+        public abstract void ReportToWord(string nameWord, bool groupExport = false, Word.Document doc = null, Word.Application app = null, Word.Paragraph paragraph = null);
+
+        public abstract void Parce(string pathHTML);
 
         protected void ExportToWord(object sender, EventArgs e)
         {
-            ReportToWord(sourcePath, templatePath);
+            ReportToWord(templatePath);
         }
 
         protected void FillRangeInWord(Word.Range range, string text, string fontFamily, int fontSize, byte bold, Word.WdParagraphAlignment alignment, Word.WdColor color, bool isTable = false, Word.WdColor tableBackColor = Word.WdColor.wdColorWhite)//Добавление текста с форматирование в указанный Range
