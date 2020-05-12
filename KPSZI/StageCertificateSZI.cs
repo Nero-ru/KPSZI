@@ -51,7 +51,6 @@ namespace KPSZI
 
         private void SearchCertificateSZI(object sender, EventArgs e)// Поиск сертификатов по заданным параметрам и их вывод
         {
-            mf.dgvCertificateSZI.Rows.Clear();
             using (KPSZIContext db = new KPSZIContext())
             {
                 List<CertificateSZI> cSZIlist = db.CertificatesSZI.ToList();
@@ -60,10 +59,7 @@ namespace KPSZI
                 if(!String.IsNullOrEmpty(mf.cbNameSZI.Text))
                     cSZIlist = cSZIlist.Where(el => el.NameSZI.Contains(mf.cbNameSZI.Text)).ToList();
 
-                foreach (CertificateSZI szi in cSZIlist)
-                {
-                    mf.dgvCertificateSZI.Rows.Add(szi.CertificateNumber, szi.Validity.ToString(), szi.NameSZI, szi.ValidityTechnicalSupport.ToString());
-                }
+                FillSZIData(cSZIlist.ToList());
             }
         }
 
@@ -71,12 +67,29 @@ namespace KPSZI
         {
             using (KPSZIContext db = new KPSZIContext())
             {
-                mf.dgvCertificateSZI.Rows.Clear();
+                FillSZIData(db.CertificatesSZI.ToList());
+            }
+        }
 
-                foreach (CertificateSZI szi in db.CertificatesSZI)
+        void FillSZIData(List<CertificateSZI> SZIs)
+        {
+            DateTime today = DateTime.Today;            
+            mf.dgvCertificateSZI.Rows.Clear();
+
+            foreach (CertificateSZI szi in SZIs)
+            {
+                string abilityToUse = "Да";
+                DateTime validity = Convert.ToDateTime(szi.Validity);
+                DateTime validityTech;
+
+                validityTech = string.IsNullOrEmpty(szi.ValidityTechnicalSupport) ? DateTime.MinValue : Convert.ToDateTime(szi.ValidityTechnicalSupport);
+
+                if (validity < today && validityTech < today)
                 {
-                    mf.dgvCertificateSZI.Rows.Add(szi.CertificateNumber, szi.Validity.ToString(), szi.NameSZI, szi.ValidityTechnicalSupport.ToString());
+                    abilityToUse = "Нет";
                 }
+
+                mf.dgvCertificateSZI.Rows.Add(szi.CertificateNumber, szi.Validity, szi.NameSZI, szi.ValidityTechnicalSupport, abilityToUse);
             }
         }
 
