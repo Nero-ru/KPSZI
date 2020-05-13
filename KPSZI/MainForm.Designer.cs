@@ -365,6 +365,10 @@
             this.btnExportToWord_Scanoval = new System.Windows.Forms.Button();
             this.wbScanoval = new System.Windows.Forms.WebBrowser();
             this.tpAllReport = new System.Windows.Forms.TabPage();
+            this.fileName_Scanoval = new System.Windows.Forms.TextBox();
+            this.fileName_ScannerVS = new System.Windows.Forms.TextBox();
+            this.fileName_FIKS = new System.Windows.Forms.TextBox();
+            this.fileName_Revisor2XP = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.DateOfReportTextBox = new System.Windows.Forms.TextBox();
@@ -416,10 +420,7 @@
             this.iconList = new System.Windows.Forms.ImageList(this.components);
             this.saveThreatModel = new System.Windows.Forms.SaveFileDialog();
             this.ofdReport = new System.Windows.Forms.OpenFileDialog();
-            this.fileName_Revisor2XP = new System.Windows.Forms.TextBox();
-            this.fileName_FIKS = new System.Windows.Forms.TextBox();
-            this.fileName_ScannerVS = new System.Windows.Forms.TextBox();
-            this.fileName_Scanoval = new System.Windows.Forms.TextBox();
+            this.cbSZIRegisterConsider = new System.Windows.Forms.CheckBox();
             this.menuStrip.SuspendLayout();
             this.tpOptions.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProjectSecurityResult)).BeginInit();
@@ -552,7 +553,7 @@
             this.dataBaseToolStripMenuItem,
             this.RegistryToolStripMenuItem});
             this.testPanelToolStripMenuItem.Name = "testPanelToolStripMenuItem";
-            this.testPanelToolStripMenuItem.Size = new System.Drawing.Size(87, 20);
+            this.testPanelToolStripMenuItem.Size = new System.Drawing.Size(86, 20);
             this.testPanelToolStripMenuItem.Text = "База данных";
             // 
             // threatToolStripMenuItem
@@ -3872,6 +3873,38 @@
             this.tpAllReport.Text = "tpAllReport";
             this.tpAllReport.UseVisualStyleBackColor = true;
             // 
+            // fileName_Scanoval
+            // 
+            this.fileName_Scanoval.Enabled = false;
+            this.fileName_Scanoval.Location = new System.Drawing.Point(205, 292);
+            this.fileName_Scanoval.Name = "fileName_Scanoval";
+            this.fileName_Scanoval.Size = new System.Drawing.Size(153, 20);
+            this.fileName_Scanoval.TabIndex = 37;
+            // 
+            // fileName_ScannerVS
+            // 
+            this.fileName_ScannerVS.Enabled = false;
+            this.fileName_ScannerVS.Location = new System.Drawing.Point(205, 263);
+            this.fileName_ScannerVS.Name = "fileName_ScannerVS";
+            this.fileName_ScannerVS.Size = new System.Drawing.Size(153, 20);
+            this.fileName_ScannerVS.TabIndex = 36;
+            // 
+            // fileName_FIKS
+            // 
+            this.fileName_FIKS.Enabled = false;
+            this.fileName_FIKS.Location = new System.Drawing.Point(205, 234);
+            this.fileName_FIKS.Name = "fileName_FIKS";
+            this.fileName_FIKS.Size = new System.Drawing.Size(153, 20);
+            this.fileName_FIKS.TabIndex = 35;
+            // 
+            // fileName_Revisor2XP
+            // 
+            this.fileName_Revisor2XP.Enabled = false;
+            this.fileName_Revisor2XP.Location = new System.Drawing.Point(205, 204);
+            this.fileName_Revisor2XP.Name = "fileName_Revisor2XP";
+            this.fileName_Revisor2XP.Size = new System.Drawing.Size(153, 20);
+            this.fileName_Revisor2XP.TabIndex = 34;
+            // 
             // label10
             // 
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -4132,6 +4165,7 @@
             // 
             // tpCertificateSZI
             // 
+            this.tpCertificateSZI.Controls.Add(this.cbSZIRegisterConsider);
             this.tpCertificateSZI.Controls.Add(this.label8);
             this.tpCertificateSZI.Controls.Add(this.cbNameSZI);
             this.tpCertificateSZI.Controls.Add(this.btnViewAllCertificateSZI);
@@ -4359,37 +4393,16 @@
             // 
             this.ofdReport.FileName = "ofdReport";
             // 
-            // fileName_Revisor2XP
+            // cbSZIRegisterConsider
             // 
-            this.fileName_Revisor2XP.Enabled = false;
-            this.fileName_Revisor2XP.Location = new System.Drawing.Point(205, 204);
-            this.fileName_Revisor2XP.Name = "fileName_Revisor2XP";
-            this.fileName_Revisor2XP.Size = new System.Drawing.Size(153, 20);
-            this.fileName_Revisor2XP.TabIndex = 34;
-            // 
-            // fileName_FIKS
-            // 
-            this.fileName_FIKS.Enabled = false;
-            this.fileName_FIKS.Location = new System.Drawing.Point(205, 234);
-            this.fileName_FIKS.Name = "fileName_FIKS";
-            this.fileName_FIKS.Size = new System.Drawing.Size(153, 20);
-            this.fileName_FIKS.TabIndex = 35;
-            // 
-            // fileName_ScannerVS
-            // 
-            this.fileName_ScannerVS.Enabled = false;
-            this.fileName_ScannerVS.Location = new System.Drawing.Point(205, 263);
-            this.fileName_ScannerVS.Name = "fileName_ScannerVS";
-            this.fileName_ScannerVS.Size = new System.Drawing.Size(153, 20);
-            this.fileName_ScannerVS.TabIndex = 36;
-            // 
-            // fileName_Scanoval
-            // 
-            this.fileName_Scanoval.Enabled = false;
-            this.fileName_Scanoval.Location = new System.Drawing.Point(205, 292);
-            this.fileName_Scanoval.Name = "fileName_Scanoval";
-            this.fileName_Scanoval.Size = new System.Drawing.Size(153, 20);
-            this.fileName_Scanoval.TabIndex = 37;
+            this.cbSZIRegisterConsider.AutoSize = true;
+            this.cbSZIRegisterConsider.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.cbSZIRegisterConsider.Location = new System.Drawing.Point(99, 404);
+            this.cbSZIRegisterConsider.Name = "cbSZIRegisterConsider";
+            this.cbSZIRegisterConsider.Size = new System.Drawing.Size(124, 17);
+            this.cbSZIRegisterConsider.TabIndex = 9;
+            this.cbSZIRegisterConsider.Text = "Учитывать регистр";
+            this.cbSZIRegisterConsider.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
@@ -4837,5 +4850,6 @@
         public System.Windows.Forms.TextBox fileName_ScannerVS;
         public System.Windows.Forms.TextBox fileName_FIKS;
         public System.Windows.Forms.TextBox fileName_Revisor2XP;
+        public System.Windows.Forms.CheckBox cbSZIRegisterConsider;
     }
 }

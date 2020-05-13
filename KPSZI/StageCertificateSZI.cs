@@ -56,8 +56,17 @@ namespace KPSZI
                 List<CertificateSZI> cSZIlist = db.CertificatesSZI.ToList();
                 if(!String.IsNullOrEmpty(mf.tbNumCertificateSZI.Text))
                     cSZIlist = cSZIlist.Where(el => el.CertificateNumber == mf.tbNumCertificateSZI.Text).ToList();
-                if(!String.IsNullOrEmpty(mf.cbNameSZI.Text))
-                    cSZIlist = cSZIlist.Where(el => el.NameSZI.Contains(mf.cbNameSZI.Text)).ToList();
+                if (!String.IsNullOrEmpty(mf.cbNameSZI.Text))
+                {
+                    if (mf.cbSZIRegisterConsider.Checked)
+                    {
+                        cSZIlist = cSZIlist.Where(el => el.NameSZI.Contains(mf.cbNameSZI.Text)).ToList();                       
+                    }
+                    else
+                    {
+                        cSZIlist = cSZIlist.Where(el => el.NameSZI.ToLower().Contains(mf.cbNameSZI.Text.ToLower())).ToList();
+                    }                   
+                }
 
                 FillSZIData(cSZIlist.ToList());
             }
