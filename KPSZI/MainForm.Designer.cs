@@ -59,19 +59,13 @@
             treeNode14,
             treeNode15});
             System.Windows.Forms.TreeNode treeNode17 = new System.Windows.Forms.TreeNode("4. Параметры настройки");
-            System.Windows.Forms.TreeNode treeNode18 = new System.Windows.Forms.TreeNode("5.1. Отчет Ревизор 2XP");
-            System.Windows.Forms.TreeNode treeNode19 = new System.Windows.Forms.TreeNode("5.2. Отчет ФИКС");
-            System.Windows.Forms.TreeNode treeNode20 = new System.Windows.Forms.TreeNode("5.3. Отчет Сканер-ВС");
-            System.Windows.Forms.TreeNode treeNode21 = new System.Windows.Forms.TreeNode("5.4. Отчет Scanoval");
-            System.Windows.Forms.TreeNode treeNode22 = new System.Windows.Forms.TreeNode("5.5. Общий отчет");
-            System.Windows.Forms.TreeNode treeNode23 = new System.Windows.Forms.TreeNode("5. Анализ защищенности", new System.Windows.Forms.TreeNode[] {
+            System.Windows.Forms.TreeNode treeNode18 = new System.Windows.Forms.TreeNode("5.1. Общий отчет");
+            System.Windows.Forms.TreeNode treeNode19 = new System.Windows.Forms.TreeNode("5.2. Сравнение параметров Dallas Lock");
+            System.Windows.Forms.TreeNode treeNode20 = new System.Windows.Forms.TreeNode("5.3. Проверка сертификатов СЗИ в реестре ФСТЭК");
+            System.Windows.Forms.TreeNode treeNode21 = new System.Windows.Forms.TreeNode("5. Анализ защищенности", new System.Windows.Forms.TreeNode[] {
             treeNode18,
             treeNode19,
-            treeNode20,
-            treeNode21,
-            treeNode22});
-            System.Windows.Forms.TreeNode treeNode24 = new System.Windows.Forms.TreeNode("6. Сравнение параметров Dallas Lock");
-            System.Windows.Forms.TreeNode treeNode25 = new System.Windows.Forms.TreeNode("7. Проверка сертификатов СЗИ в реестре ФСТЭК");
+            treeNode20});
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -352,18 +346,6 @@
             this.dgvConfigNMeasures = new System.Windows.Forms.DataGridView();
             this.measureColumnForConfigOptions = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.configColumnForConfigOptions = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tpRevisor2XP = new System.Windows.Forms.TabPage();
-            this.btnExportToWord_2XP = new System.Windows.Forms.Button();
-            this.wbRevisor2XPReport = new System.Windows.Forms.WebBrowser();
-            this.tpFIKS = new System.Windows.Forms.TabPage();
-            this.btnExportToWord_FIKS = new System.Windows.Forms.Button();
-            this.wbFIKSReport = new System.Windows.Forms.WebBrowser();
-            this.tpScannerVS = new System.Windows.Forms.TabPage();
-            this.btnExportToWord_ScannerVS = new System.Windows.Forms.Button();
-            this.wbScannerVSReport = new System.Windows.Forms.WebBrowser();
-            this.tpScanoval = new System.Windows.Forms.TabPage();
-            this.btnExportToWord_Scanoval = new System.Windows.Forms.Button();
-            this.wbScanoval = new System.Windows.Forms.WebBrowser();
             this.tpAllReport = new System.Windows.Forms.TabPage();
             this.fileName_Scanoval = new System.Windows.Forms.TextBox();
             this.fileName_ScannerVS = new System.Windows.Forms.TextBox();
@@ -398,8 +380,8 @@
             this.btnSelectCustomDLC = new System.Windows.Forms.Button();
             this.btnSelectStandardDLC = new System.Windows.Forms.Button();
             this.tpCertificateSZI = new System.Windows.Forms.TabPage();
+            this.cbSZIRegisterConsider = new System.Windows.Forms.CheckBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.cbNameSZI = new System.Windows.Forms.ComboBox();
             this.btnViewAllCertificateSZI = new System.Windows.Forms.Button();
             this.btnSearchCertificateSZI = new System.Windows.Forms.Button();
             this.tbNumCertificateSZI = new System.Windows.Forms.TextBox();
@@ -420,7 +402,7 @@
             this.iconList = new System.Windows.Forms.ImageList(this.components);
             this.saveThreatModel = new System.Windows.Forms.SaveFileDialog();
             this.ofdReport = new System.Windows.Forms.OpenFileDialog();
-            this.cbSZIRegisterConsider = new System.Windows.Forms.CheckBox();
+            this.tbNameSZI = new System.Windows.Forms.TextBox();
             this.menuStrip.SuspendLayout();
             this.tpOptions.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProjectSecurityResult)).BeginInit();
@@ -492,10 +474,6 @@
             this.pConfOpt.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbInfoConfOpt)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvConfigNMeasures)).BeginInit();
-            this.tpRevisor2XP.SuspendLayout();
-            this.tpFIKS.SuspendLayout();
-            this.tpScannerVS.SuspendLayout();
-            this.tpScanoval.SuspendLayout();
             this.tpAllReport.SuspendLayout();
             this.tpDLConfig.SuspendLayout();
             this.tpCertificateSZI.SuspendLayout();
@@ -553,7 +531,7 @@
             this.dataBaseToolStripMenuItem,
             this.RegistryToolStripMenuItem});
             this.testPanelToolStripMenuItem.Name = "testPanelToolStripMenuItem";
-            this.testPanelToolStripMenuItem.Size = new System.Drawing.Size(86, 20);
+            this.testPanelToolStripMenuItem.Size = new System.Drawing.Size(87, 20);
             this.testPanelToolStripMenuItem.Text = "База данных";
             // 
             // threatToolStripMenuItem
@@ -712,30 +690,20 @@
             treeNode16.Text = "3. Тех. проект";
             treeNode17.Name = "tnConfigOptions";
             treeNode17.Text = "4. Параметры настройки";
-            treeNode18.Name = "tnRevisor2XP";
-            treeNode18.Text = "5.1. Отчет Ревизор 2XP";
-            treeNode19.Name = "tnFIKS";
-            treeNode19.Text = "5.2. Отчет ФИКС";
-            treeNode20.Name = "tnScannerVS";
-            treeNode20.Text = "5.3. Отчет Сканер-ВС";
-            treeNode21.Name = "tnScanoval";
-            treeNode21.Text = "5.4. Отчет Scanoval";
-            treeNode22.Name = "tnAllReport";
-            treeNode22.Text = "5.5. Общий отчет";
-            treeNode23.Name = "Узел1";
-            treeNode23.Text = "5. Анализ защищенности";
-            treeNode24.Name = "tnDLConfig";
-            treeNode24.Text = "6. Сравнение параметров Dallas Lock";
-            treeNode25.Name = "tnCertificateSZI";
-            treeNode25.Text = "7. Проверка сертификатов СЗИ в реестре ФСТЭК";
+            treeNode18.Name = "tnAllReport";
+            treeNode18.Text = "5.1. Общий отчет";
+            treeNode19.Name = "tnDLConfig";
+            treeNode19.Text = "5.2. Сравнение параметров Dallas Lock";
+            treeNode20.Name = "tnCertificateSZI";
+            treeNode20.Text = "5.3. Проверка сертификатов СЗИ в реестре ФСТЭК";
+            treeNode21.Name = "Узел1";
+            treeNode21.Text = "5. Анализ защищенности";
             this.treeView.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
             treeNode6,
             treeNode13,
             treeNode16,
             treeNode17,
-            treeNode23,
-            treeNode24,
-            treeNode25});
+            treeNode21});
             this.treeView.Size = new System.Drawing.Size(287, 516);
             this.treeView.TabIndex = 3;
             this.treeView.BeforeSelect += new System.Windows.Forms.TreeViewCancelEventHandler(this.treeView_BeforeSelect);
@@ -869,10 +837,6 @@
             this.tabControl.Controls.Add(this.tpSZI);
             this.tabControl.Controls.Add(this.tpTPExport);
             this.tabControl.Controls.Add(this.tpConfigOptions);
-            this.tabControl.Controls.Add(this.tpRevisor2XP);
-            this.tabControl.Controls.Add(this.tpFIKS);
-            this.tabControl.Controls.Add(this.tpScannerVS);
-            this.tabControl.Controls.Add(this.tpScanoval);
             this.tabControl.Controls.Add(this.tpAllReport);
             this.tabControl.Controls.Add(this.tpDLConfig);
             this.tabControl.Controls.Add(this.tpCertificateSZI);
@@ -3718,126 +3682,6 @@
             this.configColumnForConfigOptions.Name = "configColumnForConfigOptions";
             this.configColumnForConfigOptions.ReadOnly = true;
             // 
-            // tpRevisor2XP
-            // 
-            this.tpRevisor2XP.Controls.Add(this.btnExportToWord_2XP);
-            this.tpRevisor2XP.Controls.Add(this.wbRevisor2XPReport);
-            this.tpRevisor2XP.Location = new System.Drawing.Point(4, 22);
-            this.tpRevisor2XP.Name = "tpRevisor2XP";
-            this.tpRevisor2XP.Padding = new System.Windows.Forms.Padding(3);
-            this.tpRevisor2XP.Size = new System.Drawing.Size(908, 490);
-            this.tpRevisor2XP.TabIndex = 16;
-            this.tpRevisor2XP.Text = "tpRevisor2XP";
-            this.tpRevisor2XP.UseVisualStyleBackColor = true;
-            // 
-            // btnExportToWord_2XP
-            // 
-            this.btnExportToWord_2XP.Location = new System.Drawing.Point(651, 449);
-            this.btnExportToWord_2XP.Name = "btnExportToWord_2XP";
-            this.btnExportToWord_2XP.Size = new System.Drawing.Size(109, 23);
-            this.btnExportToWord_2XP.TabIndex = 1;
-            this.btnExportToWord_2XP.Text = "Экспорт в Word";
-            this.btnExportToWord_2XP.UseVisualStyleBackColor = true;
-            this.btnExportToWord_2XP.Visible = false;
-            // 
-            // wbRevisor2XPReport
-            // 
-            this.wbRevisor2XPReport.Location = new System.Drawing.Point(0, 6);
-            this.wbRevisor2XPReport.MinimumSize = new System.Drawing.Size(20, 20);
-            this.wbRevisor2XPReport.Name = "wbRevisor2XPReport";
-            this.wbRevisor2XPReport.Size = new System.Drawing.Size(908, 419);
-            this.wbRevisor2XPReport.TabIndex = 0;
-            // 
-            // tpFIKS
-            // 
-            this.tpFIKS.Controls.Add(this.btnExportToWord_FIKS);
-            this.tpFIKS.Controls.Add(this.wbFIKSReport);
-            this.tpFIKS.Location = new System.Drawing.Point(4, 22);
-            this.tpFIKS.Name = "tpFIKS";
-            this.tpFIKS.Padding = new System.Windows.Forms.Padding(3);
-            this.tpFIKS.Size = new System.Drawing.Size(908, 490);
-            this.tpFIKS.TabIndex = 17;
-            this.tpFIKS.Text = "tpFIKS";
-            this.tpFIKS.UseVisualStyleBackColor = true;
-            // 
-            // btnExportToWord_FIKS
-            // 
-            this.btnExportToWord_FIKS.Location = new System.Drawing.Point(795, 447);
-            this.btnExportToWord_FIKS.Name = "btnExportToWord_FIKS";
-            this.btnExportToWord_FIKS.Size = new System.Drawing.Size(109, 23);
-            this.btnExportToWord_FIKS.TabIndex = 2;
-            this.btnExportToWord_FIKS.Text = "Экспорт в Word";
-            this.btnExportToWord_FIKS.UseVisualStyleBackColor = true;
-            this.btnExportToWord_FIKS.Visible = false;
-            // 
-            // wbFIKSReport
-            // 
-            this.wbFIKSReport.Location = new System.Drawing.Point(3, 3);
-            this.wbFIKSReport.MinimumSize = new System.Drawing.Size(20, 20);
-            this.wbFIKSReport.Name = "wbFIKSReport";
-            this.wbFIKSReport.Size = new System.Drawing.Size(963, 422);
-            this.wbFIKSReport.TabIndex = 0;
-            // 
-            // tpScannerVS
-            // 
-            this.tpScannerVS.Controls.Add(this.btnExportToWord_ScannerVS);
-            this.tpScannerVS.Controls.Add(this.wbScannerVSReport);
-            this.tpScannerVS.Location = new System.Drawing.Point(4, 22);
-            this.tpScannerVS.Margin = new System.Windows.Forms.Padding(2);
-            this.tpScannerVS.Name = "tpScannerVS";
-            this.tpScannerVS.Size = new System.Drawing.Size(908, 490);
-            this.tpScannerVS.TabIndex = 18;
-            this.tpScannerVS.Text = "tpScannerVS";
-            this.tpScannerVS.UseVisualStyleBackColor = true;
-            // 
-            // btnExportToWord_ScannerVS
-            // 
-            this.btnExportToWord_ScannerVS.Location = new System.Drawing.Point(17, 466);
-            this.btnExportToWord_ScannerVS.Name = "btnExportToWord_ScannerVS";
-            this.btnExportToWord_ScannerVS.Size = new System.Drawing.Size(109, 23);
-            this.btnExportToWord_ScannerVS.TabIndex = 3;
-            this.btnExportToWord_ScannerVS.Text = "Экспорт в Word";
-            this.btnExportToWord_ScannerVS.UseVisualStyleBackColor = true;
-            this.btnExportToWord_ScannerVS.Visible = false;
-            // 
-            // wbScannerVSReport
-            // 
-            this.wbScannerVSReport.Location = new System.Drawing.Point(2, 0);
-            this.wbScannerVSReport.MinimumSize = new System.Drawing.Size(20, 20);
-            this.wbScannerVSReport.Name = "wbScannerVSReport";
-            this.wbScannerVSReport.Size = new System.Drawing.Size(903, 422);
-            this.wbScannerVSReport.TabIndex = 1;
-            // 
-            // tpScanoval
-            // 
-            this.tpScanoval.Controls.Add(this.btnExportToWord_Scanoval);
-            this.tpScanoval.Controls.Add(this.wbScanoval);
-            this.tpScanoval.Location = new System.Drawing.Point(4, 22);
-            this.tpScanoval.Name = "tpScanoval";
-            this.tpScanoval.Padding = new System.Windows.Forms.Padding(3);
-            this.tpScanoval.Size = new System.Drawing.Size(908, 490);
-            this.tpScanoval.TabIndex = 19;
-            this.tpScanoval.Text = "tpScanoval";
-            this.tpScanoval.UseVisualStyleBackColor = true;
-            // 
-            // btnExportToWord_Scanoval
-            // 
-            this.btnExportToWord_Scanoval.Location = new System.Drawing.Point(26, 449);
-            this.btnExportToWord_Scanoval.Name = "btnExportToWord_Scanoval";
-            this.btnExportToWord_Scanoval.Size = new System.Drawing.Size(109, 23);
-            this.btnExportToWord_Scanoval.TabIndex = 4;
-            this.btnExportToWord_Scanoval.Text = "Экспорт в Word";
-            this.btnExportToWord_Scanoval.UseVisualStyleBackColor = true;
-            this.btnExportToWord_Scanoval.Visible = false;
-            // 
-            // wbScanoval
-            // 
-            this.wbScanoval.Location = new System.Drawing.Point(3, 0);
-            this.wbScanoval.MinimumSize = new System.Drawing.Size(20, 20);
-            this.wbScanoval.Name = "wbScanoval";
-            this.wbScanoval.Size = new System.Drawing.Size(903, 422);
-            this.wbScanoval.TabIndex = 2;
-            // 
             // tpAllReport
             // 
             this.tpAllReport.Controls.Add(this.fileName_Scanoval);
@@ -4165,9 +4009,9 @@
             // 
             // tpCertificateSZI
             // 
+            this.tpCertificateSZI.Controls.Add(this.tbNameSZI);
             this.tpCertificateSZI.Controls.Add(this.cbSZIRegisterConsider);
             this.tpCertificateSZI.Controls.Add(this.label8);
-            this.tpCertificateSZI.Controls.Add(this.cbNameSZI);
             this.tpCertificateSZI.Controls.Add(this.btnViewAllCertificateSZI);
             this.tpCertificateSZI.Controls.Add(this.btnSearchCertificateSZI);
             this.tpCertificateSZI.Controls.Add(this.tbNumCertificateSZI);
@@ -4180,6 +4024,17 @@
             this.tpCertificateSZI.Text = "tpCertificateSZI";
             this.tpCertificateSZI.UseVisualStyleBackColor = true;
             // 
+            // cbSZIRegisterConsider
+            // 
+            this.cbSZIRegisterConsider.AutoSize = true;
+            this.cbSZIRegisterConsider.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.cbSZIRegisterConsider.Location = new System.Drawing.Point(99, 404);
+            this.cbSZIRegisterConsider.Name = "cbSZIRegisterConsider";
+            this.cbSZIRegisterConsider.Size = new System.Drawing.Size(124, 17);
+            this.cbSZIRegisterConsider.TabIndex = 9;
+            this.cbSZIRegisterConsider.Text = "Учитывать регистр";
+            this.cbSZIRegisterConsider.UseVisualStyleBackColor = true;
+            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -4188,19 +4043,6 @@
             this.label8.Size = new System.Drawing.Size(153, 13);
             this.label8.TabIndex = 8;
             this.label8.Text = "Введите название средства:";
-            // 
-            // cbNameSZI
-            // 
-            this.cbNameSZI.CausesValidation = false;
-            this.cbNameSZI.DropDownHeight = 80;
-            this.cbNameSZI.FormattingEnabled = true;
-            this.cbNameSZI.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.cbNameSZI.IntegralHeight = false;
-            this.cbNameSZI.Location = new System.Drawing.Point(210, 374);
-            this.cbNameSZI.MaxDropDownItems = 5;
-            this.cbNameSZI.Name = "cbNameSZI";
-            this.cbNameSZI.Size = new System.Drawing.Size(498, 21);
-            this.cbNameSZI.TabIndex = 7;
             // 
             // btnViewAllCertificateSZI
             // 
@@ -4393,16 +4235,12 @@
             // 
             this.ofdReport.FileName = "ofdReport";
             // 
-            // cbSZIRegisterConsider
+            // tbNameSZI
             // 
-            this.cbSZIRegisterConsider.AutoSize = true;
-            this.cbSZIRegisterConsider.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.cbSZIRegisterConsider.Location = new System.Drawing.Point(99, 404);
-            this.cbSZIRegisterConsider.Name = "cbSZIRegisterConsider";
-            this.cbSZIRegisterConsider.Size = new System.Drawing.Size(124, 17);
-            this.cbSZIRegisterConsider.TabIndex = 9;
-            this.cbSZIRegisterConsider.Text = "Учитывать регистр";
-            this.cbSZIRegisterConsider.UseVisualStyleBackColor = true;
+            this.tbNameSZI.Location = new System.Drawing.Point(210, 374);
+            this.tbNameSZI.Name = "tbNameSZI";
+            this.tbNameSZI.Size = new System.Drawing.Size(498, 20);
+            this.tbNameSZI.TabIndex = 10;
             // 
             // MainForm
             // 
@@ -4508,10 +4346,6 @@
             this.pConfOpt.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbInfoConfOpt)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvConfigNMeasures)).EndInit();
-            this.tpRevisor2XP.ResumeLayout(false);
-            this.tpFIKS.ResumeLayout(false);
-            this.tpScannerVS.ResumeLayout(false);
-            this.tpScanoval.ResumeLayout(false);
             this.tpAllReport.ResumeLayout(false);
             this.tpAllReport.PerformLayout();
             this.tpDLConfig.ResumeLayout(false);
@@ -4788,19 +4622,7 @@
         internal System.Windows.Forms.Button btnExportTP;
         private System.Windows.Forms.SaveFileDialog saveThreatModel;
         internal System.Windows.Forms.Button btnExportModelThreats;
-        private System.Windows.Forms.TabPage tpRevisor2XP;
-        private System.Windows.Forms.TabPage tpFIKS;
-        public System.Windows.Forms.Button btnExportToWord_2XP;
         public System.Windows.Forms.OpenFileDialog ofdReport;
-        public System.Windows.Forms.Button btnExportToWord_FIKS;
-        private System.Windows.Forms.WebBrowser wbFIKSReport;
-        private System.Windows.Forms.WebBrowser wbRevisor2XPReport;
-        private System.Windows.Forms.TabPage tpScannerVS;
-        private System.Windows.Forms.WebBrowser wbScannerVSReport;
-        public System.Windows.Forms.Button btnExportToWord_ScannerVS;
-        private System.Windows.Forms.TabPage tpScanoval;
-        public System.Windows.Forms.Button btnExportToWord_Scanoval;
-        private System.Windows.Forms.WebBrowser wbScanoval;
         private System.Windows.Forms.TabPage tpAllReport;
         public System.Windows.Forms.CheckBox cbStatus_Scanoval;
         public System.Windows.Forms.CheckBox cbStatus_ScannerVS;
@@ -4830,13 +4652,11 @@
         private System.Windows.Forms.ToolStripMenuItem RegistryToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem downloadRegistryListthrlistxlsxToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem rewriteRegistryDBToolStripMenuItem;
-        private System.Windows.Forms.TabPage tpCertificateSZI;
         public System.Windows.Forms.DataGridView dgvCertificateSZI;
         public System.Windows.Forms.Button btnSearchCertificateSZI;
         public System.Windows.Forms.TextBox tbNumCertificateSZI;
         private System.Windows.Forms.Label label4;
         public System.Windows.Forms.Button btnViewAllCertificateSZI;
-        public System.Windows.Forms.ComboBox cbNameSZI;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         public System.Windows.Forms.TextBox DateOfReportTextBox;
@@ -4851,5 +4671,7 @@
         public System.Windows.Forms.TextBox fileName_FIKS;
         public System.Windows.Forms.TextBox fileName_Revisor2XP;
         public System.Windows.Forms.CheckBox cbSZIRegisterConsider;
+        public System.Windows.Forms.TabPage tpCertificateSZI;
+        public System.Windows.Forms.TextBox tbNameSZI;
     }
 }

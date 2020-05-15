@@ -61,10 +61,10 @@ namespace KPSZI
             InitializeComponent();
 
             Icon = KPSZI.Properties.Resources.mf;
-            StageReportRevisor2XP reportRevisor2XP = new StageReportRevisor2XP(returnTabPage("tpRevisor2XP"), returnTreeNode("tnRevisor2XP"), this, IS, @"reports/Revisor2XP/template2XP.docx", wbRevisor2XPReport);
-            StageReportFIKS reportFIKS = new StageReportFIKS(returnTabPage("tpFIKS"), returnTreeNode("tnFIKS"), this, IS, @"reports/FIKS/templateFIKS.docx", wbFIKSReport);
-            StageReportScannerVS reportScannerVS = new StageReportScannerVS(returnTabPage("tpScannerVS"), returnTreeNode("tnScannerVS"), this, IS, @"reports/ScannerVS/tamplateScannerVS.docx", wbScannerVSReport);
-            StageReportScanoval reportScanoval = new StageReportScanoval(returnTabPage("tpScanoval"), returnTreeNode("tnScanoval"), this, IS, @"reports/Scanoval/tamplateScanoval.docx", wbScanoval);
+            StageReportRevisor2XP reportRevisor2XP = new StageReportRevisor2XP(this, @"reports/Revisor2XP/template2XP.docx");
+            StageReportFIKS reportFIKS = new StageReportFIKS(this, @"reports/FIKS/templateFIKS.docx");
+            StageReportScannerVS reportScannerVS = new StageReportScannerVS(this, @"reports/ScannerVS/tamplateScannerVS.docx");
+            StageReportScanoval reportScanoval = new StageReportScanoval(this, @"reports/Scanoval/tamplateScanoval.docx");
             // Заполняем коллекцию этапами (название, ссылка на вкладку, ссылка на пункт в дереве) 
             stages.Add("tnOptions", new StageOptions(returnTabPage("tpOptions"), returnTreeNode("tnOptions"), this, IS));
             stages.Add("tnClassification", new StageClassification(returnTabPage("tpClassification"), returnTreeNode("tnClassification"), this, IS));
@@ -83,10 +83,10 @@ namespace KPSZI
             stages.Add("tnSZI", new StageSZI(returnTabPage("tpSZI"), returnTreeNode("tnSZI"), this, IS));
             //stages.Add("tnTPExport", new StageTPExport(returnTabPage("tpTPExport"), returnTreeNode("tnTPExport"), this, IS));
             stages.Add("tnConfigOptions", new StageConfigOptions(returnTabPage("tpConfigOptions"), returnTreeNode("tnconfigOptions"), this, IS));
-            stages.Add("tnRevisor2XP", reportRevisor2XP);
-            stages.Add("tnFIKS", reportFIKS);
-            stages.Add("tnScannerVS", reportScannerVS);
-            stages.Add("tnScanoval", reportScanoval);
+            //stages.Add("tnRevisor2XP", reportRevisor2XP);
+            //stages.Add("tnFIKS", reportFIKS);
+            //stages.Add("tnScannerVS", reportScannerVS);
+            //stages.Add("tnScanoval", reportScanoval);
             stages.Add("tnAllReport", new StageAllReport(returnTabPage("tpAllReport"), returnTreeNode("tnAllReport"), this, IS, @"reports/All/Report_v1.2.docx", reportRevisor2XP, reportFIKS, reportScannerVS, reportScanoval));
             stages.Add("tnDLConfig", new StageDLConfig(returnTabPage("tpDLConfig"), returnTreeNode("tnDLConfig"), this, IS));
             stages.Add("tnCertificateSZI", new StageCertificateSZI(returnTabPage("tpCertificateSZI"), returnTreeNode("tnCertificateSZI"), this, IS));

@@ -14,7 +14,7 @@ namespace KPSZI.Model
     /// <summary>
     /// Сертификаты СЗИ из ресстра ФСТЭК
     /// </summary
-    public class CertificateSZI
+    public class CertificateSZI : IEquatable<CertificateSZI>
     {
         /// <summary>
         /// ID угрозы
@@ -140,5 +140,17 @@ namespace KPSZI.Model
             return sb.ToString();
         }
 
+        public bool Equals(CertificateSZI other)
+        {
+            // Сравнение с null всегда возвращает false
+            if (other == null)
+                return false;
+            return (this.NameSZI == other.NameSZI);
+        }
+
+        public override int GetHashCode()
+        {
+            return this.NameSZI == null ? 0 : this.NameSZI.GetHashCode();
+        }
     }
 }

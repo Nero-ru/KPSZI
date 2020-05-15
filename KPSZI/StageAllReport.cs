@@ -178,26 +178,22 @@ namespace KPSZI
                 //Task taskScannerVS = Task.Factory.StartNew(() => );
                 //Task taskScanoval = Task.Factory.StartNew(() =>);
 
+                Scanoval.Parce(sourcePathScanoval);
+                ScannerVS.Parce(sourcePathScannerVS);
+                FIKS.Parce(sourcePathFIKS);
+                Revisor2XP.Parce(sourcePathRevisor2XP);
+
                 try
                 {
-                    Scanoval.Parce(sourcePathScanoval);
-                    ScannerVS.Parce(sourcePathScannerVS);
-                    FIKS.Parce(sourcePathFIKS);
-                    Revisor2XP.Parce(sourcePathRevisor2XP);
+                    Scanoval.ReportToWord(templatePath, true, doc, app, paragraph);
+                    ScannerVS.ReportToWord(templatePath, true, doc, app, paragraph);
+                    FIKS.ReportToWord(templatePath, true, doc, app, paragraph);
+                    Revisor2XP.ReportToWord(templatePath, true, doc, app, paragraph);
                 }
-                catch (Exception ex)
+                catch
                 {
-                    MessageBox.Show("Возможно один из отчетов был выбран неправильно!\nПроверьте выбранные отчеты и повторите попытку", "Предупреждение", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Возникла ошибка во время формирования отчета!", "Предупреждение", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-
-                Scanoval.ReportToWord(templatePath, true, doc, app, paragraph);
-                ScannerVS.ReportToWord(templatePath, true, doc, app, paragraph);
-                FIKS.ReportToWord(templatePath, true, doc, app, paragraph);
-                Revisor2XP.ReportToWord(templatePath, true, doc, app, paragraph);
-                
-                
-                
-
             }
         }
     }
