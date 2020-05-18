@@ -51,8 +51,20 @@ namespace KPSZI
                 mf.btnGetPath_Scanoval.Click += new EventHandler(GetPathReport);
                 mf.btnExportAllToWord.Click += new EventHandler(ExportAllReportsToWord);
 
+                int serverCount = 0;
+                int armCount = 0;
+                for (int i = 0; i < mf.dgvHardware.Rows.Count; i++)
+                {
+                    if (mf.dgvHardware.Rows[i].Cells["sPCGroup"].Value.ToString() == "Сервер")
+                        serverCount++;
+                    else
+                    {
+                        armCount++;
+                    }
+                }
                 mf.NameOfISTextBox.Text = mf.tbISName.Text.Trim('"');
-                mf.NumOfWPTextBox.Text = mf.dgvHardware.Rows.Count.ToString();
+                mf.NumOfWPTextBox.Text = Convert.ToString(armCount);
+                mf.NumOfSrvrsTextBox.Text = Convert.ToString(serverCount);
             }
         }
 
