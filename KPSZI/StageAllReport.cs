@@ -154,24 +154,45 @@ namespace KPSZI
                 Word.Bookmark bkNumOfWP = doc.Bookmarks.Add("NumOfWP", doc.Bookmarks["NumOfWP"].Range);
                 Word.Bookmark bkNumsOfCabinets = doc.Bookmarks.Add("NumsOfCabinets", doc.Bookmarks["NumsOfCabinets"].Range);
                 Word.Bookmark bkAddressOfComp = doc.Bookmarks.Add("AddressOfComp", doc.Bookmarks["AddressOfComp"].Range);
+                Word.Bookmark bkNumOfServers = doc.Bookmarks.Add("NumOfServers", doc.Bookmarks["NumOfServers"].Range);
 
-                bkNameofIS.Range.Text = Convert.ToString(mf.NameOfISTextBox.Text);
-                bkNameofIS1.Range.Text = Convert.ToString(mf.NameOfISTextBox.Text);
-                bkNameofIS2.Range.Text = Convert.ToString(mf.NameOfISTextBox.Text);
-                bkNameofIS3.Range.Text = Convert.ToString(mf.NameOfISTextBox.Text);
-                bkNameofIS4.Range.Text = Convert.ToString(mf.NameOfISTextBox.Text);
-                bkNameofIS5.Range.Text = Convert.ToString(mf.NameOfISTextBox.Text);
-                bkNameofIS6.Range.Text = Convert.ToString(mf.NameOfISTextBox.Text);
-                bkNameofIS7.Range.Text = Convert.ToString(mf.NameOfISTextBox.Text);
-                bkNameofIS8.Range.Text = Convert.ToString(mf.NameOfISTextBox.Text);
-                bkNameofIS9.Range.Text = Convert.ToString(mf.NameOfISTextBox.Text);
-                bkNameofIS10.Range.Text = Convert.ToString(mf.NameOfISTextBox.Text);
-                bkNameofIS11.Range.Text = Convert.ToString(mf.NameOfISTextBox.Text);
-                //bkDateReport.Range.Text = Convert.ToString(DateTime.Now.ToString("D"));
-                bkDateReport.Range.Text = Convert.ToString(mf.DateOfReportTextBox.Text);
-                bkNumOfWP.Range.Text = Convert.ToString(mf.NumOfWPTextBox.Text);
-                bkNumsOfCabinets.Range.Text = Convert.ToString(mf.NumsOfCabsTextBox.Text);
-                bkAddressOfComp.Range.Text = Convert.ToString(mf.AddressOfCompTextBox.Text);
+                bkNameofIS.Range.Text = mf.NameOfISTextBox.Text;
+                bkNameofIS1.Range.Text = mf.NameOfISTextBox.Text;
+                bkNameofIS2.Range.Text = mf.NameOfISTextBox.Text;
+                bkNameofIS3.Range.Text = mf.NameOfISTextBox.Text;
+                bkNameofIS4.Range.Text = mf.NameOfISTextBox.Text;
+                bkNameofIS5.Range.Text = mf.NameOfISTextBox.Text;
+                bkNameofIS6.Range.Text = mf.NameOfISTextBox.Text;
+                bkNameofIS7.Range.Text = mf.NameOfISTextBox.Text;
+                bkNameofIS8.Range.Text = mf.NameOfISTextBox.Text;
+                bkNameofIS9.Range.Text = mf.NameOfISTextBox.Text;
+                bkNameofIS10.Range.Text = mf.NameOfISTextBox.Text;
+                bkNameofIS11.Range.Text = mf.NameOfISTextBox.Text;
+
+                bkDateReport.Range.Text = mf.DateOfReportTextBox.Text;
+
+                if (mf.NumOfWPTextBox.Text == "1")
+                    bkNumOfWP.Range.Text = mf.NumOfWPTextBox.Text + " автоматизированного рабочего места";
+                else
+                    bkNumOfWP.Range.Text = mf.NumOfWPTextBox.Text + " автоматизированных рабочих мест";
+
+                if (mf.NumOfSrvrsTextBox.Text != String.Empty)
+                {
+                    if (mf.NumOfSrvrsTextBox.Text == "1")
+                        bkNumOfServers.Range.Text = "и " + mf.NumOfSrvrsTextBox.Text + " сервера, объединённых в локальную вычислительную сеть, предназначенных для обработки персональных данных.";
+                    else
+                        bkNumOfServers.Range.Text = "и " + mf.NumOfSrvrsTextBox.Text + " серверов, объединённых в локальную вычислительную сеть, предназначенных для обработки персональных данных.";
+                }
+                else
+                {
+                    if (mf.NumOfWPTextBox.Text == "1")
+                        bkNumOfServers.Range.Text = ", составляющего локальную вычислительную сеть, предназначенного для обработки персональных данных.";
+                    else
+                        bkNumOfServers.Range.Text = ", объединённых в локальную вычислительную сеть, предназначенных для обработки персональных данных.";
+                }
+
+                bkNumsOfCabinets.Range.Text = mf.NumsOfCabsTextBox.Text;
+                bkAddressOfComp.Range.Text = mf.AddressOfCompTextBox.Text;
 
                 //Task taskRevisor2XP = Task.Factory.StartNew(() => );
                 //Task taskFIKS = Task.Factory.StartNew(() => );
