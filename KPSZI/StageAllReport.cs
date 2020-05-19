@@ -50,6 +50,7 @@ namespace KPSZI
                 mf.btnGetPath_ScannerVS.Click += new EventHandler(GetPathReport);
                 mf.btnGetPath_Scanoval.Click += new EventHandler(GetPathReport);
                 mf.btnExportAllToWord.Click += new EventHandler(ExportAllReportsToWord);
+                mf.btnDeleteCertificateSZIRow.Click += new EventHandler(DeleteSZIRow);
 
                 int serverCount = 0;
                 int armCount = 0;
@@ -140,7 +141,7 @@ namespace KPSZI
             }
         }
 
-        protected void ExportAllReportsToWord(object sender, EventArgs e)
+        private void ExportAllReportsToWord(object sender, EventArgs e)
         {
             if (mf.cbStatus_FIKS.Checked != true || mf.cbStatus_Revisor2XP.Checked != true || mf.cbStatus_ScannerVS.Checked != true || mf.cbStatus_Scanoval.Checked != true)
                 MessageBox.Show("Выберите все отчеты", "Предупреждение", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -227,6 +228,16 @@ namespace KPSZI
                 {
                     MessageBox.Show("Возникла ошибка во время формирования отчета!", "Предупреждение", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+            }
+        }
+
+        private void DeleteSZIRow(object sender, EventArgs e)
+        {
+            ListView.SelectedListViewItemCollection items = mf.lvReportCertificates.SelectedItems;
+
+            foreach (ListViewItem item in items)
+            {
+                mf.lvReportCertificates.Items.Remove(item);
             }
         }
     }

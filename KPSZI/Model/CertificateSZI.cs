@@ -42,6 +42,23 @@ namespace KPSZI.Model
         /// </summary>
         public string ValidityTechnicalSupport { get; set; }
 
+        public string GetAbilityToUse()
+        {
+            string result = "Да";
+            DateTime today = DateTime.Today;
+
+            DateTime validity = Convert.ToDateTime(Validity);
+            DateTime validityTech;
+
+            validityTech = string.IsNullOrEmpty(ValidityTechnicalSupport) ? DateTime.MinValue : Convert.ToDateTime(ValidityTechnicalSupport);
+
+            if (validity < today && validityTech < today)
+            {
+                result = "Нет";
+            }
+            return result;
+        }
+
         /// <summary>
         /// Метод выстаскивает текстовое описание сертификатов, парсит, приводит к типу CertificateSZI и возвращает массив объектов CertificateSZI.
         /// </summary>

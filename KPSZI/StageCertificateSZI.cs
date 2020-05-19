@@ -1,4 +1,5 @@
-﻿using KPSZI.Model;
+﻿using DocumentFormat.OpenXml.Spreadsheet;
+using KPSZI.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,7 +22,7 @@ namespace KPSZI
 
         public override void enterTabPage()
         {
-            
+
         }
 
         public override void saveChanges()
@@ -34,6 +35,7 @@ namespace KPSZI
             ViewAllCertificateSZI(new Button(), new EventArgs());
             mf.btnViewAllCertificateSZI.Click += new EventHandler(ViewAllCertificateSZI);
             mf.btnSearchCertificateSZI.Click += new EventHandler(SearchCertificateSZI);
+            mf.btnAddSZIListToReport.Click += new EventHandler(AddSZIToReport);
         }
 
         private void SearchCertificateSZI(object sender, EventArgs e)// Поиск сертификатов по заданным параметрам и их вывод
@@ -63,8 +65,36 @@ namespace KPSZI
         {
             using (KPSZIContext db = new KPSZIContext())
             {
-                FillSZIData(db.CertificatesSZI.ToList());
+                List<CertificateSZI> cSZIlist = db.CertificatesSZI.ToList();
+                FillSZIData(cSZIlist);
             }
+        }
+
+        private void AddSZIToReport(object sender, EventArgs e)
+        {
+            
+            
+            DataGridViewCellCollection cells = mf.dgvCertificateSZI.CurrentRow.Cells;
+            string number = cells[0].Value.ToString();
+            string name = cells[2].Value.ToString();
+            string abilityToUse = cells[4].Value.ToString();
+
+            ListViewItem item = new ListViewItem(number);
+            item.SubItems.Add(name);
+            item.SubItems.Add(abilityToUse);
+            mf.lvReportCertificates.Items.Add(item);
+
+            /*foreach (CertificateSZI szi in cSZIlist)
+            {
+                string number = szi.CertificateNumber;
+                string name = szi.NameSZI;
+                string abilityToUse = szi.GetAbilityToUse();
+
+                ListViewItem item = new ListViewItem(number);
+                item.SubItems.Add(name);
+                item.SubItems.Add(abilityToUse);
+                mf.lvSZIDifferences.Items.Add(item);
+            }*/
         }
 
         void FillSZIData(List<CertificateSZI> SZIs)
@@ -74,7 +104,7 @@ namespace KPSZI
 
             foreach (CertificateSZI szi in SZIs)
             {
-                string abilityToUse = "Да";
+                /*string abilityToUse = "Да";
                 DateTime validity = Convert.ToDateTime(szi.Validity);
                 DateTime validityTech;
 
@@ -83,8 +113,8 @@ namespace KPSZI
                 if (validity < today && validityTech < today)
                 {
                     abilityToUse = "Нет";
-                }
-
+                }*/
+                string abilityToUse = szi.GetAbilityToUse();
                 mf.dgvCertificateSZI.Rows.Add(szi.CertificateNumber, szi.Validity, szi.NameSZI, szi.ValidityTechnicalSupport, abilityToUse);
             }
         }
