@@ -179,3 +179,42 @@ C:\Users\dduj\Desktop\учеба\4 курс\2 сем\Программа КПСЗ
 C:\Users\dduj\Desktop\учеба\4 курс\2 сем\Программа КПСЗИ\KPSZI-master\KPSZI\bin\x64\Debug\System.IO.Packaging.dll
 C:\Users\dduj\Desktop\учеба\4 курс\2 сем\Программа КПСЗИ\KPSZI-master\KPSZI\bin\x64\Debug\DocumentFormat.OpenXml.xml
 C:\Users\dduj\Desktop\учеба\4 курс\2 сем\Программа КПСЗИ\KPSZI-master\KPSZI\bin\x64\Debug\ExcelNumberFormat.xml
+C:\KPSZI\KPSZI-second\KPSZI\bin\x64\Debug\template.docx
+C:\KPSZI\KPSZI-second\KPSZI\bin\x64\Debug\templateTP.docx
+C:\KPSZI\KPSZI-second\KPSZI\bin\x64\Debug\KPSZI.exe.config
+C:\KPSZI\KPSZI-second\KPSZI\bin\x64\Debug\KPSZI.exe
+C:\KPSZI\KPSZI-second\KPSZI\bin\x64\Debug\KPSZI.pdb
+C:\KPSZI\KPSZI-second\KPSZI\bin\x64\Debug\DocumentFormat.OpenXml.dll
+C:\KPSZI\KPSZI-second\KPSZI\bin\x64\Debug\EntityFramework.dll
+C:\KPSZI\KPSZI-second\KPSZI\bin\x64\Debug\EntityFramework.SqlServer.dll
+C:\KPSZI\KPSZI-second\KPSZI\bin\x64\Debug\ExcelNumberFormat.dll
+C:\KPSZI\KPSZI-second\KPSZI\bin\x64\Debug\HtmlAgilityPack.dll
+C:\KPSZI\KPSZI-second\KPSZI\bin\x64\Debug\Microsoft.CSharp.dll
+C:\KPSZI\KPSZI-second\KPSZI\bin\x64\Debug\SQLite.CodeFirst.dll
+C:\KPSZI\KPSZI-second\KPSZI\bin\x64\Debug\System.Data.SQLite.dll
+C:\KPSZI\KPSZI-second\KPSZI\bin\x64\Debug\System.Data.SQLite.EF6.dll
+C:\KPSZI\KPSZI-second\KPSZI\bin\x64\Debug\System.Data.SQLite.EF6.Migrations.dll
+C:\KPSZI\KPSZI-second\KPSZI\bin\x64\Debug\System.Data.SQLite.Linq.dll
+C:\KPSZI\KPSZI-second\KPSZI\bin\x64\Debug\System.IO.Packaging.dll
+C:\KPSZI\KPSZI-second\KPSZI\bin\x64\Debug\DocumentFormat.OpenXml.xml
+C:\KPSZI\KPSZI-second\KPSZI\bin\x64\Debug\EntityFramework.xml
+C:\KPSZI\KPSZI-second\KPSZI\bin\x64\Debug\EntityFramework.SqlServer.xml
+C:\KPSZI\KPSZI-second\KPSZI\bin\x64\Debug\ExcelNumberFormat.xml
+C:\KPSZI\KPSZI-second\KPSZI\bin\x64\Debug\HtmlAgilityPack.pdb
+C:\KPSZI\KPSZI-second\KPSZI\bin\x64\Debug\HtmlAgilityPack.xml
+C:\KPSZI\KPSZI-second\KPSZI\bin\x64\Debug\System.Data.SQLite.xml
+C:\KPSZI\KPSZI-second\KPSZI\bin\x64\Debug\System.Data.SQLite.dll.config
+C:\KPSZI\KPSZI-second\KPSZI\obj\x64\Debug\KPSZI.csprojAssemblyReference.cache
+C:\KPSZI\KPSZI-second\KPSZI\obj\x64\Debug\KPSZI.DamageDegreeControl.resources
+C:\KPSZI\KPSZI-second\KPSZI\obj\x64\Debug\KPSZI.FillThreatsForm.resources
+C:\KPSZI\KPSZI-second\KPSZI\obj\x64\Debug\KPSZI.IntruderAbilityControl.resources
+C:\KPSZI\KPSZI-second\KPSZI\obj\x64\Debug\KPSZI.MainForm.resources
+C:\KPSZI\KPSZI-second\KPSZI\obj\x64\Debug\KPSZI.Migrations.first.resources
+C:\KPSZI\KPSZI-second\KPSZI\obj\x64\Debug\KPSZI.Properties.Resources.resources
+C:\KPSZI\KPSZI-second\KPSZI\obj\x64\Debug\KPSZI.splashForm.resources
+C:\KPSZI\KPSZI-second\KPSZI\obj\x64\Debug\KPSZI.WaitingSplashMessage.resources
+C:\KPSZI\KPSZI-second\KPSZI\obj\x64\Debug\KPSZI.csproj.GenerateResource.cache
+C:\KPSZI\KPSZI-second\KPSZI\obj\x64\Debug\KPSZI.csproj.CoreCompileInputs.cache
+C:\KPSZI\KPSZI-second\KPSZI\obj\x64\Debug\KPSZI.csproj.CopyComplete
+C:\KPSZI\KPSZI-second\KPSZI\obj\x64\Debug\KPSZI.exe
+C:\KPSZI\KPSZI-second\KPSZI\obj\x64\Debug\KPSZI.pdb

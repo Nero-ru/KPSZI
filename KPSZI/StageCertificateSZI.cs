@@ -83,7 +83,7 @@ namespace KPSZI
             item.SubItems.Add(name);
             item.SubItems.Add(abilityToUse);
             mf.lvReportCertificates.Items.Add(item);
-
+            MessageBox.Show("Сертификат успешно добавлен на вывод", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);//info
             /*foreach (CertificateSZI szi in cSZIlist)
             {
                 string number = szi.CertificateNumber;

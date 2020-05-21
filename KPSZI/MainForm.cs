@@ -325,15 +325,56 @@ namespace KPSZI
                 {
                     //try
                     //{
-                        db.Seed();
+                    //    db.Database.ExecuteSqlCommand("SET SCHEMA '" + KPSZIContext.schema_name + "'; TRUNCATE \"ConfigOptions\",\"GISMeasures\", \"ISPDNMeasures\", \"ImplementWayThreats\", \"ImplementWays\", \"InfoTypes\", \"IntruderTypes\", \"MeasureGroups\", \"SFHGISMeasures\", \"SFHTypes\", \"SFHs\", \"SZISortGISMeasures\", \"SZISortSZIs\", \"SZISorts\",  \"SZIs\", \"TCUIThreats\", \"TCUITypes\", \"TCUIs\", \"TechnogenicMeasures\", \"TechnogenicThreats\", \"ThreatGISMeasures\",  \"ThreatSFHs\", \"ThreatSourceThreats\", \"ThreatSources\", \"Threats\", \"Vulnerabilities\", \"VulnerabilityThreats\" CASCADE");
                     //}
                     //catch (Exception ex)
                     //{
-                    //    MessageBox.Show(ex.Message, "Ахтунг!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    //    MessageBox.Show("Ошибка удаления таблиц в БД\n" + ex.Message, "Ахтунг!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     //    return;
                     //}
+                    db.Seed();
+
+                    FileInfo fi = null;
+                    try
+                    {
+                        fi = new FileInfo("_reestr_sszi.xlsx");
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Сначала надо загрузить файл (База данных -> Реестр ФСТЭК СЗИ -> Скачать файл \"_reestr_sszi\"\n" + ex.Message, "Ахтунг!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                    db.CertificatesSZI.AddRange(CertificateSZI.GetThreatsFromXlsx(fi, db));
+                    db.SaveChanges();
+
+                    try
+                    {
+                        fi = new FileInfo("thrlist.xlsx");
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Сначала надо загрузить файл (База данных -> Реестр ФСТЭК СЗИ -> Скачать файл \"thrlist.xlsx\"\n" + ex.Message, "Ахтунг!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                    db.Threats.AddRange(Threat.GetThreatsFromXlsx(fi, db));
+                    db.SaveChanges();
+                    db.SeedForThreat();
+                    db.SaveChanges();
+
+                    try
+                    {
+                        db.SeedForMeasures();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Внимание!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+
+                    db.SeedForConfigOptions();
+
                 }
-                MessageBox.Show("База данных проинициализирована начальными значениями", "Это успех, парень!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Заполнение прошло успешно!", "Внимание!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
