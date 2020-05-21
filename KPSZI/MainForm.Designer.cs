@@ -62,7 +62,7 @@
             System.Windows.Forms.TreeNode treeNode18 = new System.Windows.Forms.TreeNode("5.1. Сравнение параметров СЗИ от НСД");
             System.Windows.Forms.TreeNode treeNode19 = new System.Windows.Forms.TreeNode("5.2. Проверка сертификатов СЗИ в реестре ФСТЭК");
             System.Windows.Forms.TreeNode treeNode20 = new System.Windows.Forms.TreeNode("5.3. Отчёт по анализу защищённости");
-            System.Windows.Forms.TreeNode treeNode21 = new System.Windows.Forms.TreeNode("5. Анализ защищенности", new System.Windows.Forms.TreeNode[] {
+            System.Windows.Forms.TreeNode treeNode21 = new System.Windows.Forms.TreeNode("5. Анализ защищённости", new System.Windows.Forms.TreeNode[] {
             treeNode18,
             treeNode19,
             treeNode20});
@@ -113,6 +113,7 @@
             this.downloadRegistryListthrlistxlsxToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rewriteRegistryDBToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.treeView = new System.Windows.Forms.TreeView();
+            this.iconList = new System.Windows.Forms.ImageList(this.components);
             this.tpOptions = new System.Windows.Forms.TabPage();
             this.dgvProjectSecurityResult = new System.Windows.Forms.DataGridView();
             this.Characteristic = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -409,7 +410,6 @@
             this.labelIntegrity = new System.Windows.Forms.Label();
             this.labelAvailability = new System.Windows.Forms.Label();
             this.splitter1 = new System.Windows.Forms.Splitter();
-            this.iconList = new System.Windows.Forms.ImageList(this.components);
             this.saveThreatModel = new System.Windows.Forms.SaveFileDialog();
             this.ofdReport = new System.Windows.Forms.OpenFileDialog();
             this.menuStrip.SuspendLayout();
@@ -708,7 +708,7 @@
             treeNode20.Name = "tnAllReport";
             treeNode20.Text = "5.3. Отчёт по анализу защищённости";
             treeNode21.Name = "Узел1";
-            treeNode21.Text = "5. Анализ защищенности";
+            treeNode21.Text = "5. Анализ защищённости";
             this.treeView.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
             treeNode6,
             treeNode13,
@@ -720,6 +720,12 @@
             this.treeView.TabIndex = 3;
             this.treeView.BeforeSelect += new System.Windows.Forms.TreeViewCancelEventHandler(this.treeView_BeforeSelect);
             this.treeView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView_AfterSelect);
+            // 
+            // iconList
+            // 
+            this.iconList.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
+            this.iconList.ImageSize = new System.Drawing.Size(16, 16);
+            this.iconList.TransparentColor = System.Drawing.Color.Transparent;
             // 
             // tpOptions
             // 
@@ -3803,33 +3809,33 @@
             // fileName_Scanoval
             // 
             this.fileName_Scanoval.Enabled = false;
-            this.fileName_Scanoval.Location = new System.Drawing.Point(205, 292);
+            this.fileName_Scanoval.Location = new System.Drawing.Point(257, 352);
             this.fileName_Scanoval.Name = "fileName_Scanoval";
-            this.fileName_Scanoval.Size = new System.Drawing.Size(213, 20);
+            this.fileName_Scanoval.Size = new System.Drawing.Size(173, 20);
             this.fileName_Scanoval.TabIndex = 37;
             // 
             // fileName_ScannerVS
             // 
             this.fileName_ScannerVS.Enabled = false;
-            this.fileName_ScannerVS.Location = new System.Drawing.Point(205, 263);
+            this.fileName_ScannerVS.Location = new System.Drawing.Point(257, 305);
             this.fileName_ScannerVS.Name = "fileName_ScannerVS";
-            this.fileName_ScannerVS.Size = new System.Drawing.Size(213, 20);
+            this.fileName_ScannerVS.Size = new System.Drawing.Size(173, 20);
             this.fileName_ScannerVS.TabIndex = 36;
             // 
             // fileName_FIKS
             // 
             this.fileName_FIKS.Enabled = false;
-            this.fileName_FIKS.Location = new System.Drawing.Point(205, 234);
+            this.fileName_FIKS.Location = new System.Drawing.Point(257, 258);
             this.fileName_FIKS.Name = "fileName_FIKS";
-            this.fileName_FIKS.Size = new System.Drawing.Size(213, 20);
+            this.fileName_FIKS.Size = new System.Drawing.Size(173, 20);
             this.fileName_FIKS.TabIndex = 35;
             // 
             // fileName_Revisor2XP
             // 
             this.fileName_Revisor2XP.Enabled = false;
-            this.fileName_Revisor2XP.Location = new System.Drawing.Point(205, 204);
+            this.fileName_Revisor2XP.Location = new System.Drawing.Point(257, 211);
             this.fileName_Revisor2XP.Name = "fileName_Revisor2XP";
-            this.fileName_Revisor2XP.Size = new System.Drawing.Size(213, 20);
+            this.fileName_Revisor2XP.Size = new System.Drawing.Size(173, 20);
             this.fileName_Revisor2XP.TabIndex = 34;
             // 
             // label10
@@ -3936,9 +3942,9 @@
             // 
             // btnExportAllToWord
             // 
-            this.btnExportAllToWord.Location = new System.Drawing.Point(9, 420);
+            this.btnExportAllToWord.Location = new System.Drawing.Point(9, 426);
             this.btnExportAllToWord.Name = "btnExportAllToWord";
-            this.btnExportAllToWord.Size = new System.Drawing.Size(409, 50);
+            this.btnExportAllToWord.Size = new System.Drawing.Size(409, 44);
             this.btnExportAllToWord.TabIndex = 8;
             this.btnExportAllToWord.Text = "Экспортировать все в Word";
             this.btnExportAllToWord.UseVisualStyleBackColor = true;
@@ -3947,7 +3953,7 @@
             // 
             this.cbStatus_Scanoval.AutoSize = true;
             this.cbStatus_Scanoval.Enabled = false;
-            this.cbStatus_Scanoval.Location = new System.Drawing.Point(184, 295);
+            this.cbStatus_Scanoval.Location = new System.Drawing.Point(236, 355);
             this.cbStatus_Scanoval.Name = "cbStatus_Scanoval";
             this.cbStatus_Scanoval.Size = new System.Drawing.Size(15, 14);
             this.cbStatus_Scanoval.TabIndex = 7;
@@ -3957,7 +3963,7 @@
             // 
             this.cbStatus_ScannerVS.AutoSize = true;
             this.cbStatus_ScannerVS.Enabled = false;
-            this.cbStatus_ScannerVS.Location = new System.Drawing.Point(184, 266);
+            this.cbStatus_ScannerVS.Location = new System.Drawing.Point(236, 308);
             this.cbStatus_ScannerVS.Name = "cbStatus_ScannerVS";
             this.cbStatus_ScannerVS.Size = new System.Drawing.Size(15, 14);
             this.cbStatus_ScannerVS.TabIndex = 6;
@@ -3967,7 +3973,7 @@
             // 
             this.cbStatus_FIKS.AutoSize = true;
             this.cbStatus_FIKS.Enabled = false;
-            this.cbStatus_FIKS.Location = new System.Drawing.Point(184, 237);
+            this.cbStatus_FIKS.Location = new System.Drawing.Point(236, 261);
             this.cbStatus_FIKS.Name = "cbStatus_FIKS";
             this.cbStatus_FIKS.Size = new System.Drawing.Size(15, 14);
             this.cbStatus_FIKS.TabIndex = 5;
@@ -3977,7 +3983,7 @@
             // 
             this.cbStatus_Revisor2XP.AutoSize = true;
             this.cbStatus_Revisor2XP.Enabled = false;
-            this.cbStatus_Revisor2XP.Location = new System.Drawing.Point(184, 207);
+            this.cbStatus_Revisor2XP.Location = new System.Drawing.Point(236, 214);
             this.cbStatus_Revisor2XP.Name = "cbStatus_Revisor2XP";
             this.cbStatus_Revisor2XP.Size = new System.Drawing.Size(15, 14);
             this.cbStatus_Revisor2XP.TabIndex = 4;
@@ -3985,38 +3991,39 @@
             // 
             // btnGetPath_Scanoval
             // 
-            this.btnGetPath_Scanoval.Location = new System.Drawing.Point(9, 290);
+            this.btnGetPath_Scanoval.Location = new System.Drawing.Point(9, 337);
             this.btnGetPath_Scanoval.Name = "btnGetPath_Scanoval";
-            this.btnGetPath_Scanoval.Size = new System.Drawing.Size(169, 23);
+            this.btnGetPath_Scanoval.Size = new System.Drawing.Size(221, 48);
             this.btnGetPath_Scanoval.TabIndex = 7;
-            this.btnGetPath_Scanoval.Text = "Выбрать отчет Scanoval";
+            this.btnGetPath_Scanoval.Text = "Загрузить отчёт средства проверок наличия уязвимостей програмного обеспечения";
             this.btnGetPath_Scanoval.UseVisualStyleBackColor = true;
             // 
             // btnGetPath_ScannerVS
             // 
-            this.btnGetPath_ScannerVS.Location = new System.Drawing.Point(9, 261);
+            this.btnGetPath_ScannerVS.Location = new System.Drawing.Point(9, 297);
             this.btnGetPath_ScannerVS.Name = "btnGetPath_ScannerVS";
-            this.btnGetPath_ScannerVS.Size = new System.Drawing.Size(169, 23);
+            this.btnGetPath_ScannerVS.Size = new System.Drawing.Size(221, 34);
             this.btnGetPath_ScannerVS.TabIndex = 6;
-            this.btnGetPath_ScannerVS.Text = "Выбрать отчет ScannerVS";
+            this.btnGetPath_ScannerVS.Text = "Загрузить отчёт средства анализа защищённости";
             this.btnGetPath_ScannerVS.UseVisualStyleBackColor = true;
             // 
             // btnGetPath_FIKS
             // 
-            this.btnGetPath_FIKS.Location = new System.Drawing.Point(9, 232);
+            this.btnGetPath_FIKS.Location = new System.Drawing.Point(9, 243);
             this.btnGetPath_FIKS.Name = "btnGetPath_FIKS";
-            this.btnGetPath_FIKS.Size = new System.Drawing.Size(169, 23);
+            this.btnGetPath_FIKS.Size = new System.Drawing.Size(221, 49);
             this.btnGetPath_FIKS.TabIndex = 5;
-            this.btnGetPath_FIKS.Text = "Выбрать отчет FIKS";
+            this.btnGetPath_FIKS.Text = "Загрузить отчёт программы фиксации и контроля исходного программного комплекса \"Ф" +
+    "ИКС\"";
             this.btnGetPath_FIKS.UseVisualStyleBackColor = true;
             // 
             // btnGetPath_Revisor2XP
             // 
             this.btnGetPath_Revisor2XP.Location = new System.Drawing.Point(9, 203);
             this.btnGetPath_Revisor2XP.Name = "btnGetPath_Revisor2XP";
-            this.btnGetPath_Revisor2XP.Size = new System.Drawing.Size(169, 23);
+            this.btnGetPath_Revisor2XP.Size = new System.Drawing.Size(221, 34);
             this.btnGetPath_Revisor2XP.TabIndex = 4;
-            this.btnGetPath_Revisor2XP.Text = "Выбрать отчет Revisor2XP";
+            this.btnGetPath_Revisor2XP.Text = "Загрузить отчёт средства контроля защищённости от НСД \"Ревизор - 2 ХР\"";
             this.btnGetPath_Revisor2XP.UseVisualStyleBackColor = true;
             // 
             // tpSZIConfig
@@ -4040,16 +4047,16 @@
             this.lvSZIDifferences.HideSelection = false;
             this.lvSZIDifferences.Location = new System.Drawing.Point(67, 22);
             this.lvSZIDifferences.Name = "lvSZIDifferences";
-            this.lvSZIDifferences.Size = new System.Drawing.Size(800, 275);
+            this.lvSZIDifferences.Size = new System.Drawing.Size(800, 292);
             this.lvSZIDifferences.TabIndex = 5;
             this.lvSZIDifferences.UseCompatibleStateImageBehavior = false;
             this.lvSZIDifferences.View = System.Windows.Forms.View.Details;
             // 
             // btnCompareDLConfigs
             // 
-            this.btnCompareDLConfigs.Location = new System.Drawing.Point(424, 411);
+            this.btnCompareDLConfigs.Location = new System.Drawing.Point(400, 420);
             this.btnCompareDLConfigs.Name = "btnCompareDLConfigs";
-            this.btnCompareDLConfigs.Size = new System.Drawing.Size(73, 23);
+            this.btnCompareDLConfigs.Size = new System.Drawing.Size(136, 35);
             this.btnCompareDLConfigs.TabIndex = 4;
             this.btnCompareDLConfigs.Text = "Сравнить";
             this.btnCompareDLConfigs.UseVisualStyleBackColor = true;
@@ -4074,18 +4081,18 @@
             // 
             // btnSelectCustomSZIConfig
             // 
-            this.btnSelectCustomSZIConfig.Location = new System.Drawing.Point(601, 365);
+            this.btnSelectCustomSZIConfig.Location = new System.Drawing.Point(573, 365);
             this.btnSelectCustomSZIConfig.Name = "btnSelectCustomSZIConfig";
-            this.btnSelectCustomSZIConfig.Size = new System.Drawing.Size(173, 23);
+            this.btnSelectCustomSZIConfig.Size = new System.Drawing.Size(234, 23);
             this.btnSelectCustomSZIConfig.TabIndex = 1;
-            this.btnSelectCustomSZIConfig.Text = "Выбрать файл для сравнения";
+            this.btnSelectCustomSZIConfig.Text = "Выбрать файл с текущими настройками";
             this.btnSelectCustomSZIConfig.UseVisualStyleBackColor = true;
             // 
             // btnSelectStandardSZIConfig
             // 
-            this.btnSelectStandardSZIConfig.Location = new System.Drawing.Point(156, 365);
+            this.btnSelectStandardSZIConfig.Location = new System.Drawing.Point(128, 365);
             this.btnSelectStandardSZIConfig.Name = "btnSelectStandardSZIConfig";
-            this.btnSelectStandardSZIConfig.Size = new System.Drawing.Size(148, 23);
+            this.btnSelectStandardSZIConfig.Size = new System.Drawing.Size(229, 23);
             this.btnSelectStandardSZIConfig.TabIndex = 0;
             this.btnSelectStandardSZIConfig.Text = "Выбрать эталонный файл";
             this.btnSelectStandardSZIConfig.UseVisualStyleBackColor = true;
@@ -4325,12 +4332,6 @@
             this.splitter1.Size = new System.Drawing.Size(3, 516);
             this.splitter1.TabIndex = 5;
             this.splitter1.TabStop = false;
-            // 
-            // iconList
-            // 
-            this.iconList.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
-            this.iconList.ImageSize = new System.Drawing.Size(16, 16);
-            this.iconList.TransparentColor = System.Drawing.Color.Transparent;
             // 
             // ofdReport
             // 
