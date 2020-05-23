@@ -210,7 +210,7 @@ namespace KPSZI
                 {
                     try
                     {
-                        db.Database.ExecuteSqlCommand("SET SCHEMA '" + KPSZIContext.schema_name + "'; TRUNCATE \"ConfigOptions\",\"GISMeasures\", \"ISPDNMeasures\", \"ImplementWayThreats\", \"ImplementWays\", \"InfoTypes\", \"IntruderTypes\", \"MeasureGroups\", \"SFHGISMeasures\", \"SFHTypes\", \"SFHs\", \"SZISortGISMeasures\", \"SZISortSZIs\", \"SZISorts\",  \"SZIs\", \"TCUIThreats\", \"TCUITypes\", \"TCUIs\", \"TechnogenicMeasures\", \"TechnogenicThreats\", \"ThreatGISMeasures\",  \"ThreatSFHs\", \"ThreatSourceThreats\", \"ThreatSources\", \"Threats\", \"Vulnerabilities\", \"VulnerabilityThreats\" CASCADE");
+                        db.Database.ExecuteSqlCommand("DELETE FROM ConfigOptions; DELETE FROM Threats; DELETE FROM GISMeasures; DELETE FROM ISPDNMeasures; DELETE FROM ImplementWayThreats; DELETE FROM ImplementWays; DELETE FROM InfoTypes; DELETE FROM IntruderTypes; DELETE FROM MeasureGroups; DELETE FROM SFHGISMeasures; DELETE FROM SFHTypes; DELETE FROM SFHs; DELETE FROM SZISortGISMeasures; DELETE FROM SZISortSZIs; DELETE FROM SZISorts; DELETE FROM SZIs; DELETE FROM TCUIThreats; DELETE FROM TCUITypes; DELETE FROM TCUIs; DELETE FROM TechnogenicMeasures; DELETE FROM TechnogenicThreats; DELETE FROM ThreatGISMeasures; DELETE FROM ThreatSFHs; DELETE FROM ThreatSourceThreats; DELETE FROM ThreatSources; DELETE FROM Vulnerabilities; DELETE FROM VulnerabilityThreats");
                     }
                     catch (Exception ex)
                     {
@@ -319,19 +319,19 @@ namespace KPSZI
         {
             // инициализация БД начальным значениями из метода Model.KPSZIContext.Seed()
 
-            if (MessageBox.Show("БД будет проинициализирована начальными значениями. Перед выполнением процедуры необходимо очистить (не удалить!) все таблицы.\nПродолжить?", "Ахтунг!", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
+            if (MessageBox.Show("БД будет проинициализирована начальными значениями.\nПродолжить?", "Ахтунг!", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
             {
                 using (KPSZIContext db = new KPSZIContext())
                 {
-                    //try
-                    //{
-                    //    db.Database.ExecuteSqlCommand("SET SCHEMA '" + KPSZIContext.schema_name + "'; TRUNCATE \"ConfigOptions\",\"GISMeasures\", \"ISPDNMeasures\", \"ImplementWayThreats\", \"ImplementWays\", \"InfoTypes\", \"IntruderTypes\", \"MeasureGroups\", \"SFHGISMeasures\", \"SFHTypes\", \"SFHs\", \"SZISortGISMeasures\", \"SZISortSZIs\", \"SZISorts\",  \"SZIs\", \"TCUIThreats\", \"TCUITypes\", \"TCUIs\", \"TechnogenicMeasures\", \"TechnogenicThreats\", \"ThreatGISMeasures\",  \"ThreatSFHs\", \"ThreatSourceThreats\", \"ThreatSources\", \"Threats\", \"Vulnerabilities\", \"VulnerabilityThreats\" CASCADE");
-                    //}
-                    //catch (Exception ex)
-                    //{
-                    //    MessageBox.Show("Ошибка удаления таблиц в БД\n" + ex.Message, "Ахтунг!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    //    return;
-                    //}
+                    try
+                    {
+                        db.Database.ExecuteSqlCommand("DELETE FROM ConfigOptions; DELETE FROM Threats; DELETE FROM GISMeasures; DELETE FROM ISPDNMeasures; DELETE FROM ImplementWayThreats; DELETE FROM ImplementWays; DELETE FROM InfoTypes; DELETE FROM IntruderTypes; DELETE FROM MeasureGroups; DELETE FROM SFHGISMeasures; DELETE FROM SFHTypes; DELETE FROM SFHs; DELETE FROM SZISortGISMeasures; DELETE FROM SZISortSZIs; DELETE FROM SZISorts; DELETE FROM SZIs; DELETE FROM TCUIThreats; DELETE FROM TCUITypes; DELETE FROM TCUIs; DELETE FROM TechnogenicMeasures; DELETE FROM TechnogenicThreats; DELETE FROM ThreatGISMeasures; DELETE FROM ThreatSFHs; DELETE FROM ThreatSourceThreats; DELETE FROM ThreatSources; DELETE FROM Vulnerabilities; DELETE FROM VulnerabilityThreats");
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Ошибка удаления таблиц в БД\n" + ex.Message, "Ахтунг!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
                     db.Seed();
 
                     FileInfo fi = null;
@@ -360,7 +360,9 @@ namespace KPSZI
                     db.SaveChanges();
                     db.SeedForThreat();
                     db.SaveChanges();
-
+                }
+                using (KPSZIContext db = new KPSZIContext())
+                {
                     try
                     {
                         db.SeedForMeasures();
@@ -372,9 +374,9 @@ namespace KPSZI
                     }
 
                     db.SeedForConfigOptions();
-
                 }
-                MessageBox.Show("Заполнение прошло успешно!", "Внимание!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Заполнение прошло успешно!\nПрограмма будет перезагружена!", "Внимание!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                System.Windows.Forms.Application.Restart();
             }
         }
 

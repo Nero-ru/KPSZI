@@ -30,6 +30,7 @@
         {
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.sfLog = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,12 +54,21 @@
             this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
             this.progressBar1.TabIndex = 1;
             // 
+            // sfLog
+            // 
+            this.sfLog.AutoSize = true;
+            this.sfLog.Location = new System.Drawing.Point(162, 227);
+            this.sfLog.Name = "sfLog";
+            this.sfLog.Size = new System.Drawing.Size(0, 13);
+            this.sfLog.TabIndex = 2;
+            // 
             // splashForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(350, 249);
             this.ControlBox = false;
+            this.Controls.Add(this.sfLog);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -70,12 +80,13 @@
             this.Text = "splashForm";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.ProgressBar progressBar1;
+        public System.Windows.Forms.PictureBox pictureBox1;
+        public System.Windows.Forms.Label sfLog;
     }
 }
