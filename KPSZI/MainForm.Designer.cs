@@ -59,8 +59,8 @@
             treeNode14,
             treeNode15});
             System.Windows.Forms.TreeNode treeNode17 = new System.Windows.Forms.TreeNode("4. Параметры настройки");
-            System.Windows.Forms.TreeNode treeNode18 = new System.Windows.Forms.TreeNode("5.1. Сравнение параметров СЗИ от НСД");
-            System.Windows.Forms.TreeNode treeNode19 = new System.Windows.Forms.TreeNode("5.2. Проверка сертификатов СЗИ в реестре ФСТЭК");
+            System.Windows.Forms.TreeNode treeNode18 = new System.Windows.Forms.TreeNode("5.1. Проверка сертификатов");
+            System.Windows.Forms.TreeNode treeNode19 = new System.Windows.Forms.TreeNode("5.2. Сравнение параметров СЗИ от НСД");
             System.Windows.Forms.TreeNode treeNode20 = new System.Windows.Forms.TreeNode("5.3. Отчёт по анализу защищённости");
             System.Windows.Forms.TreeNode treeNode21 = new System.Windows.Forms.TreeNode("5. Анализ защищённости", new System.Windows.Forms.TreeNode[] {
             treeNode18,
@@ -701,10 +701,10 @@
             treeNode16.Text = "3. Тех. проект";
             treeNode17.Name = "tnConfigOptions";
             treeNode17.Text = "4. Параметры настройки";
-            treeNode18.Name = "tnSZIConfig";
-            treeNode18.Text = "5.1. Сравнение параметров СЗИ от НСД";
-            treeNode19.Name = "tnCertificateSZI";
-            treeNode19.Text = "5.2. Проверка сертификатов СЗИ в реестре ФСТЭК";
+            treeNode18.Name = "tnCertificateSZI";
+            treeNode18.Text = "5.1. Проверка сертификатов";
+            treeNode19.Name = "tnSZIConfig";
+            treeNode19.Text = "5.2. Сравнение параметров СЗИ от НСД";
             treeNode20.Name = "tnAllReport";
             treeNode20.Text = "5.3. Отчёт по анализу защищённости";
             treeNode21.Name = "Узел1";

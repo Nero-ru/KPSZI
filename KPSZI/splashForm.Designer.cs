@@ -39,7 +39,7 @@
             this.pictureBox1.Image = global::KPSZI.Properties.Resources.Shield;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(350, 247);
+            this.pictureBox1.Size = new System.Drawing.Size(350, 292);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -47,7 +47,7 @@
             // progressBar1
             // 
             this.progressBar1.BackColor = System.Drawing.Color.DarkRed;
-            this.progressBar1.Location = new System.Drawing.Point(26, 195);
+            this.progressBar1.Location = new System.Drawing.Point(28, 250);
             this.progressBar1.MarqueeAnimationSpeed = 50;
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(297, 23);
@@ -66,7 +66,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(350, 249);
+            this.ClientSize = new System.Drawing.Size(350, 290);
             this.ControlBox = false;
             this.Controls.Add(this.sfLog);
             this.Controls.Add(this.progressBar1);
