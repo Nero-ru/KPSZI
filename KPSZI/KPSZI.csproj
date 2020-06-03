@@ -241,6 +241,7 @@
     <Compile Include="StageCertificateSZI.cs" />
     <Compile Include="StageClassification.cs" />
     <Compile Include="StageConfigOptions.cs" />
+    <Compile Include="StageReport_2.cs" />
     <Compile Include="StageSZIConfig.cs" />
     <Compile Include="Reports\StageReportFIKS.cs" />
     <Compile Include="StageIntruder.cs" />
@@ -249,7 +250,7 @@
     <Compile Include="StageMeasuresTechno.cs" />
     <Compile Include="StageOptions.cs" />
     <Compile Include="StageHardware.cs" />
-    <Compile Include="Reports\StageReport.cs" />
+    <Compile Include="Reports\StageReport_1.cs" />
     <Compile Include="Reports\StageReportRevisor2XP.cs" />
     <Compile Include="Reports\StageReportScannerVS.cs" />
     <Compile Include="Reports\StageReportScanoval.cs" />

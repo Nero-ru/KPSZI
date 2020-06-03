@@ -16,8 +16,8 @@ namespace KPSZI
     {
         protected override Encoding htmlEncoding { get => Encoding.UTF8; }
         protected HtmlTableElement[][][] tables = null;
-        protected string caption1 = null;
-        protected string caption2 = null;
+        protected string caption1 = String.Empty;
+        protected string caption2 = String.Empty;
 
         public StageReportScanoval(MainForm mainForm, string template)
             : base(mainForm, template)
@@ -59,7 +59,7 @@ namespace KPSZI
                         {
                             tempNodesColumns = tempHtmlColumns.DocumentNode.SelectNodes("//td | //th");
                         }
-                        HtmlTableElement[] tempRow = new HtmlTableElement[tempNodesColumns.Count];
+                        HtmlTableElement[] tempCell = new HtmlTableElement[tempNodesColumns.Count];
 
                         for (int k = 0; k < tempNodesColumns.Count; k++)
                         {
@@ -207,9 +207,9 @@ namespace KPSZI
                                 }
                             }
 
-                            tempRow[k] = new HtmlTableElement(text, bColor, fColor, bold);
+                            tempCell[k] = new HtmlTableElement(text, bColor, fColor, bold);
                         }
-                        tempTable[j] = tempRow;
+                        tempTable[j] = tempCell;
                     }
                     tables[i] = tempTable;
                 }

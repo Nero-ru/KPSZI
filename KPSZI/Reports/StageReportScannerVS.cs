@@ -9,23 +9,35 @@ using System.Text.RegularExpressions;
 using System.IO;
 using System.Drawing;
 using Word = Microsoft.Office.Interop.Word;
+using DocumentFormat.OpenXml.Spreadsheet;
+
 namespace KPSZI
 {
     class StageReportScannerVS : StageReport
     {
         protected override Encoding htmlEncoding { get => Encoding.UTF8; }
-        protected HtmlNodeCollection p_Nodes = null;
-        protected HtmlNodeCollection h1_Nodes = null;
-        protected HtmlNodeCollection h2_Nodes = null;
-        protected HtmlNodeCollection[,] tables_Nodes = null;
+
+        protected string[] captions = new string[] // заголовки
+        {
+            "1. Резюме для руководителя",
+            "2. Границы проекта",
+            "3. Порты и сервисы",
+            "4. Уязвимости"
+        };
+
+        protected object[][] vulnSections = null; // секции в пункте 4. Уязвимости
+        protected HtmlTableElement[][][] tables = null; // табличные элементы отчета
         protected Image[] imgData = null;
-        protected HtmlNodeCollection table_thead_Nodes = null;
-        protected HtmlNodeCollection table_tbody_Nodes = null;
 
         public StageReportScannerVS(MainForm mainForm, string template)
             : base(mainForm, template)
         {
+            mainForm.btnExportTest.Click += new EventHandler(Test);
+        }
 
+        public void Test(object sender, EventArgs e)
+        {
+            Parce(@"reports/ScannerVS/scaner-vs_report_short_13.04.2020.html");
         }
 
         public override void Parce(string pathHTML)
@@ -34,28 +46,147 @@ namespace KPSZI
             htmlDoc.Load(pathHTML, htmlEncoding);
 
             #region Парсинг ключевых HTML элементов
-            p_Nodes = htmlDoc.DocumentNode.SelectNodes("//p");
-            h1_Nodes = htmlDoc.DocumentNode.SelectNodes("//h1");
-            h2_Nodes = htmlDoc.DocumentNode.SelectNodes("//h2");
-            table_thead_Nodes = htmlDoc.DocumentNode.SelectNodes("/html/body/div/div/div/div/main/div[5]/div[1]/table/thead/tr/td");
-            table_tbody_Nodes = htmlDoc.DocumentNode.SelectNodes("/html/body/div/div/div/div/main/div[5]/div[1]/table/tbody/tr/td");
-            tables_Nodes = new HtmlNodeCollection[4, 3];
 
-            tables_Nodes[0, 0] = htmlDoc.DocumentNode.SelectNodes("/html/body/div/div/div/div/main/div[1]/table/caption");
-            tables_Nodes[0, 1] = htmlDoc.DocumentNode.SelectNodes("/html/body/div/div/div/div/main/div[1]/table/thead/tr/td");
-            tables_Nodes[0, 2] = htmlDoc.DocumentNode.SelectNodes("/html/body/div/div/div/div/main/div[1]/table/tbody/tr/td");
+            HtmlNodeCollection reportNodes = htmlDoc.DocumentNode.SelectNodes("//table");
+            tables = new HtmlTableElement[reportNodes.Count][][];
 
-            tables_Nodes[1, 0] = htmlDoc.DocumentNode.SelectNodes("/html/body/div/div/div/div/main/div[4]/table/caption");
-            tables_Nodes[1, 1] = htmlDoc.DocumentNode.SelectNodes("/html/body/div/div/div/div/main/div[4]/table/thead/tr/td");
-            tables_Nodes[1, 2] = htmlDoc.DocumentNode.SelectNodes("/html/body/div/div/div/div/main/div[4]/table/tbody/tr/td");
+            for (int i = 0; i < reportNodes.Count; i++)
+            {
+                HtmlAgilityPack.HtmlDocument tempHtmlRows = new HtmlAgilityPack.HtmlDocument();
+                tempHtmlRows.LoadHtml(reportNodes[i].InnerHtml);
+                HtmlNodeCollection tempNodesRows = tempHtmlRows.DocumentNode.SelectNodes("//tr");
 
-            tables_Nodes[2, 0] = htmlDoc.DocumentNode.SelectNodes("/html/body/div/div/div/div/main/table[1]/caption");
-            tables_Nodes[2, 1] = htmlDoc.DocumentNode.SelectNodes("/html/body/div/div/div/div/main/table[1]/thead/tr/th");
-            tables_Nodes[2, 2] = htmlDoc.DocumentNode.SelectNodes("/html/body/div/div/div/div/main/table[1]/tbody/tr/th");
+                HtmlTableElement[][] tempTable = new HtmlTableElement[tempNodesRows.Count][];
 
-            tables_Nodes[3, 0] = htmlDoc.DocumentNode.SelectNodes("/html/body/div/div/div/div/main/table[2]/caption");
-            tables_Nodes[3, 1] = htmlDoc.DocumentNode.SelectNodes("/html/body/div/div/div/div/main/table[2]/thead/tr/th");
-            tables_Nodes[3, 2] = htmlDoc.DocumentNode.SelectNodes("/html/body/div/div/div/div/main/table[2]/tbody/tr/th");
+                for (int j = 0; j < tempNodesRows.Count; j++)
+                {
+                    HtmlAgilityPack.HtmlDocument tempHtmlColumns = new HtmlAgilityPack.HtmlDocument();
+                    tempHtmlColumns.LoadHtml(tempNodesRows[j].InnerHtml);
+
+                    HtmlNodeCollection tempNodesColumns = tempHtmlColumns.DocumentNode.SelectNodes("//td | //th");
+                    HtmlTableElement[] tempCell = new HtmlTableElement[tempNodesColumns.Count];
+
+                    for (int k = 0; k < tempNodesColumns.Count; k++)
+                    {
+                        string text = tempNodesColumns[k].InnerText.Trim();
+                        string bColor = "FFFFFF";
+                        string fColor = "000000";
+                        byte bold = 0;
+                        int rowspan = 1;
+                        int colspan = 1;
+
+                        if (i > 3)
+                        {
+                            bold = 1;
+                        }
+
+                        if (i == 1)
+                        {
+                            if (j == 0)
+                            {
+                                if (k < 3)
+                                {
+                                    rowspan = 3;
+                                }
+                                else
+                                {
+                                    rowspan = 4;
+                                }
+                            }
+                            else if (j == 1)
+                            {
+                                rowspan = 2;
+                            }
+                        }
+                        else if (i == 4)
+                        {
+                            if (j == 0)
+                            {
+                                colspan = 2;
+                            }
+                            else if (j == 1 || j == 3 || j == 4)
+                            {
+                                colspan = 4;
+                            }
+                            else
+                            {
+                                colspan = 3;
+                            }
+                        }
+
+                        tempCell[k] = new HtmlTableElement(text, bColor, fColor, bold, rowspan, colspan);
+                    }
+                    tempTable[j] = tempCell;
+                }
+                tables[i] = tempTable;
+            }
+
+            HtmlNodeCollection vulnSectionNodes = htmlDoc.DocumentNode.SelectNodes("//div[@class='chapter'][4]//div[@class='section']");
+            vulnSections = new object[vulnSectionNodes.Count][];
+
+            for (int i = 0; i < vulnSectionNodes.Count; i++)
+            {
+                HtmlAgilityPack.HtmlDocument vulnHtml = new HtmlAgilityPack.HtmlDocument();
+                vulnHtml.LoadHtml(vulnSectionNodes[i].InnerHtml);
+
+                HtmlNodeCollection sectionChilds = vulnHtml.DocumentNode.SelectNodes("/*");
+                //HtmlTableElement[][] section = new HtmlTableElement[sectionChilds.Count][];
+                object[] childs = new object[sectionChilds.Count];
+
+                for (int j = 0; j < sectionChilds.Count; j++)
+                {
+                    object section = null;
+
+                    string name = sectionChilds[j].Name;
+
+                    if (name == "h2")
+                    {
+                        section = new HtmlElement(sectionChilds[j].InnerText, "000000", 1);
+                    }
+                    else if (name == "ol")
+                    {
+                        HtmlAgilityPack.HtmlDocument olSectionHtml = new HtmlAgilityPack.HtmlDocument();
+                        olSectionHtml.LoadHtml(sectionChilds[j].InnerHtml);
+
+                        HtmlNodeCollection olSection = olSectionHtml.DocumentNode.SelectNodes("/li");
+                        section = new HtmlElement[olSection.Count];
+
+                        for (int k = 0; k < olSection.Count; k++)
+                        {
+                            ((HtmlElement[])section)[k] = new HtmlElement(olSection[k].InnerText.Trim(), "000000", 0);
+                        }
+                    }
+                    else if (name == "div")
+                    {
+                        HtmlAgilityPack.HtmlDocument divSectionHtml = new HtmlAgilityPack.HtmlDocument();
+                        divSectionHtml.LoadHtml(sectionChilds[j].InnerHtml);
+
+                        HtmlNodeCollection divSection = divSectionHtml.DocumentNode.SelectNodes("/ul/li/a");
+                        section = new HtmlElement[divSection.Count + 1];
+
+                        string text = String.Empty;
+                        for (int k = 0; k < divSection.Count + 1; k++)
+                        {
+                            if (k == 0)
+                            {
+                                text = "Подробнее";
+                            }
+                            else
+                            {
+                                text = divSection[k - 1].InnerText;
+                            }
+                            ((HtmlElement[])section)[k] = new HtmlElement(text, "000000", 0);
+                        }
+                    }
+                    else
+                    {
+                        section = new HtmlElement(sectionChilds[j].InnerText, "000000", 0);
+                    }
+
+                    childs[j] = section;
+                }
+                vulnSections[i] = childs;
+            }
 
             HtmlNodeCollection imgNodes = htmlDoc.DocumentNode.SelectNodes("//img");
             imgData = new Image[imgNodes.Count];
