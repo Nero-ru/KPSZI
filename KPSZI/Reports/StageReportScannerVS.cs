@@ -248,7 +248,7 @@ namespace KPSZI
                  #region Раздел "Резюме для руководителей"
                  
                  paragraph.Range.InsertParagraphAfter();
-                 FillRangeInWord(paragraph.Range, captions[captionIndex++].Text, "Times New Roman", 16, 0, Word.WdParagraphAlignment.wdAlignParagraphLeft, Word.WdColor.wdColorBlack);
+                 FillRangeInWord(paragraph.Range, captions[captionIndex++].Text, "Times New Roman", 16, 1, Word.WdParagraphAlignment.wdAlignParagraphLeft, Word.WdColor.wdColorBlack);
                  paragraph.Range.InsertParagraphAfter();
                  for (int i = 0; i < summary.Length; i++)
                  {
@@ -281,7 +281,7 @@ namespace KPSZI
                 #endregion
 
                 #region Раздел "Границы проекта"
-                FillRangeInWord(paragraph.Range, captions[captionIndex++].Text, "Times New Roman", 16, 1, Word.WdParagraphAlignment.wdAlignParagraphCenter, Word.WdColor.wdColorBlack);
+                FillRangeInWord(paragraph.Range, captions[captionIndex++].Text, "Times New Roman", 16, 1, Word.WdParagraphAlignment.wdAlignParagraphLeft, Word.WdColor.wdColorBlack);
                 paragraph.Range.InsertParagraphAfter();
                 table = CreateStandartTable(paragraph.Range, 3, 7, Word.WdLineStyle.wdLineStyleSingle, Word.WdLineStyle.wdLineStyleSingle, doc);
                 int count = table.Rows[1].Cells.Count;
@@ -300,24 +300,24 @@ namespace KPSZI
                 table.Cell(2, 5).Merge(table.Cell(3, 5));
                 table.Cell(2, 6).Merge(table.Cell(2, 7));
 
-                for (int i = 0; i < tables[1].Length; i++)
+                
+                FillRangeInWord(table.Cell(1, 1).Range, tables[1][0][0].Text, "Times New Roman", 12, tables[1][0][0].Bold, Word.WdParagraphAlignment.wdAlignParagraphCenter, Word.WdColor.wdColorBlack, true, tables[1][0][0].wdBackColor);
+                FillRangeInWord(table.Cell(1, 2).Range, tables[1][0][1].Text, "Times New Roman", 12, tables[1][0][1].Bold, Word.WdParagraphAlignment.wdAlignParagraphCenter, Word.WdColor.wdColorBlack, true, tables[1][0][1].wdBackColor);
+                FillRangeInWord(table.Cell(1, 3).Range, tables[1][0][2].Text, "Times New Roman", 12, tables[1][0][2].Bold, Word.WdParagraphAlignment.wdAlignParagraphCenter, Word.WdColor.wdColorBlack, true, tables[1][0][2].wdBackColor);
+                FillRangeInWord(table.Cell(1, 4).Range, tables[1][0][3].Text, "Times New Roman", 12, tables[1][0][3].Bold, Word.WdParagraphAlignment.wdAlignParagraphCenter, Word.WdColor.wdColorBlack, true, tables[1][0][3].wdBackColor);
+                FillRangeInWord(table.Cell(2, 4).Range, tables[1][1][0].Text, "Times New Roman", 12, tables[1][1][0].Bold, Word.WdParagraphAlignment.wdAlignParagraphCenter, Word.WdColor.wdColorBlack, true, tables[1][1][0].wdBackColor);
+                FillRangeInWord(table.Cell(2, 5).Range, tables[1][1][1].Text, "Times New Roman", 12, tables[1][1][1].Bold, Word.WdParagraphAlignment.wdAlignParagraphCenter, Word.WdColor.wdColorBlack, true, tables[1][1][1].wdBackColor);
+                FillRangeInWord(table.Cell(2, 6).Range, tables[1][1][2].Text, "Times New Roman", 12, tables[1][1][2].Bold, Word.WdParagraphAlignment.wdAlignParagraphCenter, Word.WdColor.wdColorBlack, true, tables[1][1][2].wdBackColor);
+                FillRangeInWord(table.Cell(3, 6).Range, tables[1][2][0].Text, "Times New Roman", 12, tables[1][2][0].Bold, Word.WdParagraphAlignment.wdAlignParagraphCenter, Word.WdColor.wdColorBlack, true, tables[1][2][0].wdBackColor);
+                FillRangeInWord(table.Cell(3, 7).Range, tables[1][2][1].Text, "Times New Roman", 12, tables[1][2][1].Bold, Word.WdParagraphAlignment.wdAlignParagraphCenter, Word.WdColor.wdColorBlack, true, tables[1][2][1].wdBackColor);
+                for (int i = 3; i < tables[1].Length; i++)
                 {
+                    table.Rows.Add();
                     for (int j = 0; j < tables[1][i].Length; j++)
                     {
-                        if (i > 2)
-                            table.Rows.Add();
                         FillRangeInWord(table.Cell(i + 1, j + 1).Range, tables[1][i][j].Text, "Times New Roman", 12, tables[1][i][j].Bold, Word.WdParagraphAlignment.wdAlignParagraphCenter, Word.WdColor.wdColorBlack, true, tables[1][i][j].wdBackColor);
                     }
                 }
-                //FillRangeInWord(table.Cell(1, 1).Range, tables_Nodes[1, 1][0].InnerText, "Times New Roman", 12, 0, Word.WdParagraphAlignment.wdAlignParagraphCenter, Word.WdColor.wdColorBlack);
-                //FillRangeInWord(table.Cell(1, 2).Range, tables_Nodes[1, 1][1].InnerText, "Times New Roman", 12, 0, Word.WdParagraphAlignment.wdAlignParagraphCenter, Word.WdColor.wdColorBlack);
-                //FillRangeInWord(table.Cell(1, 3).Range, tables_Nodes[1, 1][2].InnerText, "Times New Roman", 12, 0, Word.WdParagraphAlignment.wdAlignParagraphCenter, Word.WdColor.wdColorBlack);
-                //FillRangeInWord(table.Cell(1, 4).Range, tables_Nodes[1, 1][3].InnerText, "Times New Roman", 12, 0, Word.WdParagraphAlignment.wdAlignParagraphCenter, Word.WdColor.wdColorBlack);
-                //FillRangeInWord(table.Cell(2, 4).Range, tables_Nodes[1, 1][4].InnerText, "Times New Roman", 12, 0, Word.WdParagraphAlignment.wdAlignParagraphCenter, Word.WdColor.wdColorBlack);
-                //FillRangeInWord(table.Cell(2, 5).Range, tables_Nodes[1, 1][5].InnerText, "Times New Roman", 12, 0, Word.WdParagraphAlignment.wdAlignParagraphCenter, Word.WdColor.wdColorBlack);
-                //FillRangeInWord(table.Cell(2, 6).Range, tables_Nodes[1, 1][6].InnerText, "Times New Roman", 12, 0, Word.WdParagraphAlignment.wdAlignParagraphCenter, Word.WdColor.wdColorBlack);
-                //FillRangeInWord(table.Cell(3, 6).Range, tables_Nodes[1, 1][7].InnerText, "Times New Roman", 12, 0, Word.WdParagraphAlignment.wdAlignParagraphCenter, Word.WdColor.wdColorBlack);
-                //FillRangeInWord(table.Cell(3, 7).Range, tables_Nodes[1, 1][8].InnerText, "Times New Roman", 12, 0, Word.WdParagraphAlignment.wdAlignParagraphCenter, Word.WdColor.wdColorBlack);
                 //for (int i = 0; i < tables_Nodes[1, 2].Count / 5; i++)
                 //{
                 //    table.Rows.Add();
@@ -336,7 +336,7 @@ namespace KPSZI
                 #endregion
 
                 #region Порты и сервисы
-                FillRangeInWord(paragraph.Range, captions[captionIndex++].Text, "Times New Roman", 16, 1, Word.WdParagraphAlignment.wdAlignParagraphCenter, Word.WdColor.wdColorBlack);
+                FillRangeInWord(paragraph.Range, captions[captionIndex++].Text, "Times New Roman", 16, 1, Word.WdParagraphAlignment.wdAlignParagraphLeft, Word.WdColor.wdColorBlack);
                 paragraph.Range.InsertParagraphAfter();
                 table = CreateStandartTable(paragraph.Range, tables[2].Length, 5, Word.WdLineStyle.wdLineStyleSingle, Word.WdLineStyle.wdLineStyleSingle, doc);
                 for (int i = 0; i < tables[2].Length; i++)
@@ -351,37 +351,118 @@ namespace KPSZI
 
                 #region Уязвимости
 
+                FillRangeInWord(paragraph.Range, captions[captionIndex++].Text, "Times New Roman", 16, 1, Word.WdParagraphAlignment.wdAlignParagraphLeft, Word.WdColor.wdColorBlack);
+
                 #region Уязвимость обхода проверки подлинности сеанса в Microsoft Windows SMB / NETBIOS, связанной с пустым значением
 
-                FillRangeInWord(paragraph.Range, captions[vulnSectionIndex++].Text, "Times New Roman", 16, 1, Word.WdParagraphAlignment.wdAlignParagraphCenter, Word.WdColor.wdColorBlack);
+                FillRangeInWord(paragraph.Range, "4.1 " + (vulnSections[0][vulnSectionIndex++] as HtmlElement).Text, "Times New Roman", 16, 1, Word.WdParagraphAlignment.wdAlignParagraphLeft, Word.WdColor.wdColorBlack);
                 paragraph.Range.InsertParagraphAfter();
-                FillRangeInWord(paragraph.Range, captions[vulnSectionIndex++].Text, "Times New Roman", 12, 0, Word.WdParagraphAlignment.wdAlignParagraphCenter, Word.WdColor.wdColorBlack);
+                FillRangeInWord(paragraph.Range, (vulnSections[0][vulnSectionIndex++] as HtmlElement).Text, "Times New Roman", 12, 0, Word.WdParagraphAlignment.wdAlignParagraphLeft, Word.WdColor.wdColorBlack);
                 paragraph.Range.InsertParagraphAfter();
-                FillRangeInWord(paragraph.Range, captions[vulnSectionIndex++].Text, "Times New Roman", 12, 0, Word.WdParagraphAlignment.wdAlignParagraphCenter, Word.WdColor.wdColorBlack);
+                FillRangeInWord(paragraph.Range, (vulnSections[0][vulnSectionIndex++] as HtmlElement).Text, "Times New Roman", 12, 0, Word.WdParagraphAlignment.wdAlignParagraphLeft, Word.WdColor.wdColorBlack);
                 paragraph.Range.InsertParagraphAfter();
-                FillRangeInWord(paragraph.Range, captions[vulnSectionIndex++].Text, "Times New Roman", 12, 0, Word.WdParagraphAlignment.wdAlignParagraphCenter, Word.WdColor.wdColorBlack);
+                FillRangeInWord(paragraph.Range, (vulnSections[0][vulnSectionIndex++] as HtmlElement).Text, "Times New Roman", 12, 0, Word.WdParagraphAlignment.wdAlignParagraphLeft, Word.WdColor.wdColorBlack);
                 paragraph.Range.InsertParagraphAfter();
-                FillRangeInWord(paragraph.Range, captions[vulnSectionIndex++].Text, "Times New Roman", 12, 0, Word.WdParagraphAlignment.wdAlignParagraphCenter, Word.WdColor.wdColorBlack);
+                FillRangeInWord(paragraph.Range, (vulnSections[0][vulnSectionIndex++] as HtmlElement).Text, "Times New Roman", 12, 0, Word.WdParagraphAlignment.wdAlignParagraphLeft, Word.WdColor.wdColorBlack);
                 paragraph.Range.InsertParagraphAfter();
-                count = vulnSectionIndex;
-                //for (int i = 0; i < vulnSections[0][)
+                count = vulnSectionIndex++;
+                HtmlElement[] el = (HtmlElement[])vulnSections[0][count]; 
+                for (int i = 0; i < el.Length; i++)
+                {
+                    FillRangeInWord(paragraph.Range, el[i].Text, "Times New Roman", 12, 0, Word.WdParagraphAlignment.wdAlignParagraphLeft, Word.WdColor.wdColorBlack);
+                    paragraph.Range.InsertParagraphAfter();
+                }
+                FillRangeInWord(paragraph.Range, (vulnSections[0][vulnSectionIndex++] as HtmlElement).Text, "Times New Roman", 12, 0, Word.WdParagraphAlignment.wdAlignParagraphLeft, Word.WdColor.wdColorBlack);
+                paragraph.Range.InsertParagraphAfter();
+                FillRangeInWord(paragraph.Range, (vulnSections[0][vulnSectionIndex++] as HtmlElement).Text, "Times New Roman", 12, 0, Word.WdParagraphAlignment.wdAlignParagraphLeft, Word.WdColor.wdColorBlack);
+                paragraph.Range.InsertParagraphAfter();
+                FillRangeInWord(paragraph.Range, (vulnSections[0][vulnSectionIndex++] as HtmlElement).Text, "Times New Roman", 12, 0, Word.WdParagraphAlignment.wdAlignParagraphLeft, Word.WdColor.wdColorBlack);
+                paragraph.Range.InsertParagraphAfter();
+                FillRangeInWord(paragraph.Range, (vulnSections[0][vulnSectionIndex++] as HtmlElement).Text, "Times New Roman", 12, 0, Word.WdParagraphAlignment.wdAlignParagraphLeft, Word.WdColor.wdColorBlack);
+                paragraph.Range.InsertParagraphAfter();
+                count = vulnSectionIndex++;
+                el = (HtmlElement[])vulnSections[0][count];
+                for (int i = 0; i < el.Length; i++)
+                {
+                    FillRangeInWord(paragraph.Range, el[i].Text, "Times New Roman", 12, 0, Word.WdParagraphAlignment.wdAlignParagraphLeft, Word.WdColor.wdColorBlack);
+                    paragraph.Range.InsertParagraphAfter();
+                }
+                FillRangeInWord(paragraph.Range, (vulnSections[0][vulnSectionIndex++] as HtmlElement).Text, "Times New Roman", 12, 0, Word.WdParagraphAlignment.wdAlignParagraphLeft, Word.WdColor.wdColorBlack);
+                paragraph.Range.InsertParagraphAfter();
+                FillRangeInWord(paragraph.Range, (vulnSections[0][vulnSectionIndex++] as HtmlElement).Text, "Times New Roman", 12, 0, Word.WdParagraphAlignment.wdAlignParagraphLeft, Word.WdColor.wdColorBlack);
+                paragraph.Range.InsertParagraphAfter();
                 #endregion
+
+                #region Отчеты о перечислении служб DCE / RPC и MSRPC
+
+                vulnSectionIndex = 0;
+                FillRangeInWord(paragraph.Range, "4.2 " + (vulnSections[1][vulnSectionIndex++] as HtmlElement).Text, "Times New Roman", 16, 1, Word.WdParagraphAlignment.wdAlignParagraphLeft, Word.WdColor.wdColorBlack);
+                paragraph.Range.InsertParagraphAfter();
+                FillRangeInWord(paragraph.Range, (vulnSections[1][vulnSectionIndex++] as HtmlElement).Text, "Times New Roman", 12, 0, Word.WdParagraphAlignment.wdAlignParagraphLeft, Word.WdColor.wdColorBlack);
+                paragraph.Range.InsertParagraphAfter();
+                FillRangeInWord(paragraph.Range, (vulnSections[1][vulnSectionIndex++] as HtmlElement).Text, "Times New Roman", 12, 0, Word.WdParagraphAlignment.wdAlignParagraphLeft, Word.WdColor.wdColorBlack);
+                paragraph.Range.InsertParagraphAfter();
+                FillRangeInWord(paragraph.Range, (vulnSections[1][vulnSectionIndex++] as HtmlElement).Text, "Times New Roman", 12, 0, Word.WdParagraphAlignment.wdAlignParagraphLeft, Word.WdColor.wdColorBlack);
+                paragraph.Range.InsertParagraphAfter();
+                FillRangeInWord(paragraph.Range, (vulnSections[1][vulnSectionIndex++] as HtmlElement).Text, "Times New Roman", 12, 0, Word.WdParagraphAlignment.wdAlignParagraphLeft, Word.WdColor.wdColorBlack);
+                paragraph.Range.InsertParagraphAfter();
+                count = vulnSectionIndex++;
+                el = (HtmlElement[])vulnSections[0][count];
+                for (int i = 0; i < el.Length; i++)
+                {
+                    FillRangeInWord(paragraph.Range, el[i].Text, "Times New Roman", 12, 0, Word.WdParagraphAlignment.wdAlignParagraphLeft, Word.WdColor.wdColorBlack);
+                    paragraph.Range.InsertParagraphAfter();
+                }
+                FillRangeInWord(paragraph.Range, (vulnSections[1][vulnSectionIndex++] as HtmlElement).Text, "Times New Roman", 12, 0, Word.WdParagraphAlignment.wdAlignParagraphLeft, Word.WdColor.wdColorBlack);
+                paragraph.Range.InsertParagraphAfter();
+                FillRangeInWord(paragraph.Range, (vulnSections[1][vulnSectionIndex++] as HtmlElement).Text, "Times New Roman", 12, 0, Word.WdParagraphAlignment.wdAlignParagraphLeft, Word.WdColor.wdColorBlack);
+                paragraph.Range.InsertParagraphAfter();
+                FillRangeInWord(paragraph.Range, (vulnSections[1][vulnSectionIndex++] as HtmlElement).Text, "Times New Roman", 12, 0, Word.WdParagraphAlignment.wdAlignParagraphLeft, Word.WdColor.wdColorBlack);
+                paragraph.Range.InsertParagraphAfter();
+                FillRangeInWord(paragraph.Range, (vulnSections[1][vulnSectionIndex++] as HtmlElement).Text, "Times New Roman", 12, 0, Word.WdParagraphAlignment.wdAlignParagraphLeft, Word.WdColor.wdColorBlack);
+                paragraph.Range.InsertParagraphAfter();
+                FillRangeInWord(paragraph.Range, (vulnSections[1][vulnSectionIndex++] as HtmlElement).Text, "Times New Roman", 12, 0, Word.WdParagraphAlignment.wdAlignParagraphLeft, Word.WdColor.wdColorBlack);
+                paragraph.Range.InsertParagraphAfter();
 
                 #endregion
 
-                //#region CVSS 2.0
-                //FillRangeInWord(paragraph.Range, tables_Nodes[2, 0][0].InnerText, "Times New Roman", 14, 0, Word.WdParagraphAlignment.wdAlignParagraphLeft, Word.WdColor.wdColorGray85);
-                //paragraph.Range.InsertParagraphAfter();
-                //table = CreateStandartTable(paragraph.Range, 6, 4, Word.WdLineStyle.wdLineStyleSingle, Word.WdLineStyle.wdLineStyleSingle, doc);
-                //count = table.Rows[1].Cells.Count;
-                //for (int i = 0; i < tables_Nodes[2, 1].Count / 4; i++)
-                //{
-                //    for (int j = 0; j < count; j++)
-                //    {
-                //        FillRangeInWord(table.Cell(i + 1, j + 1).Range, tables_Nodes[2, 1][count * i + j].InnerText, "Times New Roman", 12, 0, Word.WdParagraphAlignment.wdAlignParagraphCenter, Word.WdColor.wdColorBlack);
-                //    }
-                //}
-                //#endregion
+                #endregion
+
+                #region CVSS 2.0
+                FillRangeInWord(paragraph.Range, tablesCaptions[tableCaprionIndex++].Text, "Times New Roman", 14, 0, Word.WdParagraphAlignment.wdAlignParagraphLeft, Word.WdColor.wdColorGray85);
+                paragraph.Range.InsertParagraphAfter();
+                table = CreateStandartTable(paragraph.Range, tables[3].Length, 4, Word.WdLineStyle.wdLineStyleSingle, Word.WdLineStyle.wdLineStyleSingle, doc);
+                for (int i = 0; i < tables[3].Length; i++)
+                {
+                    for (int j = 0; j < tables[3][i].Length; j++)
+                    {
+                        FillRangeInWord(table.Cell(i + 1, j + 1).Range, tables[3][i][j].Text, "Times New Roman", 12, tables[3][i][j].Bold, Word.WdParagraphAlignment.wdAlignParagraphCenter, Word.WdColor.wdColorBlack, true, tables[3][i][j].wdBackColor);
+                    }
+                }
+                paragraph.Range.InsertParagraphAfter();
+                #endregion
+
+                #region CVSS 3.0
+
+                FillRangeInWord(paragraph.Range, tablesCaptions[tableCaprionIndex++].Text, "Times New Roman", 14, 0, Word.WdParagraphAlignment.wdAlignParagraphLeft, Word.WdColor.wdColorGray85);
+                paragraph.Range.InsertParagraphAfter();
+                table = CreateStandartTable(paragraph.Range, 8, 5, Word.WdLineStyle.wdLineStyleSingle, Word.WdLineStyle.wdLineStyleSingle, doc);
+                table.Cell(2, 2).Merge(table.Cell(2, 3));
+                table.Cell(2, 3).Merge(table.Cell(2, 4));
+                table.Cell(3, 2).Merge(table.Cell(3, 3));
+                table.Cell(4, 2).Merge(table.Cell(4, 3));
+                table.Cell(4, 3).Merge(table.Cell(4, 4));
+                table.Cell(5, 2).Merge(table.Cell(5, 3));
+                table.Cell(5, 3).Merge(table.Cell(5, 4));
+                for (int i = 0; i < tables[4].Length; i++)
+                {
+                    for (int j = 0; j < tables[4][i].Length; j++)
+                    {
+                        FillRangeInWord(table.Cell(i + 1, j + 1).Range, tables[4][i][j].Text, "Times New Roman", 12, tables[4][i][j].Bold, Word.WdParagraphAlignment.wdAlignParagraphCenter, Word.WdColor.wdColorBlack, true, tables[4][i][j].wdBackColor);
+                    }
+                }
+
+                #endregion
             }
 
             paragraph.Range.InsertBreak(Word.WdBreakType.wdPageBreak);
