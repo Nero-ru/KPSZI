@@ -134,7 +134,7 @@ namespace KPSZI
                     table.Rows.Add();
                     for (int j = 0; j < data.GetLength(1); j++)
                     {
-                        FillRangeInWord(table.Cell(i + 1, j + 1).Range, data[i - 2, j].Text, "Times New Roman", 12, data[i - 2, j].Bold, Word.WdParagraphAlignment.wdAlignParagraphCenter, Word.WdColor.wdColorBlack);
+                        FillRangeInWord(table.Cell(i + 1, j + 1).Range, data[i - 2, j].Text, "Times New Roman", 12, data[i - 2, j].Bold, Word.WdParagraphAlignment.wdAlignParagraphCenter, Word.WdColor.wdColorBlack, true, data[i - 2, j].wdBackColor);
                         if (j == 0)
                             table.Cell(i + 1, j + 1).Range.ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphLeft;
                     }

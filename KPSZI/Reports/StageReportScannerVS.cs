@@ -261,6 +261,9 @@ namespace KPSZI
                  paragraph.Range.InsertParagraphAfter();
 
                  Word.Table table = CreateStandartTable(paragraph.Range, tables[0].Length, 3, Word.WdLineStyle.wdLineStyleSingle, Word.WdLineStyle.wdLineStyleSingle, doc);
+                table.Columns[1].Width = 100;
+                table.Columns[2].Width = 300;
+                table.Columns[3].Width = 99;
                 //int count = table.Rows[1].Cells.Count;
                 //for (int i = 3; i < count + 1; i++)
                 //{
@@ -272,6 +275,7 @@ namespace KPSZI
                     for (int j = 0; j < tables[0][i].Length; j++)
                     {
                         FillRangeInWord(table.Cell(i + 1, j + 1).Range, tables[0][i][j].Text, "Times New Roman", 12, tables[0][i][j].Bold, Word.WdParagraphAlignment.wdAlignParagraphCenter, Word.WdColor.wdColorBlack, true, tables[0][i][j].wdBackColor);
+                        table.Cell(i + 1, j + 1).VerticalAlignment = Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
                     }
                 }
                 paragraph.Range.InsertParagraphAfter();
@@ -302,20 +306,30 @@ namespace KPSZI
 
                 
                 FillRangeInWord(table.Cell(1, 1).Range, tables[1][0][0].Text, "Times New Roman", 12, tables[1][0][0].Bold, Word.WdParagraphAlignment.wdAlignParagraphCenter, Word.WdColor.wdColorBlack, true, tables[1][0][0].wdBackColor);
+                table.Cell(1, 1).VerticalAlignment = Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
                 FillRangeInWord(table.Cell(1, 2).Range, tables[1][0][1].Text, "Times New Roman", 12, tables[1][0][1].Bold, Word.WdParagraphAlignment.wdAlignParagraphCenter, Word.WdColor.wdColorBlack, true, tables[1][0][1].wdBackColor);
+                table.Cell(1, 2).VerticalAlignment = Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
                 FillRangeInWord(table.Cell(1, 3).Range, tables[1][0][2].Text, "Times New Roman", 12, tables[1][0][2].Bold, Word.WdParagraphAlignment.wdAlignParagraphCenter, Word.WdColor.wdColorBlack, true, tables[1][0][2].wdBackColor);
+                table.Cell(1, 3).VerticalAlignment = Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
                 FillRangeInWord(table.Cell(1, 4).Range, tables[1][0][3].Text, "Times New Roman", 12, tables[1][0][3].Bold, Word.WdParagraphAlignment.wdAlignParagraphCenter, Word.WdColor.wdColorBlack, true, tables[1][0][3].wdBackColor);
+                table.Cell(1, 4).VerticalAlignment = Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
                 FillRangeInWord(table.Cell(2, 4).Range, tables[1][1][0].Text, "Times New Roman", 12, tables[1][1][0].Bold, Word.WdParagraphAlignment.wdAlignParagraphCenter, Word.WdColor.wdColorBlack, true, tables[1][1][0].wdBackColor);
+                table.Cell(2, 4).VerticalAlignment = Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
                 FillRangeInWord(table.Cell(2, 5).Range, tables[1][1][1].Text, "Times New Roman", 12, tables[1][1][1].Bold, Word.WdParagraphAlignment.wdAlignParagraphCenter, Word.WdColor.wdColorBlack, true, tables[1][1][1].wdBackColor);
+                table.Cell(2, 5).VerticalAlignment = Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
                 FillRangeInWord(table.Cell(2, 6).Range, tables[1][1][2].Text, "Times New Roman", 12, tables[1][1][2].Bold, Word.WdParagraphAlignment.wdAlignParagraphCenter, Word.WdColor.wdColorBlack, true, tables[1][1][2].wdBackColor);
+                table.Cell(2, 6).VerticalAlignment = Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
                 FillRangeInWord(table.Cell(3, 6).Range, tables[1][2][0].Text, "Times New Roman", 12, tables[1][2][0].Bold, Word.WdParagraphAlignment.wdAlignParagraphCenter, Word.WdColor.wdColorBlack, true, tables[1][2][0].wdBackColor);
+                table.Cell(3, 6).VerticalAlignment = Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
                 FillRangeInWord(table.Cell(3, 7).Range, tables[1][2][1].Text, "Times New Roman", 12, tables[1][2][1].Bold, Word.WdParagraphAlignment.wdAlignParagraphCenter, Word.WdColor.wdColorBlack, true, tables[1][2][1].wdBackColor);
+                table.Cell(3, 7).VerticalAlignment = Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
                 for (int i = 3; i < tables[1].Length; i++)
                 {
                     table.Rows.Add();
                     for (int j = 0; j < tables[1][i].Length; j++)
                     {
                         FillRangeInWord(table.Cell(i + 1, j + 1).Range, tables[1][i][j].Text, "Times New Roman", 12, tables[1][i][j].Bold, Word.WdParagraphAlignment.wdAlignParagraphCenter, Word.WdColor.wdColorBlack, true, tables[1][i][j].wdBackColor);
+                        table.Cell(i + 1, j + 1).VerticalAlignment = Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
                     }
                 }
                 //for (int i = 0; i < tables_Nodes[1, 2].Count / 5; i++)
@@ -344,6 +358,7 @@ namespace KPSZI
                     for (int j = 0; j < tables[2][i].Length; j++)
                     {
                         FillRangeInWord(table.Cell(i + 1, j + 1).Range, tables[2][i][j].Text, "Times New Roman", 12, tables[2][i][j].Bold, Word.WdParagraphAlignment.wdAlignParagraphCenter, Word.WdColor.wdColorBlack, true, tables[2][i][j].wdBackColor);
+                        table.Cell(i + 1, j + 1).VerticalAlignment = Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
                     }
                 }
                 paragraph.Range.InsertParagraphAfter();
@@ -437,6 +452,7 @@ namespace KPSZI
                     for (int j = 0; j < tables[3][i].Length; j++)
                     {
                         FillRangeInWord(table.Cell(i + 1, j + 1).Range, tables[3][i][j].Text, "Times New Roman", 12, tables[3][i][j].Bold, Word.WdParagraphAlignment.wdAlignParagraphCenter, Word.WdColor.wdColorBlack, true, tables[3][i][j].wdBackColor);
+                        table.Cell(i + 1, j + 1).VerticalAlignment = Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
                     }
                 }
                 paragraph.Range.InsertParagraphAfter();
@@ -454,11 +470,15 @@ namespace KPSZI
                 table.Cell(4, 3).Merge(table.Cell(4, 4));
                 table.Cell(5, 2).Merge(table.Cell(5, 3));
                 table.Cell(5, 3).Merge(table.Cell(5, 4));
+                table.Cell(6, 3).Merge(table.Cell(6, 4));
+                table.Cell(7, 3).Merge(table.Cell(7, 4));
+                table.Cell(8, 3).Merge(table.Cell(8, 4));
                 for (int i = 0; i < tables[4].Length; i++)
                 {
                     for (int j = 0; j < tables[4][i].Length; j++)
                     {
                         FillRangeInWord(table.Cell(i + 1, j + 1).Range, tables[4][i][j].Text, "Times New Roman", 12, tables[4][i][j].Bold, Word.WdParagraphAlignment.wdAlignParagraphCenter, Word.WdColor.wdColorBlack, true, tables[4][i][j].wdBackColor);
+                        table.Cell(i + 1, j + 1).VerticalAlignment = Word.WdCellVerticalAlignment.wdCellAlignVerticalCenter;
                     }
                 }
 
