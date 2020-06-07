@@ -47,12 +47,7 @@ namespace KPSZI
         public StageReportScannerVS(MainForm mainForm, string template)
             : base(mainForm, template)
         {
-            mainForm.btnExportTest.Click += new EventHandler(Test);
-        }
-
-        public void Test(object sender, EventArgs e)
-        {
-            Parce(@"reports/ScannerVS/scaner-vs_report_short_13.04.2020.html");
+            
         }
 
         public override void Parce(string pathHTML)

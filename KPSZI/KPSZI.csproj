@@ -241,7 +241,7 @@
     <Compile Include="StageCertificateSZI.cs" />
     <Compile Include="StageClassification.cs" />
     <Compile Include="StageConfigOptions.cs" />
-    <Compile Include="StageReport_2.cs" />
+    <Compile Include="Reports\StageReport_2.cs" />
     <Compile Include="StageSZIConfig.cs" />
     <Compile Include="Reports\StageReportFIKS.cs" />
     <Compile Include="StageIntruder.cs" />
