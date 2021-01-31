@@ -149,7 +149,8 @@ namespace KPSZI
             {
                 Word.Application app = new Word.Application();
                 Word.Document doc = app.Documents.Add(Environment.CurrentDirectory + "/" + templatePath);
-                Word.Paragraph paragraph = doc.Paragraphs.Add(doc.Bookmarks["AllReport"].Range);
+                Word.Paragraph paragraph = doc.Paragraphs.Add(doc.Bookmarks["Certificate"].Range);
+                //Word.Paragraph paragraph = doc.Paragraphs.Add(doc.Bookmarks["AllReport"].Range);
 
                 Word.Bookmark bkNameofIS = doc.Bookmarks.Add("ISName", doc.Bookmarks["ISName"].Range);
                 Word.Bookmark bkNameofIS1 = doc.Bookmarks.Add("ISName1", doc.Bookmarks["ISName1"].Range);
@@ -212,6 +213,7 @@ namespace KPSZI
                 //Task taskScannerVS = Task.Factory.StartNew(() => );
                 //Task taskScanoval = Task.Factory.StartNew(() =>);
 
+
                 Scanoval.Parce(sourcePathScanoval);
                 ScannerVS.Parce(sourcePathScannerVS);
                 FIKS.Parce(sourcePathFIKS);
@@ -239,6 +241,11 @@ namespace KPSZI
             {
                 mf.lvReportCertificates.Items.Remove(item);
             }
+        }
+
+        private void CertificateToWord(Word.Document doc = null, Word.Application app = null, Word.Paragraph paragraph = null)
+        {
+
         }
     }
 }

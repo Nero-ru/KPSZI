@@ -451,7 +451,7 @@ namespace KPSZI
             {
                 using (var client = new WebClient())
                 {
-                    client.DownloadFile("https://fstec.ru/component/attachments/download/489", "_reestr_sszi.ods");
+                    client.DownloadFile("https://cloclo54.cldmail.ru/public/get/7YShMbD2eAbYnFPmJ8nyN1XxuQpqaGW7EPo1fRbDUuoEhkiMJt2ezTpr8tmxKjgZZJUkXR/zheka.t97@mail.ru/_reestr_sszi.ods", "_reestr_sszi.ods"); 
                 }
             }
             catch (Exception ex)
